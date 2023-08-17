@@ -1,4 +1,4 @@
-.main-header .sidebar-toggle:before {
+  .main-header .sidebar-toggle:before {
   content: "";
 }
 
@@ -6,17 +6,17 @@
   min-height: 0 !important;
   overflow: auto;
 }
-}
+
 
 #body{
-  background: red;
+  background:url("assets/images/bk.jpg");
 
 }
 .container{
   width: 30%;
   margin: 100px 0 0 800px;
   background: rgba(0 , 0 , 0 , 0.8);
-  box-shadow: 0px 0px 20px rgba(255 , 255 , 255 , 0.8);
+  box-shadow: 0 0 20px rgba(255 , 255 , 255 , 0.8);
 }
 .h-user{
   color:#fff;
