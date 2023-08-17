@@ -4,9 +4,6 @@ require_once 'models/User.php';
 
 class UserController extends Controller {
 public function register(){
-    echo '<pre>';
-    print_r($_POST);
-    echo'</pre>';
     if(isset($_POST['submit'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -17,7 +14,7 @@ public function register(){
         $email = $_POST['email'];
         $avatar = $_FILES['avatar'];
 
-        if(empty($username)||empty($password)||empty($name)||empty($phone)||empty($address)||empty($email)){
+        if(empty($username)||empty($password)||empty($name)||empty($phone)||empty($address)||empty($email)||empty($repas)){
             $this->error='phải nhập đầy đủ thông tin';
         }elseif($password != $repas){
             $this->error='mật khẩu không khớp';
@@ -46,8 +43,9 @@ public function register(){
                     }
                     $filename = time() . "-" . $avatar['name'];
                     $is_upload = move_uploaded_file($avatar['tmp_name'],"$dir_upload/$filename");
-                    var_dump($is_upload);
-                }}
+
+                    //var_dump($is_upload);
+                }}}
 //                $sql_insert = "insert into student(name,age,avatar,description) values('$name','$age','$filename','$mota')";
 //                $is_insert = mysqli_query($connection,$sql_insert);
         if(empty($this->error)){
@@ -62,13 +60,12 @@ public function register(){
                 header('location:index.php?controller=user&action=login');
                 exit();
             }$this->error='dky thất bại';
-        }
-    }
+        }}
 
     $this->page_title='form đăng ký';
     $this->content = $this->render('views/users/register.php');
     require_once 'views/layouts/main_login.php';
-    }}
+    }
     public function login(){
 
     echo '<pre>';
@@ -106,6 +103,7 @@ public function register(){
         require_once 'views/layouts/main_login.php';
 
 }
+
 public function logout(){
     unset($_SESSION['user']);
     $_SESSION['success']='logout thành công';

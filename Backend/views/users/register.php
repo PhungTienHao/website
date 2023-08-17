@@ -42,7 +42,7 @@ require_once "models/User.php";
             <input type="submit" name="submit" value="đăng ký"  class="btn btn-success">
 
         </div>
-        <div>Đã có tài khoản , đăng nhập tại <a href="index.php?controller=user&action=login">đây</a><br></div>
+        <div>Đã có tài khoản , đăng nhập tại <a href=" index.php?controller=user&action=login">đây</a><br></div>
     </form>
 </div>
 </body>
