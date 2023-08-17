@@ -2,7 +2,6 @@
 //views/users/register.php
 require_once "controllers/UserController.php";
 require_once "models/User.php";
-
 ?>
 <body>
 <div class="container">
