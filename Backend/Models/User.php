@@ -50,4 +50,14 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
         $user=$obj_select_one->fetch(PDO::FETCH_ASSOC);
         return $user;
     }
+    public function getAdmin($username){
+        $sql_select_one ="select * from admin where username=:username";
+        $obj_select_one = $this->connection->prepare($sql_select_one);
+        $selects=[
+            ':username'=>$username
+        ];
+        $obj_select_one->execute($selects);
+        $user=$obj_select_one->fetch(PDO::FETCH_ASSOC);
+        return $user;
+    }
 }

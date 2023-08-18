@@ -68,7 +68,7 @@ public function register(){
             if($is_register){
                 $_SESSION['success'] = 'đăng kí thành công';
             } else {
-                $_SESSION['error'] = 'đăng kí không thành xông';
+                $_SESSION['error'] = 'đăng kí không thành công';
             }
             header('Location: index.php?controller=user');
             exit();
@@ -88,6 +88,37 @@ public function register(){
             if(empty($this->error)){
                 $user_model = new User();
                 $user =$user_model->getUser($username);
+                if(empty($user)){
+                    $this->error='username k tồn tại';}
+                else{
+                    $pass_hash=$user['password'];
+                    $is_login=password_verify($password,$pass_hash);
+                    var_dump($is_login);
+                    if($is_login){
+                        $_SESSION['user']=$user;
+                        $_SESSION['success']='đăng nhập thành công';
+                        header('location:website/Frontend/views/homes/index.php?controller=product&action=index');
+                        exit();
+                    }
+                    $this->error='sai tk';
+                }
+            }
+        }
+
+        $this->page_title='form đăng nhập';
+        $this->content = $this->render('views/users/login.php');
+        require_once 'views/layouts/main_login.php';
+
+}
+public function loginAdmin(){
+        $user_model = new User();
+        if(isset($_POST['submit'])){
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+
+            if(empty($this->error)){
+                $user_model = new User();
+                $user =$user_model->getAdmin($username);
                 if(empty($user)){
                     $this->error='username k tồn tại';}
                 else{
