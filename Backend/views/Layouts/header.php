@@ -158,4 +158,7 @@ if (isset($_SESSION['user'])) {
     a.b {
         font-size: 23px;
     }
+    section.content-header {
+        height: 70px;
+    }
 </style>
