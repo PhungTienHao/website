@@ -41,7 +41,7 @@ class CategoryController extends Controller
     if (isset($_POST['submit'])) {
       $name = $_POST['name'];
       $description = $_POST['description'];
-      $status = $_POST['status'];
+     // $status = $_POST['status'];
       $avatar_files = $_FILES['avatar'];
 
       if (empty($name)) {
@@ -78,7 +78,7 @@ class CategoryController extends Controller
         $category_model->name = $name;
         $category_model->avatar = $avatar;
         $category_model->description = $description;
-        $category_model->status = $status;
+       // $category_model->status = $status;
 
         $is_insert = $category_model->insert();
         if ($is_insert) {
@@ -111,7 +111,7 @@ class CategoryController extends Controller
     if (isset($_POST['submit'])) {
       $name = $_POST['name'];
       $description = $_POST['description'];
-      $status = $_POST['status'];
+      //$status = $_POST['status'];
       $avatar_files = $_FILES['avatar'];
 
 
@@ -158,7 +158,7 @@ class CategoryController extends Controller
         $category_model->name = $name;
         $category_model->avatar = $avatar;
         $category_model->description = $description;
-        $category_model->status = $status;
+        //$category_model->status = $status;
         $category_model->updated_at = date('Y-m-d H:i:s');
         //gọi phương thức update theo id
         $is_update = $category_model->update($id);

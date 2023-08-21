@@ -239,7 +239,7 @@ public function update(){
             'query_string' => 'page',
             'controller' => 'user',
             'action' => 'index',
-            'page' => $page,
+                'page' => $page,
             'query_additional' => $query_additional
         ];
         $pagination = new Pagination($params);

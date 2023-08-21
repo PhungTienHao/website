@@ -39,7 +39,6 @@ class ProductController extends Controller
       if (empty($title)) {
         $this->error = 'Không được để trống title';
       } else if ($_FILES['avatar']['error'] == 0) {
-        //validate khi có file upload lên thì bắt buộc phải là ảnh và dung lượng không quá 2 Mb
         $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
         $extension = strtolower($extension);
         $arr_extension = ['jpg', 'jpeg', 'png', 'gif'];

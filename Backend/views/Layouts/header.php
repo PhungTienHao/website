@@ -38,8 +38,8 @@ if (isset($_SESSION['user'])) {
                             <img src="assets/uploads/<?php echo $avatar; ?>" class="img-circle" alt="User Image">
 
                             <p>
-                                <?php echo $username . ' - ' . $jobs; ?>
-                                <!--Nguyễn Viết Mạnh - Web Developer-->
+                                <?php echo $username; ?>
+
                                 <small>Thành viên từ năm <?php echo $year; ?></small>
                             </p>
                         </li>
@@ -78,15 +78,15 @@ if (isset($_SESSION['user'])) {
             <li class="header">LAOYOUT ADMIN</li>
 
             <li>
-                <a href="index.php?controller=category&action=index">
-                    <i class="fa fa-th"></i> <span>Quản lý danh mục</span>
+                <a href="index.php?controller=category&action=index" class="b">
+                    <i class="fa fa-th"></i> <span >Quản lý danh mục</span>
                     <span class="pull-right-container">
               <!--<small class="label pull-right bg-green">new</small>-->
             </span>
                 </a>
             </li>
             <li>
-                <a href="index.php?controller=product&action=index">
+                <a href="index.php?controller=product&action=index" class="b">
                     <i class="fa fa-code"></i> <span>Quản lý sản phẩm</span>
                     <span class="pull-right-container">
               <!--<small class="label pull-right bg-green">new</small>-->
@@ -94,7 +94,7 @@ if (isset($_SESSION['user'])) {
                 </a>
             </li>
             <li>
-                <a href="index.php?controller=user&action=index">
+                <a href="index.php?controller=user&action=index" class="b">
                     <i class="fa fa-user"></i> <span>Quản lý user</span>
                     <span class="pull-right-container">
               <!--<small class="label pull-right bg-green">new</small>-->
@@ -154,3 +154,8 @@ if (isset($_SESSION['user'])) {
         <!--        <p class="alert alert-success">Thành công</p>-->
     </section>
 </div>
+<style>
+    a.b {
+        font-size: 23px;
+    }
+</style>

@@ -18,9 +18,7 @@ class Product extends Model
     public $status;
     public $created_at;
     public $updated_at;
-    /*
-     * Chuỗi search, sinh tự động dựa vào tham số GET trên Url
-     */
+
     public $str_search = '';
 
     public function __construct()
