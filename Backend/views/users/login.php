@@ -1,7 +1,7 @@
 <?php
 //views/users/login.php
 ?>
-<body></body>
+<body>
 <div class="container">
     <h2> from đăng Nhập</h2>
     <form action="" method="post" >

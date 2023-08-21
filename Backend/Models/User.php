@@ -15,6 +15,7 @@ class User extends Model {
     public $avatar;
     public $created_at;
     public $str_search;
+    public $page;
 
     public function __construct()
     {

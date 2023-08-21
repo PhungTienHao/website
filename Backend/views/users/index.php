@@ -41,7 +41,7 @@
                 <td><?php echo $user['email'] ?></td>
                 <td>
                     <?php if (!empty($user['avatar'])): ?>
-                        <img height="80" src="assets/uploads/<?php echo $user['avatar'] ?>"/>
+                        <img height="80" src="assets/uploads/<?php echo $user['avatar'] ?>">
                     <?php endif; ?>
                 </td>
 

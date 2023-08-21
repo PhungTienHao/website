@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 14, 2023 lúc 02:45 PM
+-- Thời gian đã tạo: Th8 21, 2023 lúc 10:02 AM
 -- Phiên bản máy phục vụ: 10.4.27-MariaDB
 -- Phiên bản PHP: 8.2.0
 
@@ -18,8 +18,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `php0423e2_project`
+-- Cơ sở dữ liệu: `doancuoikhoa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `pas` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `pas`) VALUES
+(1, 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -29,21 +48,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL COMMENT 'Tên danh mục',
-  `type` tinyint(3) DEFAULT 0 COMMENT 'Loại danh mục: 0 - Product, 1 - News',
-  `avatar` varchar(255) DEFAULT NULL COMMENT 'Tên file ảnh danh mục',
-  `description` text DEFAULT NULL COMMENT 'Mô tả chi tiết cho danh mục',
-  `status` tinyint(3) DEFAULT 0 COMMENT 'Trạng thái danh mục: 0 - Inactive, 1 - Active',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Ngày tạo danh mục',
-  `updated_at` datetime DEFAULT NULL COMMENT 'Ngày cập nhật cuối'
+  `name` varchar(255) NOT NULL,
+  `type` tinyint(3) DEFAULT 0,
+  `avatar` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `status` tinyint(3) DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Đang đổ dữ liệu cho bảng `categories`
---
-
-INSERT INTO `categories` (`id`, `name`, `type`, `avatar`, `description`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'tiền', 0, '1691667761-123.jpg', 'mô tả', 0, '2023-08-10 11:42:41', NULL);
 
 -- --------------------------------------------------------
 
@@ -53,17 +65,17 @@ INSERT INTO `categories` (`id`, `name`, `type`, `avatar`, `description`, `status
 
 CREATE TABLE `news` (
   `id` int(11) NOT NULL,
-  `category_id` int(11) DEFAULT NULL COMMENT 'Id của danh mục mà tin tức thuộc về, là khóa ngoại liên kết với bảng categories',
-  `name` varchar(255) NOT NULL COMMENT 'Tiêu đề tin tức',
-  `summary` varchar(255) DEFAULT NULL COMMENT 'Mô tả ngắn cho tin tức',
-  `avatar` varchar(255) DEFAULT NULL COMMENT 'Tên file ảnh tin tức',
-  `content` text DEFAULT NULL COMMENT 'Mô tả chi tiết cho sản phẩm',
-  `status` tinyint(3) DEFAULT 0 COMMENT 'Trạng thái danh mục: 0 - Inactive, 1 - Active',
-  `seo_title` varchar(255) DEFAULT NULL COMMENT 'Từ khóa seo cho title',
-  `seo_description` varchar(255) DEFAULT NULL COMMENT 'Từ khóa seo cho phần mô tả',
-  `seo_keywords` varchar(255) DEFAULT NULL COMMENT 'Các từ khóa seo',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Ngày tạo',
-  `updated_at` datetime DEFAULT NULL COMMENT 'Ngày cập nhật cuối'
+  `category_id` int(11) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `summary` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `content` text DEFAULT NULL,
+  `status` tinyint(3) DEFAULT 0,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_description` varchar(255) DEFAULT NULL,
+  `seo_keywords` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -74,16 +86,16 @@ CREATE TABLE `news` (
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL COMMENT 'Id của user trong trường hợp đã login và đặt hàng, là khóa ngoại liên kết với bảng users',
-  `fullname` varchar(255) DEFAULT NULL COMMENT 'Tên khách hàng',
-  `address` varchar(255) DEFAULT NULL COMMENT 'Địa chỉ khách hàng',
-  `mobile` int(11) DEFAULT NULL COMMENT 'SĐT khách hàng',
-  `email` varchar(255) DEFAULT NULL COMMENT 'Email khách hàng',
-  `note` text DEFAULT NULL COMMENT 'Ghi chú từ khách hàng',
-  `price_total` int(11) DEFAULT NULL COMMENT 'Tổng giá trị đơn hàng',
-  `payment_status` tinyint(2) DEFAULT NULL COMMENT 'Trạng thái đơn hàng: 0 - Chưa thành toán, 1 - Đã thành toán',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Ngày tạo đơn',
-  `updated_at` datetime DEFAULT NULL COMMENT 'Ngày cập nhật cuối'
+  `user_id` int(11) DEFAULT NULL,
+  `fullname` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `mobile` int(11) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `note` text DEFAULT NULL,
+  `price_total` int(11) DEFAULT NULL,
+  `payment_status` tinyint(2) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -93,10 +105,10 @@ CREATE TABLE `orders` (
 --
 
 CREATE TABLE `order_details` (
-  `order_id` int(11) DEFAULT NULL COMMENT 'Id của order tương ứng, là khóa ngoại liên kết với bảng orders',
-  `product_name` varchar(150) DEFAULT NULL COMMENT 'Tên sp tại thời điểm đặt hàng',
-  `product_price` int(11) DEFAULT NULL COMMENT 'Giá sản phẩm tương ứng tại thời điểm đặt hàng',
-  `quantity` int(11) DEFAULT NULL COMMENT 'Số lượng sản phẩm tương ứng tại thời điểm đặt hàng'
+  `order_id` int(11) DEFAULT NULL,
+  `product_name` varchar(150) DEFAULT NULL,
+  `product_price` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -107,20 +119,47 @@ CREATE TABLE `order_details` (
 
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
-  `category_id` int(11) DEFAULT NULL COMMENT 'Id của danh mục mà sản phẩm thuộc về, là khóa ngoại liên kết với bảng categories',
-  `name` varchar(255) DEFAULT NULL COMMENT 'Tên sản phẩm',
-  `avatar` varchar(255) DEFAULT NULL COMMENT 'Tên file ảnh sản phẩm',
-  `price` int(11) DEFAULT NULL COMMENT 'Giá sản phẩm',
-  `amount` int(11) DEFAULT NULL COMMENT 'Số lượng sản phẩm trong kho',
-  `summary` varchar(255) DEFAULT NULL COMMENT 'Mô tả ngắn cho sản phẩm',
-  `content` text DEFAULT NULL COMMENT 'Mô tả chi tiết cho sản phẩm',
-  `status` tinyint(3) DEFAULT 0 COMMENT 'Trạng thái danh mục: 0 - Inactive, 1 - Active',
-  `seo_title` varchar(255) DEFAULT NULL COMMENT 'Từ khóa seo cho title',
-  `seo_description` varchar(255) DEFAULT NULL COMMENT 'Từ khóa seo cho phần mô tả',
-  `seo_keywords` varchar(255) DEFAULT NULL COMMENT 'Các từ khóa seo',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Ngày tạo',
-  `updated_at` datetime DEFAULT NULL COMMENT 'Ngày cập nhật cuối'
+  `category_id` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
+  `summary` varchar(255) DEFAULT NULL,
+  `content` text DEFAULT NULL,
+  `status` tinyint(3) DEFAULT 0,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_description` varchar(255) DEFAULT NULL,
+  `seo_keywords` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `student`
+--
+
+CREATE TABLE `student` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `age` int(11) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `create_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `student`
+--
+
+INSERT INTO `student` (`id`, `name`, `age`, `avatar`, `description`, `create_at`) VALUES
+(10, 'phùng tiến hào', 22, '1690986241-chef-character-cook-1417239-1.png', 'sv năm 4 ngành cntt đại học hòa bình', '2023-08-02 12:37:01'),
+(11, 'phùng tiến hào', 21, '1691221986-315974158_101760472769134_1937452839689991189_n.jpg', '', '2023-08-02 12:39:20'),
+(12, 'Nguyễn Hồng Phúc', 21, '1690986277-Screenshot_4.png', 'bạn của hào', '2023-08-02 14:24:37'),
+(13, 'trần mạnh hoằng', 21, '1690986339-Screenshot_5.png', 'bạn của phúc', '2023-08-02 14:25:39'),
+(14, 'nguyễn viết hiếu', 21, '1690986432-z4378325758671_ac93e251e96557deeffeebdd7027454b.jpg', 'bạn của 3 người', '2023-08-02 14:27:12'),
+(15, 'haohao', 11, '1690987038-76797787-9949-45EC-97EA-4E44947C9F5B.jpg', '111', '2023-08-02 14:37:18');
 
 -- --------------------------------------------------------
 
@@ -130,34 +169,32 @@ CREATE TABLE `products` (
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(255) DEFAULT NULL COMMENT 'Tên đăng nhập',
-  `password` varchar(255) DEFAULT NULL COMMENT 'Mật khẩu đăng nhập',
-  `first_name` varchar(255) DEFAULT NULL COMMENT 'Fist name',
-  `last_name` varchar(255) DEFAULT NULL COMMENT 'Last name',
-  `phone` int(11) DEFAULT NULL COMMENT 'SĐT user',
-  `address` varchar(255) DEFAULT NULL COMMENT 'Địa chỉ user',
-  `email` varchar(255) DEFAULT NULL COMMENT 'Email của user',
-  `avatar` varchar(255) DEFAULT NULL COMMENT 'File ảnh đại diện',
-  `jobs` varchar(255) DEFAULT NULL COMMENT 'Nghề nghiệp',
-  `last_login` datetime DEFAULT NULL COMMENT 'Lần đăng nhập gần đây nhất',
-  `facebook` varchar(255) DEFAULT NULL COMMENT 'Link facebook',
-  `status` tinyint(3) DEFAULT 0 COMMENT 'Trạng thái danh mục: 0 - Inactive, 1 - Active',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Ngày tạo',
-  `updated_at` datetime DEFAULT NULL COMMENT 'Ngày cập nhật cuối'
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `phone` int(11) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `phone`, `address`, `email`, `avatar`, `jobs`, `last_login`, `facebook`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'haohao', '$2y$10$3n9Kg7GVTzATfXvyjubDB.bbP8AMZgQfjFWEQHns/OnPsSX1QjWty', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2023-08-10 12:49:50', NULL),
-(2, 's', '$2y$10$2.n.owtIzP7YCPYsPCeYrOT54N4lTAmbgligk7lB2znyxmmqQVyXW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2023-08-10 12:50:01', NULL),
-(3, 's', '$2y$10$iQJioQJ.zR9r0xDL6nm0S.0339yYU5owwJ4MyobUpYh8GkykEy.Ou', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2023-08-10 13:29:39', NULL);
+INSERT INTO `users` (`id`, `username`, `password`, `name`, `phone`, `address`, `email`, `avatar`, `created_at`) VALUES
+(4, 'haohao', '$2y$10$3i4Oez9wICou92ScyMttYeetuuKtxXPvJ2FjrLdmbg9WjO01zX/8C', 'phùng tiến hào', 338680362, 'hn', 'haotienphung@gmail.com', '1692286825-user-z4569980100674_8ae6250eb99a08817a7d8fb41abe624b.jpg', '2023-08-17 15:40:25');
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `categories`
@@ -193,6 +230,12 @@ ALTER TABLE `products`
   ADD KEY `category_id` (`category_id`);
 
 --
+-- Chỉ mục cho bảng `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
@@ -201,6 +244,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
+
+--
+-- AUTO_INCREMENT cho bảng `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `categories`
@@ -227,10 +276,16 @@ ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT cho bảng `student`
+--
+ALTER TABLE `student`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

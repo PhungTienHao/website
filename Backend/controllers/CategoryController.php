@@ -172,10 +172,7 @@ class CategoryController extends Controller
       }
 
     }
-
-    //lấy nội dung view create.php
     $this->content = $this->render('views/categories/update.php', ['category' => $category]);
-    //gọi layout để nhúng nội dung view create vừa lấy đc
     require_once 'views/layouts/main.php';
   }
 

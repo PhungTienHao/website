@@ -1,6 +1,7 @@
 <?php
 require_once 'controllers/Controller.php';
 require_once 'models/User.php';
+require_once 'Models/Pagination.php';
 
 class UserController extends Controller {
 public function register(){
@@ -238,7 +239,7 @@ public function update(){
             'query_string' => 'page',
             'controller' => 'user',
             'action' => 'index',
-            //'page' => $page,
+            'page' => $page,
             'query_additional' => $query_additional
         ];
         $pagination = new Pagination($params);
