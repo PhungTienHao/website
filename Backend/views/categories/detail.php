@@ -1,4 +1,5 @@
-<h1>Chi tiết category</h1>
+
+<h1>Chi Tiết Danh Mục</h1>
 
 <table class="table table-bordered">
     <tr>

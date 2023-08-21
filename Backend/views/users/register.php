@@ -46,5 +46,41 @@ require_once "models/User.php";
     </form>
 </div>
 </body>
+<style>
+
+    body{
+        background:url("assets/images/bk.jpg");
+
+    }
+    .container{
+        width: 30%;
+        margin: 100px 0 0 800px;
+        background: rgba(0 , 0 , 0 , 0.8);
+        box-shadow: 0 0 20px rgba(255 , 255 , 255 , 0.8);
+    }
+    .h-user{
+        color:#fff;
+        text-transform: uppercase;
+        text-align:center ;
+    }
+    .form-group{
+        border-bottom: 2px solid #fff;
+        color:#fff;
+        margin:5px;
+    }
+    .form-control{
+        background:transparent;
+        border: 0 ;
+        color:#fff
+    }
+    input.btn.btn-success{
+        width:100%;
+        margin-top:20px;
+    }
+    a{
+        font-size:30px;
+    }
+
+</style>
 
 

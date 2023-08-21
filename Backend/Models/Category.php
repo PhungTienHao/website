@@ -29,6 +29,7 @@ VALUES (:name, :avatar, :description, :status)";
     return $obj_insert->execute($arr_insert);
   }
 
+
   public function getAll($params = []) {
 
     $str_search = 'WHERE TRUE';

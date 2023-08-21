@@ -5,7 +5,6 @@ require_once 'models/Pagination.php';
 
 class CategoryController extends Controller
 {
-
   public function index()
   {
     $category_model = new Category();
@@ -213,7 +212,6 @@ class CategoryController extends Controller
     $this->content = $this->render('views/categories/detail.php', [
       'category' => $category
     ]);
-    //gọi layout để nhúng nội dung view detail vừa lấy đc
     require_once 'views/layouts/main.php';
 
   }
