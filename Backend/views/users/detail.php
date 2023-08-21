@@ -1,8 +1,9 @@
 <?php
+require_once "controller/UserController.php";
 
 ?>
 
-<h2>Thông tin chi tiết cá nhân</h2>
+<h2>Thông tin chi tiết user</h2>
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
@@ -43,10 +44,10 @@
 <!--        <th>status</th>-->
 <!--        <td>--><?php //echo Helper::getStatusText($user['status']); ?><!--</td>-->
 <!--    </tr>-->
-<!--    <tr>-->
-<!--        <th>created_at</th>-->
-<!--        <td>--><?php //echo date('d-m-Y H:i:s', strtotime($user['created_at'])) ?><!--</td>-->
-<!--    </tr>-->
+    <tr>
+        <th>created_at</th>
+        <td><?php echo date('d-m-Y H:i:s', strtotime($user['created_at'])) ?></td>
+    </tr>
 <!--    <tr>-->
 <!--        <th>updated_at</th>-->
 <!--        <td>--><?php //echo date('d-m-Y H:i:s', strtotime($user['updated_at'])) ?><!--</td>-->

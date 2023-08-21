@@ -40,6 +40,25 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
         ];
         return $obj_insert->execute($arr_insert);
     }
+    public function update($id)
+    {
+        $obj_update = $this->connection
+            ->prepare("UPDATE users SET name=:name,  phone=:phone, 
+            address=:address, email=:email, avatar=:avatar
+             WHERE id = $id");
+        $arr_update = [
+
+            ':name' => $this->name,
+            ':phone' => $this->phone,
+            ':address' => $this->address,
+            ':email' => $this->email,
+            ':avatar' => $this->avatar,
+        ];
+        $obj_update->execute($arr_update);
+
+        return $obj_update->execute($arr_update);
+    }
+
     public function getUser($username){
         $sql_select_one ="select * from users where username=:username";
         $obj_select_one = $this->connection->prepare($sql_select_one);
@@ -67,4 +86,25 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
         $obj_select->execute();
         return $obj_select->fetch(PDO::FETCH_ASSOC);
     }
+    public function getTotal(){
+            $obj_select = $this->connection
+                ->prepare("SELECT COUNT(id) FROM users WHERE TRUE $this->str_search");
+            $obj_select->execute();
+            return $obj_select->fetchColumn();
+
+}
+    public function getAllPagination($params = [])
+    {
+        $limit = $params['limit'];
+        $page = $params['page'];
+        $start = ($page - 1) * $limit;
+        $obj_select = $this->connection
+            ->prepare("SELECT * FROM users WHERE TRUE $this->str_search
+              ORDER BY created_at DESC
+              LIMIT $start, $limit");
+        $obj_select->execute();
+        $users = $obj_select->fetchAll(PDO::FETCH_ASSOC);
+        return $users;
+    }
+
 }
