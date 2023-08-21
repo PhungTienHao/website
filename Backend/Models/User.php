@@ -60,4 +60,11 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
         $user=$obj_select_one->fetch(PDO::FETCH_ASSOC);
         return $user;
     }
+    public function getById($id)
+    {
+        $obj_select = $this->connection
+            ->prepare("SELECT * FROM users WHERE id = $id");
+        $obj_select->execute();
+        return $obj_select->fetch(PDO::FETCH_ASSOC);
+    }
 }
