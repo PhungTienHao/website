@@ -1,4 +1,4 @@
-  .main-header .sidebar-toggle:before {
+.main-header .sidebar-toggle:before {
   content: "";
 }
 
@@ -6,5 +6,41 @@
   min-height: 0 !important;
   overflow: auto;
 }
+.body-user{
+  background-image:url(../images/bk.jpg);
 
+}
+.container{
+  width: 30%;
+  margin: 100px 0 0 800px;
+  background: rgba(0 , 0 , 0 , 0.8);
+  box-shadow: 0 0 20px rgba(255 , 255 , 255 , 0.8);
+  height:60%;
+}
+.h-user{
+  color:#fff;
+  text-transform: uppercase;
+  text-align:center ;
+}
+.form-group{
+  border-bottom: 2px solid #fff;
+  color:#fff;
+  margin:5px;
+}
+.form-control{
+  background:transparent;
+  border: 0 ;
+  color:#fff
+}
+input.btn.btn-success{
+  width:100%;
+  margin-top:20px;
+}
+.link-user {
+  color: white;
+  text-align: center
+}
+.aaa{
+  font-size:30px;
+}
 
