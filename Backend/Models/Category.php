@@ -2,8 +2,7 @@
 //models/Category
 require_once 'models/Model.php';
 class Category extends Model {
-  //khai báo các thuộc tính cho model trùng với các trường
-//    của bảng categories
+
   public $id;
   public $name;
   public $avatar;
@@ -12,15 +11,15 @@ class Category extends Model {
   public $created_at;
   public $updated_at;
 
-  //insert dữ liệu vào bảng categories
+
   public function insert() {
     $sql_insert =
       "INSERT INTO categories(`name`, `avatar`, `description`, `status`)
 VALUES (:name, :avatar, :description, :status)";
-    //cbi đối tượng truy vấn
+
     $obj_insert = $this->connection
       ->prepare($sql_insert);
-    //gán giá trị thật cho các placeholder
+
     $arr_insert = [
       ':name' => $this->name,
       ':avatar' => $this->avatar,
@@ -30,32 +29,20 @@ VALUES (:name, :avatar, :description, :status)";
     return $obj_insert->execute($arr_insert);
   }
 
-  /**
-   * LẤy thông tin danh mục trên hệ thống
-   * @param $params array Mảng các tham số search
-   * @return array
-   */
   public function getAll($params = []) {
-    echo "<pre>";
-    print_r($params);
-    echo "</pre>";
-    //tạo 1 chuỗi truy vấn để thêm các điều kiện search
-    //dựa vào mảng params truyền vào
+
     $str_search = 'WHERE TRUE';
-    //check mảng param truyền vào để thay đổi lại chuỗi search
+
     if (isset($params['name']) && !empty($params['name'])) {
       $name = $params['name'];
-      //nhớ phải có dấu cách ở đầu chuỗi
+
       $str_search .= " AND `name` LIKE '%$name%'";
     }
     if (isset($params['status'])) {
       $status = $params['status'];
       $str_search .= " AND `status` = $status";
     }
-    //tạo câu truy vấn
-    //gắn chuỗi search nếu có vào truy vấn ban đầu
     $sql_select_all = "SELECT * FROM categories $str_search";
-    //cbi đối tượng truy vấn
     $obj_select_all = $this->connection
       ->prepare($sql_select_all);
     $obj_select_all->execute();
@@ -108,7 +95,6 @@ VALUES (:name, :avatar, :description, :status)";
       ':status' => $this->status,
       ':updated_at' => $this->updated_at,
     ];
-
     return $obj_update->execute($arr_update);
   }
 

@@ -139,7 +139,6 @@ public function loginAdmin(){
         $this->page_title='form đăng nhập';
         $this->content = $this->render('views/users/login.php');
         require_once 'views/layouts/main_login.php';
-
 }
 
 public function logout(){

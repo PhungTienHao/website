@@ -8,11 +8,9 @@ class ProductController extends Controller
 {
   public function index()
   {
-      // nếu chưa dn thì chặn
     $product_model = new Product();
     $products = $product_model->getAll();
 
-    //lấy danh sách category đang có trên hệ thống để phục vụ cho search
     $category_model = new Category();
     $categories = $category_model->getAll();
 

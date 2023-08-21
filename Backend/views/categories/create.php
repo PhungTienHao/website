@@ -1,3 +1,8 @@
+
+<script></script>
+<style>
+
+</style>
 <h2>Thêm mới danh mục</h2>
 <form method="post" action="" enctype="multipart/form-data">
     <div class="form-group">
@@ -5,19 +10,16 @@
         <input type="text" name="name" value="<?php echo isset($_POST['name']) ? $_POST['name'] : ''; ?>"
                class="form-control"/>
     </div>
-
     <div class="form-group">
         <label>Ảnh đại diện</label>
         <input type="file" name="avatar" class="form-control" id="category-avatar"/>
         <img src="#" id="img-preview" style="display: none" width="100" height="100"/>
     </div>
-
     <div class="form-group">
-        <label>Mô tả</label>
+        <label>Mô tả về danh mục</label>
         <textarea class="form-control"
                   name="description"><?php echo isset($_POST['description']) ? $_POST['description'] : ''; ?></textarea>
     </div>
-
     <div class="form-group">
       <?php
       $selected_active = '';
