@@ -48,8 +48,6 @@
  
 	<?php echo $this->content; ?>
 </section>
-<!-- /.content -->
-<!-- jQuery 3 -->
 <script src="assets/js/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="assets/js/jquery-ui.min.js"></script>

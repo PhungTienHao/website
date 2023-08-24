@@ -70,11 +70,8 @@
           </div>
       <?php endif; ?>
     </div>
-    <!--    hiển thị nội dung động -->
   <?php echo $this->content; ?>
 </div>
-
-
 <?php require_once 'footer.php'; ?>
 
 </body>

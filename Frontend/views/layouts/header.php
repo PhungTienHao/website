@@ -48,27 +48,20 @@
     </div>
 </div>
 <span class="ajax-message"></span>
-<!-- header start -->
+
 <header class="header">
 
     <div class="header-wrapper container">
-        <!--sidebar menu toggler start -->
         <div class="toggle-sidebar material-button">
             <i class="material-icons">&#xE5D2;</i>
         </div>
-        <!--sidebar menu toggler end -->
-
-        <!--logo start -->
         <div class="logo-box">
             <h1>
-                <a href="/" class="logo"></a>
+                <a href="/" class="logo"><img src=""> </a>
             </h1>
         </div>
-        <!--logo end -->
 
         <div class="header-menu">
-
-            <!-- header left menu start -->
             <ul class="header-navigation" data-show-menu-on-mobile>
                 <li>
                     <a href="index.php" class="home-link material-button submenu-toggle">
@@ -94,14 +87,13 @@
                 <li>
                     <a href="danh-sach-san-pham.html" class="material-button submenu-toggle">Sản phẩm</a>
                 </li>
-                <li>
-                    <a href="gio-hang-cua-ban.html" class="material-button submenu-toggle">Giỏ hàng</a>
-                </li>
+<!--                <li>-->
+<!--                    <a href="gio-hang-cua-ban.html" class="material-button submenu-toggle">Giỏ hàng</a>-->
+<!--                </li>-->
                 <li>
                     <a href="login.html" class="material-button submenu-toggle">Đăng nhập</a>
                 </li>
             </ul>
-            <!-- header left menu end -->
         </div>
         <div class="header-right with-seperator">
             <!-- header right menu start -->
@@ -120,27 +112,18 @@
         </div>
     </div>
 </header>
-<!-- header end -->
-
-<!-- Left sidebar menu start -->
 <div class="sidebar">
     <div class="sidebar-wrapper">
 
-        <!-- side menu logo start -->
         <div class="sidebar-logo">
             <a href="#"></a>
             <div class="sidebar-toggle-button">
                 <i class="material-icons">&#xE317;</i>
             </div>
         </div>
-        <!-- side menu logo end -->
-        <!-- mobile menu start -->
         <div id="mobileMenu">
             <div class="sidebar-seperate"></div>
         </div>
-        <!-- mobile menu end -->
-
-        <!-- sidebar menu start -->
         <ul class="sidebar-menu">
             <li>
                 <a href="index.php" class="material-button submenu-toggle">Trang chủ</a>
@@ -160,3 +143,6 @@
         <!-- sidebar menu end -->
     </div>
 </div>
+<style>
+
+</style>
