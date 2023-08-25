@@ -7,13 +7,13 @@ if (isset($_SESSION['user'])) {
     $avatar = $_SESSION['user']['avatar'];
     $year = date('Y', strtotime($_SESSION['user']['created_at']));
 }
-
 ?>
 <header class="main-header">
     <!-- Logo -->
     <a href="index2.html" class="logo">
         <span class="logo-mini"><b>A</b>LT</span>
         <span class="logo-lg"><b>Admin</b>LTE</span>
+<!--        <img src="assets/images/logo2 (3).png">-->
     </a>
 
     <nav class="navbar navbar-static-top">
@@ -23,14 +23,12 @@ if (isset($_SESSION['user'])) {
 
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-                <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="assets/uploads/<?php echo $avatar; ?>" class="user-image" alt="User Image">
                         <span class="hidden-xs"><?php echo $username; ?></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <!-- User image -->
                         <li class="user-header">
                             <img src="assets/uploads/<?php echo $avatar; ?>" class="img-circle" alt="User Image">
 
@@ -56,11 +54,8 @@ if (isset($_SESSION['user'])) {
         </div>
     </nav>
 </header>
-<!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-        <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
                 <img src="assets/uploads/<?php echo $avatar; ?>" class="img-circle" alt="User Image">

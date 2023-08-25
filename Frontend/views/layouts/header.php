@@ -1,23 +1,26 @@
+
 <a href="#" class="scrollup"></a>
 <div class="header-top nopc">
     <div class="container">
         <div class="row">
-            <div class=" col-md-4 col-sm-4 col-xs-12">
-                <a class="info-contact" href="tel:0999999999">
-                    <i class="fas fa-phone-alt"></i> 0999999999
+<!--            <div class=" col-md-4 col-sm-4 col-xs-12">-->
+            <div class=" info">
+                <a class="info-contact" href="tel:0331231234">
+                    <i class="fas fa-phone-alt"></i> 0331231234
                 </a>
-                <a class="info-contact" href="mailto:abc@gmail.com">
-                    <i class="far fa-envelope"></i> abc@gmail.com
+                <a class="info-contact" href="mailto:fuchaogamestore@gmail.com">
+                    <i class="far fa-envelope"></i> fuchaogame@gmail.com
                 </a>
             </div>
-            <div class="col-md-8 col-sm-8 col-xs-12">
+<!--            <div class="col-md-8 col-sm-8 col-xs-12">-->
+            <div class="mini-logo">
                 <ul class="header-navigation" data-show-menu-on-mobile="">
-                    <li>
-                        <a href="info.html" class="material-button submenu-toggle">Giới thiệu
-                    </li>
-                    <li>
-                        <a href="contact.html" class="material-button submenu-toggle">Liên hệ</a>
-                    </li>
+<!--                    <li>-->
+<!--                        <a href="info.html" class="material-button submenu-toggle">Giới thiệu-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="contact.html" class="material-button submenu-toggle">Liên hệ</a>-->
+<!--                    </li>-->
                     <li>
                         <a href="#" class="link-icon-laguage material-button submenu-toggle">
                             <img src="assets/images/icon-flag-vn.png" class="icon-language">
@@ -57,17 +60,15 @@
         </div>
         <div class="logo-box">
             <h1>
-                <a href="/" class="logo"><img src=""> </a>
+
             </h1>
         </div>
-
         <div class="header-menu">
             <ul class="header-navigation" data-show-menu-on-mobile>
                 <li>
                     <a href="index.php" class="home-link material-button submenu-toggle">
-                        LOGO
+                        <img class="logo" src="assets/images/logo2 (3).png">
                     </a>
-
                 </li>
                 <li>
                     <a href="index.php" class="material-button submenu-toggle">Trang chủ</a>
@@ -87,9 +88,6 @@
                 <li>
                     <a href="danh-sach-san-pham.html" class="material-button submenu-toggle">Sản phẩm</a>
                 </li>
-<!--                <li>-->
-<!--                    <a href="gio-hang-cua-ban.html" class="material-button submenu-toggle">Giỏ hàng</a>-->
-<!--                </li>-->
                 <li>
                     <a href="login.html" class="material-button submenu-toggle">Đăng nhập</a>
                 </li>
@@ -144,5 +142,20 @@
     </div>
 </div>
 <style>
-
+ .row{
+     display:flex;
+     flex-wrap: wrap;
+ }
+ .info{
+     display:flex;
+     flex-wrap: wrap;
+     margin-left: 15px;
+ }
+ .mini-logo{
+     margin-left: 420px;
+ }
+ .logo{
+     width: 111px;
+     height: 60px;
+ }
 </style>
