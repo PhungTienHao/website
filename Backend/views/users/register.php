@@ -3,7 +3,7 @@
 require_once "controllers/UserController.php";
 require_once "models/User.php";
 ?>
-<body>
+<body class="body-user">
 <div class="container">
     <h2 class="h-user">  đăng ký</h2>
     <form action="" method="post" enctype="multipart/form-data">

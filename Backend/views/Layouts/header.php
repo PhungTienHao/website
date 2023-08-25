@@ -11,6 +11,7 @@ if (isset($_SESSION['user'])) {
 <header class="main-header">
     <!-- Logo -->
     <a href="index2.html" class="logo">
+<!--        <img class="logo1"  src="assets/images/logo2 (3).png">-->
         <span class="logo-mini"><b>A</b>LT</span>
         <span class="logo-lg"><b>Admin</b>LTE</span>
 <!--        <img src="assets/images/logo2 (3).png">-->

@@ -13,7 +13,6 @@ require_once 'helpers/Helper.php';
                   <div class="form-group">
                       <b>Danh mục</b> <br/>
                     <?php foreach ($categories AS $category):
-                      //đổ lại dữ liệu đã check category
                       $category_checked = '';
                       if (isset($_POST['category'])) {
                         if (in_array($category['id'], $_POST['category'])) {
@@ -33,7 +32,6 @@ require_once 'helpers/Helper.php';
                 <div class="form-group">
                     <b>Khoảng giá</b> <br/>
                   <?php
-                  //cần đổ lại dữ liệu ra form search
                   $price1_checked = '';
                   $price2_checked = '';
                   $price3_checked = '';
