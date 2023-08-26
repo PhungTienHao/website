@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    margin: 0;
+    margin: 50px;
 }
 
 figcaption, menu, article, aside, details, figure, footer, header, main, nav, section, summary {
@@ -540,6 +540,23 @@ a {
     outline: none;
     cursor: pointer;
     color: #FFF;
+}
+
+.row{
+    display:flex;
+    flex-wrap: wrap;
+}
+.info{
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: 15px;
+}
+.mini-logo{
+    margin-left: 420px;
+}
+.logo{
+    width: 111px;
+    height: 60px;
 }
 
 /*end of part 2----------------------------------------------------*/

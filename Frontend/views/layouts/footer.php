@@ -3,14 +3,34 @@
     <div class="container">
         <div class="row">
             <div class="image-footer-wrap col-md-3">
-                LOGO
+                <img class="logo" src="assets/images/logo.png">
+                <div>
+                    <strong>Thông tin liên hệ</strong>
+                    Tòa nhà CMC, Số 11, Phố Duy Tân, Phường Dịch Vọng Hậu, Cầu Giấy, Hà Nội <br/>
+                    Hotline: 0331231234 <br/>
+                    Email: fuchaogame@gmail.com
+                </div>
             </div>
-            <div class="address-footer-wrap col-md-6">
-                <strong>Thông tin liên hệ</strong>
-                Tòa nhà CMC, Số 11, Phố Duy Tân, Phường Dịch Vọng Hậu, Cầu Giấy, Hà Nội <br/>
-                Hotline: 0999999999 <br/>
-                Email: abc@gmail.com
+            <div class="address-footer-wrap col-md-3">
+                    <span class="span_cuoitrang">VỀ CHÚNG TÔI</span>
+                    <ul>
+                        <li class="li_cuoitrang_a"><a class="a_cuoitrang" href="#">Giới thiệu</a></li>
+                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Hệ thống cửa hàng</a></li>
+                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Giấy phép kinh doanh</a></li>
+                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Quy chế hoạt động</a></li>
+                    </ul>
             </div>
+            <div class="col-md-3">
+                    <span class="span_cuoitrang">CAC CHÍNH SÁCH</span>
+                    <ul>
+                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Chính sách bảo hành</a></li>
+                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Chính sách đổi trả</a></li>
+                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Chính sách giao hàng</a></li>
+                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Chính sách bảo mật</a></li>
+                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Gửi đóng góp, khiếu nại</a></li>
+                    </ul>
+            </div>
+
             <div class="social-footer-wrap col-md-3">
                 <strong>Kết nối với chúng tôi</strong>
                 <ul>
@@ -33,7 +53,7 @@
             </div>
         </div>
         <p class="footer-copyright">
-            Copyright 2020 by nvmanh. All rights reserved
+            Copyright 2023 by nhom3. All rights reserved
         </p>
     </div>
 </div>
@@ -64,6 +84,9 @@
     </li>
 </ul>
 
+
+
+
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
@@ -81,19 +104,21 @@
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>
-  window.fbAsyncInit = function () {
-    FB.init({
-      xfbml: true,
-      version: 'v7.0'
-    });
-  };
+    window.fbAsyncInit = function () {
+        FB.init({
+            xfbml: true,
+            version: 'v7.0'
+        });
+    };
 
-  (function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 </script>
+
+

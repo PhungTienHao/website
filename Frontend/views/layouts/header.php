@@ -21,22 +21,7 @@
 <!--                    <li>-->
 <!--                        <a href="contact.html" class="material-button submenu-toggle">Liên hệ</a>-->
 <!--                    </li>-->
-                    <li>
-                        <a href="gio-hang-cua-ban.html" class="cart-link">
-                            <i class="fa fa-cart-plus"></i>
-                            <?php
-                            $cart_total = 0;
-                            if (isset($_SESSION['cart'])) {
-                                foreach ($_SESSION['cart'] AS $cart) {
-                                    $cart_total += $cart['quantity'];
-                                }
-                            }
-                            ?>
-                            <span class="cart-amount">
-                                <?php echo $cart_total; ?>
-                            </span>
-                        </a>
-                    </li>
+
                     <li>
                         <a href="#" class="link-icon-laguage material-button submenu-toggle">
                             <img src="assets/images/icon-flag-vn.png" class="icon-language">
@@ -70,6 +55,10 @@
                         <img class="logo" src="assets/images/logo.png">
                     </a>
                 </li>
+                <div class="seach">
+                    <input type="text" name="query" placeholder="Tìm kiếm...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
                 <li>
                     <a href="index.php" class="material-button submenu-toggle">Trang chủ</a>
                 </li>
@@ -90,6 +79,22 @@
                 </li>
                 <li>
                     <a href="login.html" class="material-button submenu-toggle">Đăng nhập</a>
+                </li>
+                <li>
+                    <a href="gio-hang-cua-ban.html" class="cart-link">Giỏ hàng
+                        <i class="fa fa-cart-plus"></i>
+                        <?php
+                        $cart_total = 0;
+                        if (isset($_SESSION['cart'])) {
+                            foreach ($_SESSION['cart'] AS $cart) {
+                                $cart_total += $cart['quantity'];
+                            }
+                        }
+                        ?>
+                        <span class="cart-amount">
+                                <?php echo $cart_total; ?>
+                            </span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -141,21 +146,3 @@
         <!-- sidebar menu end -->
     </div>
 </div>
-<style>
- .row{
-     display:flex;
-     flex-wrap: wrap;
- }
- .info{
-     display:flex;
-     flex-wrap: wrap;
-     margin-left: 15px;
- }
- .mini-logo{
-     margin-left: 420px;
- }
- .logo{
-     width: 111px;
-     height: 60px;
- }
-</style>
