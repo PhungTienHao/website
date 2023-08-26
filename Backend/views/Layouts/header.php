@@ -9,18 +9,22 @@ if (isset($_SESSION['user'])) {
 }
 ?>
 <header class="main-header">
-    <!-- Logo -->
-    <a href="index2.html" class="logo">
-<!--        <img class="logo1"  src="assets/images/logo2 (3).png">-->
-        <span class="logo-mini"><b>A</b>LT</span>
-        <span class="logo-lg"><b>Admin</b>LTE</span>
-<!--        <img src="assets/images/logo2 (3).png">-->
-    </a>
+<!--    <a href="index2.html" class="logo">-->
+<!--        <span class="logo-mini"><b>A</b>LT</span>-->
+<!--        <span class="logo-lg"><b>Admin</b>LTE</span>-->
+<!--    </a>-->
+<!---->
 
     <nav class="navbar navbar-static-top">
+        <div >
+            <a herf="index.php" >
+                <img class="logoweb" src="assets/images/logo.png" >
+            </a>
+        </div>
+        <div>
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
             <i class="fa fa-bars"></i>
-        </a>
+        </a></div>
 
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
@@ -66,7 +70,6 @@ if (isset($_SESSION['user'])) {
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-        <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">LAOYOUT ADMIN</li>
 
@@ -74,7 +77,6 @@ if (isset($_SESSION['user'])) {
                 <a href="index.php?controller=category&action=index" class="b">
                     <i class="fa fa-th"></i> <span >Quản lý danh mục</span>
                     <span class="pull-right-container">
-              <!--<small class="label pull-right bg-green">new</small>-->
             </span>
                 </a>
             </li>
@@ -82,7 +84,6 @@ if (isset($_SESSION['user'])) {
                 <a href="index.php?controller=product&action=index" class="b">
                     <i class="fa fa-code"></i> <span>Quản lý sản phẩm</span>
                     <span class="pull-right-container">
-              <!--<small class="label pull-right bg-green">new</small>-->
             </span>
                 </a>
             </li>
@@ -90,7 +91,6 @@ if (isset($_SESSION['user'])) {
                 <a href="index.php?controller=user&action=index" class="b">
                     <i class="fa fa-user"></i> <span>Quản lý user</span>
                     <span class="pull-right-container">
-              <!--<small class="label pull-right bg-green">new</small>-->
             </span>
                 </a>
             </li>
@@ -153,5 +153,20 @@ if (isset($_SESSION['user'])) {
     }
     section.content-header {
         height: 70px;
+    }
+    .logoweb {
+        width: 126px;
+    }
+
+    nav.navbar.navbar-static-top {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 114px;
+    }
+    .navbar-custom-menu {
+        margin-left: 934px;
+        margin-top: 30px;
+        font-size: 24px;
     }
 </style>

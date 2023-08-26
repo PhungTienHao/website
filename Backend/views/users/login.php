@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 //views/users/login.php
 ?>
@@ -12,9 +12,6 @@
 <!--        </div>-->
 <!--    </div>-->
 <!--</div>-->
-=======
-
->>>>>>> 27b5191ecb2ffd36736b410f83e871511bfbe4a9
 <body class="body-user">
 <div class="container">
     <h2 class="h-user">  đăng Nhập</h2>

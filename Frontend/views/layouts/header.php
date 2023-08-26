@@ -22,27 +22,27 @@
 <!--                        <a href="contact.html" class="material-button submenu-toggle">Liên hệ</a>-->
 <!--                    </li>-->
                     <li>
+                        <a href="gio-hang-cua-ban.html" class="cart-link">
+                            <i class="fa fa-cart-plus"></i>
+                            <?php
+                            $cart_total = 0;
+                            if (isset($_SESSION['cart'])) {
+                                foreach ($_SESSION['cart'] AS $cart) {
+                                    $cart_total += $cart['quantity'];
+                                }
+                            }
+                            ?>
+                            <span class="cart-amount">
+                                <?php echo $cart_total; ?>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="#" class="link-icon-laguage material-button submenu-toggle">
                             <img src="assets/images/icon-flag-vn.png" class="icon-language">
                         </a>
                         <a href="#" class="link-icon-laguage material-button submenu-toggle">
-                            <img src="/template/camping1/assets/images/icon-flag-en.png" class="icon-language">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="gio-hang-cua-ban.html" class="cart-link">
-                            <i class="fa fa-cart-plus"></i>
-                          <?php
-                          $cart_total = 0;
-                          if (isset($_SESSION['cart'])) {
-                            foreach ($_SESSION['cart'] AS $cart) {
-                              $cart_total += $cart['quantity'];
-                            }
-                          }
-                          ?>
-                            <span class="cart-amount">
-                                <?php echo $cart_total; ?>
-                            </span>
+                            <img src="assets/images/avatar.jpg" class="icon-language">
                         </a>
                     </li>
                 </ul>
@@ -67,7 +67,7 @@
             <ul class="header-navigation" data-show-menu-on-mobile>
                 <li>
                     <a href="index.php" class="home-link material-button submenu-toggle">
-                        <img class="logo" src="assets/images/logo2 (3).png">
+                        <img class="logo" src="assets/images/logo.png">
                     </a>
                 </li>
                 <li>
