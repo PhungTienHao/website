@@ -1,6 +1,8 @@
 <?php
 require_once 'models/Model.php';
 require_once 'configs/Database.php';
+require_once 'views/users/login.php';
+require_once 'views/users/register.php';
 
 
 class User extends Model {
@@ -24,7 +26,7 @@ class User extends Model {
     }
     public function registerUser(){
         $obj_insert = $this->connection
-            ->prepare("INSERT INTO user (name,user, pas, sdt, address)
+            ->prepare("INSERT INTO user (name, user, pas, sdt, address)
 VALUES(:name,:username, :password, :phone, :address)");
         $arr_insert = [
             ':username' => $this->username,
@@ -39,7 +41,7 @@ VALUES(:name,:username, :password, :phone, :address)");
     public function update($id)
     {
         $obj_update = $this->connection
-            ->prepare("UPDATE users SET name=:name,  phone=:phone, 
+            ->prepare("UPDATE user SET name=:name,  phone=:phone, 
             address=:address
              WHERE id = $id");
         $arr_update = [
@@ -63,26 +65,16 @@ VALUES(:name,:username, :password, :phone, :address)");
         $user=$obj_select_one->fetch(PDO::FETCH_ASSOC);
         return $user;
     }
-//    public function getAdmin($username){
-//        $sql_select_one ="select * from admin where username=:username";
-//        $obj_select_one = $this->connection->prepare($sql_select_one);
-//        $selects=[
-//            ':username'=>$username
-//        ];
-//        $obj_select_one->execute($selects);
-//        $user=$obj_select_one->fetch(PDO::FETCH_ASSOC);
-//        return $user;
-//    }
     public function getById($id)
     {
         $obj_select = $this->connection
-            ->prepare("SELECT * FROM users WHERE id = $id");
+            ->prepare("SELECT * FROM user WHERE id = $id");
         $obj_select->execute();
         return $obj_select->fetch(PDO::FETCH_ASSOC);
     }
     public function getTotal(){
         $obj_select = $this->connection
-            ->prepare("SELECT COUNT(id) FROM users WHERE TRUE $this->str_search");
+            ->prepare("SELECT COUNT(id) FROM user WHERE TRUE $this->str_search");
         $obj_select->execute();
         return $obj_select->fetchColumn();
 
@@ -100,6 +92,5 @@ VALUES(:name,:username, :password, :phone, :address)");
         $users = $obj_select->fetchAll(PDO::FETCH_ASSOC);
         return $users;
     }
-
 }
 ?>

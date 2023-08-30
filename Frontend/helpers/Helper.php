@@ -2,12 +2,7 @@
 require_once 'libraries/PHPMailer/src/PHPMailer.php';
 require_once 'libraries/PHPMailer/src/SMTP.php';
 require_once 'libraries/PHPMailer/src/Exception.php';
-/**
- * Created by PhpStorm.
- * User: nvmanh
- * Date: 5/2/2020
- * Time: 10:14 AM
- */
+
 class Helper
 {
     const STATUS_ACTIVE = 1;
@@ -15,11 +10,7 @@ class Helper
     const STATUS_ACTIVE_TEXT = 'Active';
     const STATUS_DISABLED_TEXT = 'Disabled';
 
-    /**
-     * Get status text
-     * @param int $status
-     * @return string
-     */
+
     public static function getStatusText($status = 0)
     {
         $status_text = '';

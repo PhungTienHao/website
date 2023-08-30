@@ -3,6 +3,7 @@ require_once 'controllers/Controller.php';
 require_once 'models/User.php';
 require_once 'Models/Pagination.php';
 
+
 class UserController extends Controller {
     public function register(){
         $user_model = new User();
@@ -14,7 +15,7 @@ class UserController extends Controller {
             $phone = $_POST['phone'];
             $address = $_POST['address'];
 
-            if(empty($username)||empty($password)||empty($name)||empty($phone)||empty($address)||empty($email)||empty($repas)){
+            if(empty($username)||empty($password)||empty($name)||empty($phone)||empty($address)||empty($repas)){
                 $this->error='phải nhập đầy đủ thông tin';
             }elseif($password != $repas){
                 $this->error='mật khẩu không khớp';
@@ -48,9 +49,8 @@ class UserController extends Controller {
                 header('Location: index.php?controller=user');
                 exit();
             }
-
         $this->page_title='form đăng ký';
-        $this->content = $this->render('views/user/register.php');
+        $this->content = $this->render('views/users/register.php');
         require_once 'views/layouts/main_login.php';
     }
 
@@ -83,38 +83,7 @@ class UserController extends Controller {
         $this->page_title='form đăng nhập';
         $this->content = $this->render('views/users/login.php');
         require_once 'views/layouts/main_login.php';
-
     }
-//    public function loginAdmin(){
-//        $user_model = new User();
-//        if(isset($_POST['submit'])){
-//            $username = $_POST['username'];
-//            $password = $_POST['password'];
-//
-//            if(empty($this->error)){
-//                $user_model = new User();
-//                $user =$user_model->getAdmin($username);
-//                if(empty($user)){
-//                    $this->error='username k tồn tại';}
-//                else{
-//                    $pass_hash=$user['password'];
-//                    $is_login=password_verify($password,$pass_hash);
-//                    var_dump($is_login);
-//                    if($is_login){
-//                        $_SESSION['user']=$user;
-//                        $_SESSION['success']='đăng nhập thành công';
-//                        header('location:index.php?controller=product&action=index');
-//                        exit();
-//                    }
-//                    $this->error='sai tk';
-//                }
-//            }
-//        }
-//
-//        $this->page_title='form đăng nhập';
-//        $this->content = $this->render('views/users/login.php');
-//        require_once 'views/layouts/main_login.php';
-//    }
 
     public function update(){
         if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {

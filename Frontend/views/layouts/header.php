@@ -26,7 +26,7 @@
                         <a href="#" class="link-icon-laguage material-button submenu-toggle">
                             <img src="assets/images/icon-flag-vn.png" class="icon-language">
                         </a>
-                        <a href="#" class="link-icon-laguage material-button submenu-toggle">
+                        <a href="index.php?controller=user&action=login" class="link-icon-laguage material-button submenu-toggle">
                             <img src="assets/images/avatar.jpg" class="icon-language">
                         </a>
                     </li>
