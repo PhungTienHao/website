@@ -25,7 +25,6 @@ if (isset($_SESSION['user'])) {
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
             <i class="fa fa-bars"></i>
         </a></div>
-
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
