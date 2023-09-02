@@ -14,7 +14,7 @@
             <div class="address-footer-wrap col-md-3">
                     <span class="span_cuoitrang">VỀ CHÚNG TÔI</span>
                     <ul>
-                        <li class="li_cuoitrang_a"><a class="a_cuoitrang" href="#">Giới thiệu</a></li>
+                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Giới thiệu</a></li>
                         <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Hệ thống cửa hàng</a></li>
                         <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Giấy phép kinh doanh</a></li>
                         <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Quy chế hoạt động</a></li>
@@ -90,18 +90,10 @@
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-
-<!-- Tooltip plugin (zebra) js file -->
 <script src="assets/js/zebra_tooltips.min.js"></script>
-
-
-<!-- Owl Carousel plugin js file -->
 <script src="assets/js/owl.carousel.min.js"></script>
-
-<!-- Ideabox theme js file. you have to add all pages. -->
 <script src="assets/js/jquery.show-more.js"></script>
 <script src="assets/js/script.js"></script>
-<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>
     window.fbAsyncInit = function () {
