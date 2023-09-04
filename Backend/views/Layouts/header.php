@@ -44,12 +44,16 @@ if (isset($_SESSION['user'])) {
                         </li>
 
                         <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
-                            </div>
+<!--                            <div class="pull-left">-->
+<!--                                <a href="#" class="btn btn-default btn-flat">Profile</a>-->
+<!--                            </div>-->
                             <div class="pull-right">
                                 <a href="index.php?controller=user&action=logout" class="btn btn-default btn-flat">Sign
                                     out</a>
+                            </div>
+                            <div class="pull-left">
+                                <a href="http://localhost/website/Frontend/index.php" class="btn btn-default btn-flat">Chuyển
+                                Sang Trang Chủ</a>
                             </div>
                         </li>
                     </ul>
