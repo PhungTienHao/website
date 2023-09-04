@@ -23,7 +23,6 @@ class ProductController extends Controller
 
   public function create()
   {
-    //xử lý submit form
     if (isset($_POST['submit'])) {
       $category_id = $_POST['category_id'];
       $title = $_POST['title'];
