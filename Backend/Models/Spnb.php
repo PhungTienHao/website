@@ -1,5 +1,6 @@
 <?php
 require_once 'models/Model.php';
+require_once 'controllers/SpnbController.php';
 
 class Spnb extends Model
 {
@@ -147,4 +148,5 @@ class Spnb extends Model
             ->prepare("DELETE FROM spnb WHERE id = $id");
         return $obj_delete->execute();
     }
+
 }
