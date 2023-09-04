@@ -35,6 +35,7 @@ require_once 'helpers/Helper.php';
 
     </div>
     </div>
+</div>
 <!--    PRODUCT-->
 <div class="product-wrap">
     <div class="product container">

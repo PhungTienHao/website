@@ -9,33 +9,33 @@ require_once "models/User.php";
     <form action="" method="post" enctype="multipart/form-data">
         <div class="form-group">
 
-            <input type="text" id="username" name="username" class="form-control" placeholder="tên đăng nhập"> </div>
+            <input id="user" type="text" id="username" name="username" class="form-control" placeholder="tên đăng nhập"> </div>
         <div class="form-group">
 
-            <input type="password" id="password" name="password" class="form-control" placeholder="mật khẩu"> </div>
+            <input id="user" type="password" id="password" name="password" class="form-control" placeholder="mật khẩu"> </div>
         <div class="form-group">
 
-            <input type="password" id="repas" name="repas" class="form-control" placeholder="nhập lại mật khẩu"> </div>
+            <input id="user" type="password" id="repas" name="repas" class="form-control" placeholder="nhập lại mật khẩu"> </div>
         <div class="form-group">
 
-            <input type="text" id="name" name="name" class="form-control" placeholder="họ tên">
+            <input id="user" type="text" id="name" name="name" class="form-control" placeholder="họ tên">
         </div>
         <div class="form-group">
 
-            <input type="text" id="phone" name="phone" class="form-control" placeholder="số điện thoại">
+            <input id="user" type="text" id="phone" name="phone" class="form-control" placeholder="số điện thoại">
         </div>
         <div class="form-group">
 
-            <input type="email" id="email" name="email" class="form-control" placeholder="email">
+            <input id="user" type="email" id="email" name="email" class="form-control" placeholder="email">
         </div>
         <div class="form-group">
 
-            <input type="text" id="address" name="address" class="form-control"placeholder="địa chỉ" >
+            <input id="user" type="text" id="address" name="address" class="form-control"placeholder="địa chỉ" >
         </div>
 
         <div class="form-group">
             <label for="avatar" >Chọn Ảnh Đại Diện của bạn</label>
-            <input type="file" id="avatar" name="avatar" class="form-control">
+            <input id="user" type="file" id="avatar" name="avatar" class="form-control">
         </div>
         <div class="form-group" >
 
