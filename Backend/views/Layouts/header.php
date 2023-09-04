@@ -97,6 +97,13 @@ if (isset($_SESSION['user'])) {
             </span>
                 </a>
             </li>
+            <li>
+                <a href="index.php?controller=user&action=index" class="b">
+                    <i class="fa fa-user"></i> <span>Quản lý Sản Phẩm Nổi Bật</span>
+                    <span class="pull-right-container">
+            </span>
+                </a>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->
@@ -149,7 +156,7 @@ if (isset($_SESSION['user'])) {
         <!--        <div class="alert alert-danger">Lỗi validate</div>-->
         <!--        <p class="alert alert-success">Thành công</p>-->
     </section>
-</div>
+</div
 <style>
     a.b {
         font-size: 23px;
