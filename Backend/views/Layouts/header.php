@@ -18,7 +18,7 @@ if (isset($_SESSION['user'])) {
     <nav class="navbar navbar-static-top">
         <div >
             <a herf="index.php" >
-                <img class="logoweb" src="assets/images/logo.png" >
+<!--                <img class="logoweb" src="assets/images/logo.png" >-->
             </a>
         </div>
         <div>
@@ -98,7 +98,7 @@ if (isset($_SESSION['user'])) {
                 </a>
             </li>
             <li>
-                <a href="index.php?controller=user&action=index" class="b">
+                <a href="index.php?controller=spnb&action=index" class="b">
                     <i class="fa fa-user"></i> <span>Quản lý Sản Phẩm Nổi Bật</span>
                     <span class="pull-right-container">
             </span>

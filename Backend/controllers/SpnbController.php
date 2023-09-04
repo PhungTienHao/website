@@ -1,21 +1,20 @@
 <?php
 require_once 'controllers/Controller.php';
-require_once 'models/Product.php';
+require_once 'models/Spnb.php';
 require_once 'models/Category.php';
 require_once 'models/Pagination.php';
 
-class SbnbController extends Controller
+class SpnbController extends Controller
 {
     public function index()
     {
-        $product_model = new Product();
-        $products = $product_model->getAll();
-
+        $spnb_model = new Spnb();
+        $spnbs = $spnb_model->getAll();
         $category_model = new Category();
         $categories = $category_model->getAll();
 
         $this->content = $this->render('views/spnb/index.php', [
-            'products' => $products,
+            'spnb' => $spnbs,
             'categories' => $categories,
         ]);
         require_once 'views/layouts/main.php';
@@ -34,7 +33,7 @@ class SbnbController extends Controller
             $seo_description = $_POST['seo_description'];
             $seo_keywords = $_POST['seo_keywords'];
             $status = $_POST['status'];
-            //xử lý validate
+
             if (empty($title)) {
                 $this->error = 'Không được để trống title';
             } else if ($_FILES['avatar']['error'] == 0) {
@@ -65,25 +64,25 @@ class SbnbController extends Controller
                     move_uploaded_file($_FILES['avatar']['tmp_name'], $dir_uploads . '/' . $filename);
                 }
 
-                $product_model = new Product();
-                $product_model->category_id = $category_id;
-                $product_model->title = $title;
-                $product_model->avatar = $filename;
-                $product_model->price = $price;
-                $product_model->amount = $amount;
-                $product_model->summary = $summary;
-                $product_model->content = $content;
-                $product_model->seo_title = $seo_title;
-                $product_model->seo_description = $seo_description;
-                $product_model->seo_keywords = $seo_keywords;
-                $product_model->status = $status;
-                $is_insert = $product_model->insert();
+                $spnb_model = new Spnb();
+                $spnb_model->category_id = $category_id;
+                $spnb_model->title = $title;
+                $spnb_model->avatar = $filename;
+                $spnb_model->price = $price;
+                $spnb_model->amount = $amount;
+                $spnb_model->summary = $summary;
+                $spnb_model->content = $content;
+                $spnb_model->seo_title = $seo_title;
+                $spnb_model->seo_description = $seo_description;
+                $spnb_model->seo_keywords = $seo_keywords;
+                $spnb_model->status = $status;
+                $is_insert = $spnb_model->insert();
                 if ($is_insert) {
                     $_SESSION['success'] = 'Insert dữ liệu thành công';
                 } else {
                     $_SESSION['error'] = 'Insert dữ liệu thất bại';
                 }
-                header('Location: index.php?controller=product');
+                header('Location: index.php?controller=spnb');
                 exit();
             }
         }
@@ -105,7 +104,7 @@ class SbnbController extends Controller
         }
 
         $id = $_GET['id'];
-        $product_model = new Product();
+        $product_model = new Spnb();
         $product = $product_model->getById($id);
 
         $this->content = $this->render('views/spnb/detail.php', [
@@ -123,8 +122,8 @@ class SbnbController extends Controller
         }
 
         $id = $_GET['id'];
-        $product_model = new Product();
-        $product = $product_model->getById($id);
+        $spnb_model = new Spnb();
+        $spnb = $spnb_model->getById($id);
 
         if (isset($_POST['submit'])) {
             $category_id = $_POST['category_id'];
@@ -137,17 +136,17 @@ class SbnbController extends Controller
             $seo_description= $_POST['seo_description'];
             $seo_keywords = $_POST['seo_keywords'];
             $status = $_POST['status'];
-            //xử lý validate
+
             if (empty($title)) {
                 $this->error = 'Không được để trống title';
             } else if ($_FILES['avatar']['error'] == 0) {
-                //validate khi có file upload lên thì bắt buộc phải là ảnh và dung lượng không quá 2 Mb
+
                 $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
                 $extension = strtolower($extension);
                 $arr_extension = ['jpg', 'jpeg', 'png', 'gif'];
 
                 $file_size_mb = $_FILES['avatar']['size'] / 1024 / 1024;
-                //làm tròn theo đơn vị thập phân
+
                 $file_size_mb = round($file_size_mb, 2);
 
                 if (!in_array($extension, $arr_extension)) {
@@ -156,54 +155,48 @@ class SbnbController extends Controller
                     $this->error = 'File upload không được quá 2MB';
                 }
             }
-
-            //nếu ko có lỗi thì tiến hành save dữ liệu
             if (empty($this->error)) {
-                $filename = $product['avatar'];
-                //xử lý upload file nếu có
+                $filename = $spnb['avatar'];
                 if ($_FILES['avatar']['error'] == 0) {
                     $dir_uploads = 'assets/uploads';
-                    //xóa file cũ, thêm @ vào trước hàm unlink để tránh báo lỗi khi xóa file ko tồn tại
+
                     @unlink($dir_uploads . '/' . $filename);
                     if (!file_exists($dir_uploads)) {
                         mkdir($dir_uploads);
                     }
-                    //tạo tên file theo 1 chuỗi ngẫu nhiên để tránh upload file trùng lặp
                     $filename = time() . '-product-' . $_FILES['avatar']['name'];
                     move_uploaded_file($_FILES['avatar']['tmp_name'], $dir_uploads . '/' . $filename);
                 }
                 //save dữ liệu vào bảng products
-                $product_model->category_id = $category_id;
-                $product_model->title = $title;
-                $product_model->avatar = $filename;
-                $product_model->price = $price;
-                $product_model->amount = $amount;
-                $product_model->summary = $summary;
-                $product_model->content = $content;
-                $product_model->seo_title = $seo_title;
-                $product_model->seo_description = $seo_description;
-                $product_model->seo_keywords = $seo_keywords;
-                $product_model->status = $status;
-                $product_model->updated_at = date('Y-m-d H:i:s');
+                $spnb_model->category_id = $category_id;
+                $spnb_model->title = $title;
+                $spnb_model->avatar = $filename;
+                $spnb_model->price = $price;
+                $spnb_model->amount = $amount;
+                $spnb_model->summary = $summary;
+                $spnb_model->content = $content;
+                $spnb_model->seo_title = $seo_title;
+                $spnb_model->seo_description = $seo_description;
+                $spnb_model->seo_keywords = $seo_keywords;
+                $spnb_model->status = $status;
+                $spnb_model->updated_at = date('Y-m-d H:i:s');
 
-                $is_update = $product_model->update($id);
+                $is_update = $spnb_model->update($id);
                 if ($is_update) {
                     $_SESSION['success'] = 'Update dữ liệu thành công';
                 } else {
                     $_SESSION['error'] = 'Update dữ liệu thất bại';
                 }
-                header('Location: index.php?controller=product');
+                header('Location: index.php?controller=spnb');
                 exit();
             }
         }
-
-        //lấy danh sách category đang có trên hệ thống để phục vụ cho search
         $category_model = new Category();
         $categories = $category_model->getAll();
 
-        $this->content = $this->render('views/products/update.php', [
+        $this->content = $this->render('views/spnb/update.php', [
             'categories' => $categories,
-            'product' => $product,
+            'spnb' => $spnb,
         ]);
         require_once 'views/layouts/main.php';
     }
@@ -212,19 +205,20 @@ class SbnbController extends Controller
     {
         if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
             $_SESSION['error'] = 'ID không hợp lệ';
-            header('Location: index.php?controller=product');
+            header('Location: index.php?controller=spnb');
             exit();
         }
 
         $id = $_GET['id'];
-        $product_model = new Product();
-        $is_delete = $product_model->delete($id);
+        $spnb_model = new Spnb();
+        $is_delete = $spnb_model->delete($id);
         if ($is_delete) {
             $_SESSION['success'] = 'Xóa dữ liệu thành công';
         } else {
             $_SESSION['error'] = 'Xóa dữ liệu thất bại';
         }
-        header('Location: index.php?controller=product');
+        header('Location: index.php?controller=spnb');
         exit();
     }
 }
+?>

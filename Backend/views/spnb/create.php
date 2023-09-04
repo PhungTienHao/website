@@ -1,8 +1,8 @@
 <h2>Thêm mới sản phẩm</h2>
-<form action="" method="post" enctype="multipart/form-data">
+<form action="" method="post" enctype="multipart/form-data" style="color: black">
     <div class="form-group">
-        <label for="category_id">Chọn danh mục</label>
-        <select name="category_id" class="form-control" id="category_id">
+        <label for="category_id" style="color: black">Chọn danh mục</label>
+        <select name="category_id" class="form-control" id="category_id" style="color: black">
             <?php foreach ($categories as $category):
                 $selected = '';
                 if (isset($_POST['category_id']) && $category['id'] == $_POST['category_id']) {
@@ -15,19 +15,19 @@
             <?php endforeach; ?>
         </select>
     </div>
-    <div class="form-group">
-        <label for="title">Nhập tên sản phẩm</label>
-        <input type="text" name="title" value="<?php echo isset($_POST['title']) ? $_POST['title'] : '' ?>"
+    <div class="form-group" >
+        <label for="title" style="color: black" >Nhập tên sản phẩm</label>
+        <input style="color: black" type="text" name="title" value="<?php echo isset($_POST['title']) ? $_POST['title'] : '' ?>"
                class="form-control" id="title"/>
     </div>
     <div class="form-group">
-        <label for="avatar">Ảnh đại diện</label>
-        <input type="file" name="avatar" value="" class="form-control" id="avatar"/>
+        <label for="avatar" style="color: black" >Ảnh đại diện</label>
+        <input style="color: black" type="file" name="avatar" value="" class="form-control" id="avatar"/>
         <img src="#" id="img-preview" style="display: none" width="100" height="100"/>
     </div>
     <div class="form-group">
-        <label for="price">Giá</label>
-        <input type="number" name="price" value="<?php echo isset($_POST['price']) ? $_POST['price'] : '' ?>"
+        <label for="price"style="color: black" >Giá</label>
+        <input style="color: black" type="number" name="price" value="<?php echo isset($_POST['price']) ? $_POST['price'] : '' ?>"
                class="form-control" id="price"/>
     </div>
     <div class="form-group">

@@ -1,9 +1,8 @@
 <?php
 require_once 'models/Model.php';
 
-class Product extends Model
+class Spnb extends Model
 {
-
     public $id;
     public $category_id;
     public $title;
@@ -25,10 +24,10 @@ class Product extends Model
     {
         parent::__construct();
         if (isset($_GET['title']) && !empty($_GET['title'])) {
-            $this->str_search .= " AND products.title LIKE '%{$_GET['title']}%'";
+            $this->str_search .= " AND spnb.title LIKE '%{$_GET['title']}%'";
         }
         if (isset($_GET['category_id']) && !empty($_GET['category_id'])) {
-            $this->str_search .= " AND products.category_id = {$_GET['category_id']}";
+            $this->str_search .= " AND spnb.category_id = {$_GET['category_id']}";
         }
     }
 
@@ -78,7 +77,7 @@ class Product extends Model
     }
 
     /**
-     * Tính tổng số bản ghi đang có trong bảng products
+     * Tính tổng số bản ghi đang có trong bảng spnb
      * @return mixed
      */
     public function countTotal()
@@ -90,7 +89,7 @@ class Product extends Model
     }
 
     /**
-     * Insert dữ liệu vào bảng products
+     * Insert dữ liệu vào bảng spnb
      * @return bool
      */
     public function insert()
