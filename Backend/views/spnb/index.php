@@ -3,7 +3,7 @@ require_once 'helpers/Helper.php';
 ?>
 
 <h2>Danh sách Các Sản Phẩm Nổi Bật</h2>
-<a href="index.php?controller=product&action=create" class="btn btn-success">
+<a href="index.php?controller=spnb&action=create" class="btn btn-success">
     <i class="fa fa-plus"></i> Thêm mới
 </a>
 <table class="table table-bordered">
