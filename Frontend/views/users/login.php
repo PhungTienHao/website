@@ -1,13 +1,12 @@
 <?php
-require_once "controllers/UserController.php";
-require_once "models/User.php";
+//require_once "controllers/UserController.php";
+//require_once "models/User.php";
 ?>
-<body class="body-user">
+<!--<body class="body-user">-->
 <div class="container">
-    <h2 class="h-user">  đăng Nhập</h2>
+    <h2 class="h-user">  Đăng Nhập</h2>
     <form action="" method="post" >
         <div class="form-group">
-
             <input type="text" id="username" name="username" class="form-control" placeholder="tên đăng nhập "> </div>
         <div class="form-group">
 
@@ -20,4 +19,4 @@ require_once "models/User.php";
         </div>
     </form>
 </div>
-</body>
+<!--</body>-->

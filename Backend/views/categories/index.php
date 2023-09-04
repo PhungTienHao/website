@@ -3,8 +3,8 @@
     <input type="hidden" name="controller" value="category"/>
     <input type="hidden" name="action" value="index"/>
     <div class="form-group">
-        <label>Nhập tên danh mục</label>
-        <input type="text" name="name" value="<?php echo isset($_GET['name']) ? $_GET['name'] : '' ?>"
+        <label style="color: black" >Nhập tên danh mục</label>
+        <input style="color: black" type="text" name="name" value="<?php echo isset($_GET['name']) ? $_GET['name'] : '' ?>"
                class="form-control"/>
     </div>
     <div class="form-group">

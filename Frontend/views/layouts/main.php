@@ -4,7 +4,7 @@
     <base href="<?php echo $_SERVER['SCRIPT_NAME'] ?>" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MVC Demo Frontend</title>
+    <title>FUCHAO</title>
 
 
     <link rel="canonical" href="http://localhost"/>

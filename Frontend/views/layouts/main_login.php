@@ -20,9 +20,8 @@
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body>
-<!-- Main content -->
+
 <section class="content">
-    <!--            Hiển thị thông báo lỗi và thành công-->
     <?php if (!empty($this->error)): ?>
         <div class="alert alert-danger"><?php echo $this->error ?></div>
     <?php endif; ?>
@@ -46,7 +45,7 @@
     <?php endif; ?>
 
 
-    <?php echo $this->content; ?>
+ <?php echo $this->content; ?>
 </section>
 <script src="assets/js/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

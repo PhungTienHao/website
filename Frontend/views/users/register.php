@@ -1,16 +1,13 @@
 
 <?php
-require_once "controllers/UserController.php";
-require_once "models/User.php";
+//require_once "controllers/UserController.php";
+//require_once "models/User.php";
 ?>
-<body class="body-user">
+
 <div class="container">
     <h2 class="h-user">  đăng ký</h2>
     <form action="" method="post" enctype="multipart/form-data">
-
-
             <div class="form-group">
-
                 <input type="text" id="name" name="name" class="form-control" placeholder="họ tên">
             </div>
         <div class="form-group">
@@ -33,10 +30,9 @@ require_once "models/User.php";
         <div class="form-group" >
 
             <input type="submit" name="submit" value="đăng ký"  class="btn btn-success">
-
         </div>
         <div class="link-user">Đã có tài khoản , đăng nhập  <a class="aaa" href="index.php?controller=user&action=login">tại đây</a></div>
     </form>
 </div>
-</body>
+
 

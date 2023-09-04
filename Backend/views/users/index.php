@@ -1,8 +1,8 @@
 <?php ?>
 <form method="GET" action="">
     <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username"
+        <label for="username" style="color:black">Username</label>
+        <input style="color:black" type="text" name="username" id="username"
                value="<?php echo isset($_GET['username']) ? $_GET['username'] : '' ?>" class="form-control"/>
         <input type="hidden" name="controller" value="user"/>
         <input type="hidden" name="action" value="index"/>
