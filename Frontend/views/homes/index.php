@@ -1,5 +1,7 @@
 <?php
 require_once 'helpers/Helper.php';
+require_once 'controllers/ProductController.php';
+require_once 'models/Product.php';
 ?>
 <div class="maintop">
     <div class="row">

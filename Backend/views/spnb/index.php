@@ -2,9 +2,6 @@
 require_once 'helpers/Helper.php';
 require_once 'Models/Spnb.php';
 require_once 'controllers/SpnbController.php';
-echo '<pre>';
-print_r($spnb);
-echo'</pre>';
 ?>
 
 <h2>Danh sách Các Sản Phẩm Nổi Bật</h2>

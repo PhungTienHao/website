@@ -53,10 +53,12 @@ class ProductController extends Controller {
     $category_model = new Category();
     $categories = $category_model->getAll();
 
+
     $this->content = $this->render('views/products/show_all.php', [
       'products' => $products,
       'categories' => $categories,
       'pagination' => $pagination,
+
     ]);
 
     require_once 'views/layouts/main.php';
@@ -78,5 +80,13 @@ class ProductController extends Controller {
       'product' => $product
     ]);
     require_once 'views/layouts/main.php';
+  }
+  public function spnb(){
+      $spnb_model = new spnb();
+      $spnbs = $spnb_model->getspnb();
+      $this->content = $this->render('views/homes/index.php', [
+          'spnb' => $spnbs
+      ]);
+      require_once 'views/layouts/main.php';
   }
 }

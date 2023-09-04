@@ -55,7 +55,6 @@ class Product extends Model {
 
         $obj_select = $this->connection->prepare($sql_select);
         $obj_select->execute();
-
         $spnbs = $obj_select->fetchAll(PDO::FETCH_ASSOC);
         return $spnbs;
     }
