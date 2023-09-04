@@ -96,7 +96,7 @@ class Product extends Model
     public function insert()
     {
         $obj_insert = $this->connection
-            ->prepare("INSERT INTO products(category_id, name, avatar, price, amount, summary, content, seo_title, seo_description, seo_keywords, status) 
+            ->prepare("INSERT INTO products(category_id, title, avatar, price, amount, summary, content, seo_title, seo_description, seo_keywords, status) 
                                 VALUES (:category_id, :title, :avatar, :price, :amount, :summary, :content, :seo_title, :seo_description, :seo_keywords, :status)");
         $arr_insert = [
             ':category_id' => $this->category_id,
