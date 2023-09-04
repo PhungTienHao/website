@@ -30,11 +30,6 @@ class Spnb extends Model
             $this->str_search .= " AND spnb.category_id = {$_GET['category_id']}";
         }
     }
-
-    /**
-     * Lấy thông tin của sản phẩm đang có trên hệ thống
-     * @return array
-     */
     public function getAll()
     {
         $obj_select = $this->connection
@@ -43,12 +38,11 @@ class Spnb extends Model
                         WHERE TRUE $this->str_search
                         ORDER BY spnb.created_at DESC
                         ");
-
         $arr_select = [];
         $obj_select->execute($arr_select);
-        $products = $obj_select->fetchAll(PDO::FETCH_ASSOC);
+        $spnbs = $obj_select->fetchAll(PDO::FETCH_ASSOC);
 
-        return $products;
+        return $spnbs;
     }
 
     /**
@@ -71,9 +65,9 @@ class Spnb extends Model
 
         $arr_select = [];
         $obj_select->execute($arr_select);
-        $products = $obj_select->fetchAll(PDO::FETCH_ASSOC);
+        $spnbs = $obj_select->fetchAll(PDO::FETCH_ASSOC);
 
-        return $products;
+        return $spnbs;
     }
 
     /**
