@@ -31,8 +31,8 @@ class Product extends Model {
   public function getById($id)
   {
     $obj_select = $this->connection
-      ->prepare("SELECT spnb.*, categories.name AS category_name FROM spnb
-          INNER JOIN categories ON spnb.category_id = categories.id WHERE spnb.id = $id");
+      ->prepare("SELECT products.*, categories.name AS category_name FROM products
+          INNER JOIN categories ON products.category_id = categories.id WHERE products.id = $id");
 
     $obj_select->execute();
     $product =  $obj_select->fetch(PDO::FETCH_ASSOC);

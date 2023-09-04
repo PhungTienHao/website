@@ -45,11 +45,6 @@ class Spnb extends Model
         return $spnbs;
     }
 
-    /**
-     * Lấy thông tin của sản phẩm đang có trên hệ thống
-     * @param array Mảng các tham số phân trang
-     * @return array
-     */
     public function getAllPagination($arr_params)
     {
         $limit = $arr_params['limit'];

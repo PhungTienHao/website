@@ -54,7 +54,6 @@ class SpnbController extends Controller
 
             if (empty($this->error)) {
                 $filename = '';
-
                 if ($_FILES['avatar']['error'] == 0) {
                     $dir_uploads = 'assets/uploads';
                     if (!file_exists($dir_uploads)) {
