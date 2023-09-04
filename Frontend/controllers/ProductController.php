@@ -5,16 +5,12 @@ require_once 'models/Category.php';
 require_once 'models/Pagination.php';
 class ProductController extends Controller {
   public function showAll() {
-//    echo "<pre>" . __LINE__ . ", " . __DIR__ . "<br />";
-//    print_r($_REQUEST);
-//    echo "</pre>";
-//    die;
+
     $params = [];
-    //nếu user có hành động filter
+
     if (isset($_POST['filter'])) {
       if (isset($_POST['category'])) {
         $category = implode(',', $_POST['category']);
-        //chuyển thành chuỗi sau để sử dụng câu lệnh in_array
         $str_category_id = "($category)";
         $params['category'] = $str_category_id;
       }

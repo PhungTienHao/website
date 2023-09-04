@@ -104,11 +104,11 @@ class SpnbController extends Controller
         }
 
         $id = $_GET['id'];
-        $product_model = new Spnb();
-        $product = $product_model->getById($id);
+        $spnb_model = new Spnb();
+        $spnb = $spnb_model->getById($id);
 
         $this->content = $this->render('views/spnb/detail.php', [
-            'product' => $product
+            'spnb' => $spnb
         ]);
         require_once 'views/layouts/main.php';
     }
