@@ -2,6 +2,11 @@
 require_once 'helpers/Helper.php';
 require_once 'controllers/ProductController.php';
 require_once 'models/Product.php';
+require_once 'controllers/SpnbController.php';
+require_once 'models/spnb.php';
+
+
+
 ?>
 <div class="maintop">
     <div class="row">
@@ -41,36 +46,39 @@ require_once 'models/Product.php';
 <!--    PRODUCT-->
 <div class="product-wrap">
     <div class="product container">
-      <?php if (!empty($spnbs)): ?>
+
+        <?php if (!empty($spnbs)): ?>
           <h1 class="post-list-title">
               <a href="danh-sach-san-pham.html" class="link-category-item">Sản phẩm Nổi Bật</a>
           </h1>
           <div class="link-secondary-wrap row">
-            <?php foreach ($spnbs AS $spnb):
-              $slug = Helper::getSlug($spnb['title']);
-              $product_link = "san-pham/$slug/" . $spnb['id'] . ".html";
-              $product_cart_add = "them-vao-gio-hang/" . $spnb['id'] . ".html";
+            <?php foreach ($spnbs AS $spnbs):
+              $slug = Helper::getSlug($spnbs['title']);
+              $product_link = "san-pham/$slug/" . $spnbs['id'] . ".html";
+              $product_cart_add = "them-vao-gio-hang/" . $spnbs['id'] . ".html";
+
               ?>
                 <div class="service-link col-md-3 col-sm-6 col-xs-12">
                     <a href="<?php echo $product_link; ?>">
-                        <img class="secondary-img img-responsive" title="<?php echo $spnb['title'] ?>"
-                             src="../backend/assets/uploads/<?php echo $spnb['avatar'] ?>"
-                             alt="<?php echo $spnb['title'] ?>"/>
+                        <img class="secondary-img img-responsive" title="<?php echo $spnbs['title'] ?>"
+                             src="../backend/assets/uploads/<?php echo $spnbs['avatar'] ?>"
+                             alt="<?php echo $spnbs['title'] ?>"/>
                         <span class="shop-title">
-                        <?php echo $spnb['title'] ?>
+                        <?php echo $spnbs['title'] ?>
                     </span>
                     </a>
                     <span class="shop-price">
-                            <?php echo number_format($spnb['price']) ?>
+                            <?php echo number_format($spnbs['price']) ?>
                 </span>
 
-                    <span data-id="<?php echo $spnb['id'] ?>" class="add-to-cart">
+                    <span data-id="<?php echo $spnbs['id'] ?>" class="add-to-cart">
                         <a href="<?php echo $product_cart_add ?>" style="color: inherit">Thêm vào giỏ</a>
                     </span>
                 </div>
             <?php endforeach; ?>
           </div>
       <?php endif; ?>
+
     </div>
 </div>
 <!--    END PRODUCT-->

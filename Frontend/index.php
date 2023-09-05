@@ -20,4 +20,5 @@ if (method_exists($object, $action) == false) {
   die("Không tồn tại phương thức $action của class $controller");
 }
 $object->$action();
+
 ?>

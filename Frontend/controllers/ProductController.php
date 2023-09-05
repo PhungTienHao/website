@@ -81,12 +81,5 @@ class ProductController extends Controller {
     ]);
     require_once 'views/layouts/main.php';
   }
-  public function spnb(){
-      $spnb_model = new spnb();
-      $spnbs = $spnb_model->getspnb();
-      $this->content = $this->render('views/homes/index.php', [
-          'spnb' => $spnbs
-      ]);
-      require_once 'views/layouts/main.php';
-  }
+
 }
