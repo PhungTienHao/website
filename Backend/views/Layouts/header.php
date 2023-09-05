@@ -65,8 +65,9 @@ if (isset($_SESSION['user'])) {
 <aside class="main-sidebar">
     <section class="sidebar">
         <div class="user-panel">
+
             <div class="pull-left image">
-                <img src="assets/uploads/<?php echo $avatar; ?>" class="img-circle" alt="User Image">
+                <img src="assets/uploads/<?php echo $avatar; ?>" class="img-circle">
             </div>
             <div class="pull-left info">
                 <p><?php echo $username; ?></p>
@@ -165,16 +166,11 @@ if (isset($_SESSION['user'])) {
     </section>
 </div
 <style>
-    a.b {
-        font-size: 23px;
-    }
+
+
     section.content-header {
         height: 70px;
     }
-    .logoweb {
-        width: 126px;
-    }
-
     nav.navbar.navbar-static-top {
         display: flex;
         flex-wrap: wrap;
