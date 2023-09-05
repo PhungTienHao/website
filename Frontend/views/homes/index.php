@@ -20,7 +20,7 @@ require_once 'models/spnb.php';
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="assets/images/1.jpg">
+                    <img class="d-block w-100" src="assets/images/ps5-1.jpg">
                 </div>
                 <div class="carousel-item ">
                     <img class="d-block w-100" src="assets/images/2.jpg">
@@ -39,8 +39,9 @@ require_once 'models/spnb.php';
             </a>
         </div>
         <div class="col align-self-end">
-        <img class="img-maintop" src="assets/images/BANNER-GIAM-GIA.jpg">
-        <img  class="img-maintop" src="assets/images/cam-ket.jpg">
+            <div>
+        <img class="img-maintop" src="assets/images/BANNER-GIAM-GIA.jpg"></div><br><div>
+        <img  class="img-maintop" src="assets/images/cam-ket.jpg"></div>
 
     </div>
     </div>

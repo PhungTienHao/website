@@ -65,8 +65,9 @@ if (isset($_SESSION['user'])) {
 <aside class="main-sidebar">
     <section class="sidebar">
         <div class="user-panel">
+
             <div class="pull-left image">
-                <img src="assets/uploads/<?php echo $avatar; ?>" class="img-circle" alt="User Image">
+                <img src="assets/uploads/<?php echo $avatar; ?>" class="img-circle">
             </div>
             <div class="pull-left info">
                 <p><?php echo $username; ?></p>
@@ -164,6 +165,7 @@ if (isset($_SESSION['user'])) {
         <!--        <p class="alert alert-success">Thành công</p>-->
     </section>
 </div
+<<<<<<< HEAD
 <!--<style>-->
 <!--    a.b {-->
 <!--        font-size: 23px;-->
@@ -187,3 +189,23 @@ if (isset($_SESSION['user'])) {
 <!--        font-size: 24px;-->
 <!--    }-->
 <!--</style>-->
+=======
+<style>
+
+
+    section.content-header {
+        height: 70px;
+    }
+    nav.navbar.navbar-static-top {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 114px;
+    }
+    .navbar-custom-menu {
+        margin-left: 934px;
+        margin-top: 30px;
+        font-size: 24px;
+    }
+</style>
+>>>>>>> b254f5fdd5faf17804216ed9c8cf78497fdb31bc

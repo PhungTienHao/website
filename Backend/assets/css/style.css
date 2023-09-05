@@ -45,9 +45,15 @@ input.btn.btn-success{
 }
 
  a.b {
-   font-size: 23px;
+   font-size: 15px;
  }
 label {
   color: black;
+}
+.user-panel{
+  background-image:url(../images/logo.png);
+  height: 190px;
+  background-repeat: round;
+  filter: brightness(0.5);
 }
 
