@@ -2,7 +2,7 @@
 require_once 'helpers/Helper.php';
 require_once 'controllers/ProductController.php';
 require_once 'models/Product.php';
-require_once 'controllers/SpnbController.php';
+require_once 'controllers/HomeController.php';
 require_once 'models/spnb.php';
 
 
