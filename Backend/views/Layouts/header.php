@@ -105,7 +105,7 @@ if (isset($_SESSION['user'])) {
                 </a>
             </li>
             <li>
-                <a href="index.php?controller=spnb&action=index" class="b">
+                <a href="index.php?controller=new&action=index" class="b">
                     <i class="fa fa-code"></i> <span>Quản lý Tin Tức Hiển Thị</span>
                     <span class="pull-right-container">
             </span>
@@ -164,26 +164,26 @@ if (isset($_SESSION['user'])) {
         <!--        <p class="alert alert-success">Thành công</p>-->
     </section>
 </div
-<style>
-    a.b {
-        font-size: 23px;
-    }
-    section.content-header {
-        height: 70px;
-    }
-    .logoweb {
-        width: 126px;
-    }
-
-    nav.navbar.navbar-static-top {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        height: 114px;
-    }
-    .navbar-custom-menu {
-        margin-left: 934px;
-        margin-top: 30px;
-        font-size: 24px;
-    }
-</style>
+<!--<style>-->
+<!--    a.b {-->
+<!--        font-size: 23px;-->
+<!--    }-->
+<!--    section.content-header {-->
+<!--        height: 70px;-->
+<!--    }-->
+<!--    .logoweb {-->
+<!--        width: 126px;-->
+<!--    }-->
+<!---->
+<!--    nav.navbar.navbar-static-top {-->
+<!--        display: flex;-->
+<!--        flex-wrap: wrap;-->
+<!--        width: 100%;-->
+<!--        height: 114px;-->
+<!--    }-->
+<!--    .navbar-custom-menu {-->
+<!--        margin-left: 934px;-->
+<!--        margin-top: 30px;-->
+<!--        font-size: 24px;-->
+<!--    }-->
+<!--</style>-->

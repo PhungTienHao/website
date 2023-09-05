@@ -27,15 +27,10 @@
         <img src="#" id="img-preview" style="display: none" width="100" height="100"/>
     </div>
     <div class="form-group">
-        <label for="price">Giá</label>
-        <input type="number" name="price" value="<?php echo isset($_POST['price']) ? $_POST['price'] : '' ?>"
-               class="form-control" id="price"/>
-    </div>
-    <div class="form-group">
-        <label for="amount">Số lượng</label>
-        <input type="number" name="amount" value="<?php echo isset($_POST['amount']) ? $_POST['amount'] : '' ?>"
-               class="form-control" id="amount"/>
-    </div>
+            <label for="price">Giá</label>
+            <input type="number" name="price" value="<?php echo isset($_POST['price']) ? $_POST['price'] : '' ?>"
+                   class="form-control" id="price"/>
+        </div>
     <div class="form-group">
         <label for="summary">Mô tả ngắn sản phẩm</label>
         <textarea name="summary" id="summary"
