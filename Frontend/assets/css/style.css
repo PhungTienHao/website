@@ -17,9 +17,6 @@ html {
     -webkit-text-size-adjust: 100%
 }
 
-body {
-    margin: 50px;
-}
 
 figcaption, menu, article, aside, details, figure, footer, header, main, nav, section, summary {
     display: block
@@ -279,7 +276,8 @@ a {
     display: block;
     background-image: url(../images/logo1.jpg);
 
-    /*background-image: url(../images/logo.png);*/
+
+
 }
 
 
@@ -4180,9 +4178,7 @@ ul, li {
     left: 15px;
 }
 
-.container {
-    max-width: 1200px;
-}
+
 
 .two-item-heading {
     margin-top: 0 !important;
@@ -4442,9 +4438,28 @@ a.link_pg {
 .footer {
     padding: 20px 0;
     clear: both;
-    background-image:url(../images/header.png);
     color: #ffffff;
     padding-bottom: 0;
+}
+.parallax{
+    background-image:url(../images/header.png);
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    position: relative;
+}
+
+.footer-top-row {
+    margin-right: 0;
+    margin-left: 0;
+}
+.footer-content {
+    background-color: darkcyan;
+    padding-left: 90px;
+    padding-top: 25px;
 }
 
 .footer .main-content {

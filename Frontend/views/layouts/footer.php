@@ -1,6 +1,19 @@
 <!--footer-->
-<div class="footer">
-    <div class="container">
+<footer class="footer">
+    <div class="footer-top">
+        <div class=" footer-top-row">
+            <div class="site-footer-top">
+                <div class="text-center">
+                    <div class="parallax" >
+                        <div class="custom-bottom">
+                            <h1>MIỄN PHÍ VẬN CHUYỂN</h1>
+                            <div class="des-2"> ÁP DỤNG TRÊN MỌI MẶT HÀNG CỦA CHÚNG TÔI</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-content">
         <div class="row">
             <div class="image-footer-wrap col-md-3">
                 <img class="logo" src="assets/images/logo.png">
@@ -12,23 +25,23 @@
                 </div>
             </div>
             <div class="address-footer-wrap col-md-3">
-                    <span class="span_cuoitrang">VỀ CHÚNG TÔI</span>
-                    <ul>
-                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Giới thiệu</a></li>
-                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Hệ thống cửa hàng</a></li>
-                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Giấy phép kinh doanh</a></li>
-                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Quy chế hoạt động</a></li>
-                    </ul>
+                <span class="span_cuoitrang">VỀ CHÚNG TÔI</span>
+                <ul>
+                    <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Giới thiệu</a></li>
+                    <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Hệ thống cửa hàng</a></li>
+                    <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Giấy phép kinh doanh</a></li>
+                    <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Quy chế hoạt động</a></li>
+                </ul>
             </div>
             <div class="col-md-3">
-                    <span class="span_cuoitrang">CAC CHÍNH SÁCH</span>
-                    <ul>
-                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Chính sách bảo hành</a></li>
-                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Chính sách đổi trả</a></li>
-                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Chính sách giao hàng</a></li>
-                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Chính sách bảo mật</a></li>
-                        <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Gửi đóng góp, khiếu nại</a></li>
-                    </ul>
+                <span class="span_cuoitrang">CAC CHÍNH SÁCH</span>
+                <ul>
+                    <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Chính sách bảo hành</a></li>
+                    <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Chính sách đổi trả</a></li>
+                    <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Chính sách giao hàng</a></li>
+                    <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Chính sách bảo mật</a></li>
+                    <li class="li_cuoitrang"><a class="a_cuoitrang" href="#">Gửi đóng góp, khiếu nại</a></li>
+                </ul>
             </div>
 
             <div class="social-footer-wrap col-md-3">
@@ -56,7 +69,10 @@
             Copyright 2023 by nhom3. All rights reserved
         </p>
     </div>
-</div>
+
+</footer>
+
+
 
 
 <div class="overlay"></div>
@@ -112,5 +128,8 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
+
+
+
 
 
