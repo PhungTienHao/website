@@ -99,7 +99,14 @@ if (isset($_SESSION['user'])) {
             </li>
             <li>
                 <a href="index.php?controller=spnb&action=index" class="b">
-                    <i class="fa fa-user"></i> <span>Quản lý Sản Phẩm Nổi Bật</span>
+                    <i class="fa fa-code"></i> <span>Quản lý Sản Phẩm Nổi Bật</span>
+                    <span class="pull-right-container">
+            </span>
+                </a>
+            </li>
+            <li>
+                <a href="index.php?controller=spnb&action=index" class="b">
+                    <i class="fa fa-code"></i> <span>Quản lý Tin Tức Hiển Thị</span>
                     <span class="pull-right-container">
             </span>
                 </a>
