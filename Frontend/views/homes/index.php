@@ -6,23 +6,29 @@ require_once 'controllers/HomeController.php';
 require_once 'models/spnb.php';
 
 ?>
+
+
 <div class="maintop">
-    <div class="row">
-        <div id="carouselExampleIndicators" class="carousel slide col-md-7" data-ride="carousel">
+    <div>
+        <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="assets/images/ps5-1.jpg">
+                    <img class="d-block w-100 " src="assets/images/xbox.jpg" >
                 </div>
                 <div class="carousel-item ">
-                    <img class="d-block w-100" src="assets/images/2.jpg">
+                    <img class="d-block w-100" src="assets/images/original.jpg">
                 </div>
                 <div class="carousel-item ">
-                    <img class="d-block w-100" src="assets/images/3.jpg">
+                    <img class="d-block w-100" src="assets/images/duo-gamer-3.jpg">
+                </div>
+                <div class="carousel-item ">
+                    <img class="d-block w-100" src="assets/images/R.jpg">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -34,12 +40,13 @@ require_once 'models/spnb.php';
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <div class="col align-self-end">
-            <div>
-        <img class="img-maintop" src="assets/images/BANNER-GIAM-GIA.jpg"></div><br><div>
-        <img  class="img-maintop" src="assets/images/cam-ket.jpg"></div>
-
     </div>
+        <div  class="row" >
+
+        <img class="img-maintop col-md-6" src="assets/images/BANNER-GIAM-GIA.jpg">
+        <img  class="img-maintop col-md-6" src="assets/images/cam-ket.jpg">
+
+
     </div>
 </div>
 <?php
