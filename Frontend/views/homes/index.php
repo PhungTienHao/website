@@ -114,12 +114,14 @@ echo '</pre>'; ?>
                                      alt="<?php echo $news['title'] ?>"/>
                                 <span class="shop-title">
                         <?php echo $news['title'] ?>
-                        <?php echo $news['content'] ?>
+
 
                     </span>
+<!--                                --><?php //echo $news['content'] ?>
                             </a>
+                            <p>Giá cũ : <del>6000000</del> </p>
                             <span class="shop-price">
-                            <?php echo number_format($news['price']) ?>
+                            <p> Giá mới :<?php echo number_format($news['price']) ?></p>
                 </span>
 
                             <span data-id="<?php echo $news['id'] ?>" class="add-to-cart">
