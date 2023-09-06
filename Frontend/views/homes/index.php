@@ -5,10 +5,6 @@ require_once 'models/Product.php';
 require_once 'controllers/HomeController.php';
 require_once 'models/spnb.php';
 
-
-
-
-
 ?>
 <div class="maintop">
     <div class="row">
