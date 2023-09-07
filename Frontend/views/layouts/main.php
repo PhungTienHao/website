@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="assets/css/responsive-style.css"/>
     <!-- Ideabox main theme css file. you have to add all pages -->
     <link rel="stylesheet" href="assets/css/style.css"/>
+
 </head>
 <body>
 <?php require_once 'header.php'; ?>

@@ -98,7 +98,7 @@ require_once 'helpers/Helper.php';
                     </div>
                 <?php endforeach; ?>
 
-               
+
               </div>
               <?php echo $pagination; ?>
           <?php endif; ?>
