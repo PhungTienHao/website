@@ -3,7 +3,7 @@
 
 <div class="header-top nopc">
     <div class="container">
-        <div class="row">
+        <div class="row" >
 <!--            <div class=" col-md-4 col-sm-4 col-xs-12">-->
             <div class=" info">
                 <a class="info-contact" href="tel:0331231234">
@@ -13,54 +13,40 @@
                     <i class="far fa-envelope"></i> fuchaogame@gmail.com
                 </a>
             </div>
-<!--            <div class="col-md-8 col-sm-8 col-xs-12">-->
-            <div class="mini-logo">
-                <ul class="header-navigation" data-show-menu-on-mobile="">
-<!--                    <li>-->
-<!--                        <a href="info.html" class="material-button submenu-toggle">Giới thiệu-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a href="contact.html" class="material-button submenu-toggle">Liên hệ</a>-->
-<!--                    </li>-->
+            <div class="mini-logo" >
+                <ul class="header-navigation" data-show-menu-on-mobile="" >
 
                     <li>
-                        <a href="#" class="link-icon-laguage material-button submenu-toggle">
                             <img src="assets/images/icon-flag-vn.png" class="icon-language">
-                        </a>
-                        <a href="index.php?controller=user&action=login" class="link-icon-laguage material-button submenu-toggle">
-                            <img src="assets/images/avatar.jpg" class="icon-language">
-                        </a>
+
+<!--                        <a href="index.php?controller=user&action=login" class="link-icon-laguage material-button submenu-toggle">-->
+<!--                            <img src="assets/images/avatar.jpg" class="icon-language">-->
+<!--                        </a>-->
+                    </li>
+                <li>
+                        <div class="navbar-custom-menu">
+                            <ul class="nav navbar-nav" >
+                                <li class="dropdown user user-menu" >
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <img src="assets/images/avatar.jpg" class="user-image" style="width: 23px; " >
+                                        <span class="hidden-xs"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="user-header">
+                                            <img src="assets/images/avatar.jpg" class="img-circle" alt="User Image">
+                                        </li>
+
+                                        <li class="user-footer">
+                                            <div class="pull-right">
+                                                <a href="index.php?controller=user&action=login" class="btn btn-default btn-flat">Đăng Nhập</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
-<!--                <ul class="nav navbar-nav">-->
-<!--                    <li class="dropdown user user-menu">-->
-<!--                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
-<!--                            <img src="assets/uploads/--><?php //echo $avatar; ?><!--" class="user-image" alt="User Image">-->
-<!--                            <span class="hidden-xs">--><?php //echo $username; ?><!--</span>-->
-<!--                        </a>-->
-<!--                        <ul class="dropdown-menu">-->
-<!--                            <li class="user-header">-->
-<!--                                <img src="assets/uploads/--><?php //echo $avatar; ?><!--" class="img-circle" alt="User Image">-->
-<!---->
-<!--                                <p>-->
-<!--                                    --><?php //echo $username; ?>
-<!---->
-<!--                                    <small>Thành viên từ năm --><?php //echo $year; ?><!--</small>-->
-<!--                                </p>-->
-<!--                            </li>-->
-<!---->
-<!--                            <li class="user-footer">-->
-<!--                                <div class="pull-left">-->
-<!--                                    <a href="#" class="btn btn-default btn-flat">Profile</a>-->
-<!--                                </div>-->
-<!--                                <div class="pull-right">-->
-<!--                                    <a href="index.php?controller=user&action=logout" class="btn btn-default btn-flat">Sign-->
-<!--                                        out</a>-->
-<!--                                </div>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                    </li>-->
-<!--                </ul>-->
             </div>
         </div>
     </div>
@@ -115,7 +101,7 @@
                             <a href="danh-sach-san-pham.html" class="material-button submenu-toggle">Sản phẩm</a>
                         </li>
                         <li>
-                            <a href="login.html" class="material-button submenu-toggle">Đăng nhập</a>
+                            <a href="contact.html" class="material-button submenu-toggle">Liên Hệ</a>
                         </li>
                         <li>
                             <a href="gio-hang-cua-ban.html" class="cart-link">Giỏ hàng

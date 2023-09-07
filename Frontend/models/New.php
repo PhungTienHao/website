@@ -64,4 +64,14 @@ class news extends Model {
         $news = $obj_select->fetchAll(PDO::FETCH_ASSOC);
         return $news;
     }
+    public function getById($id)
+    {
+        $obj_select = $this->connection
+            ->prepare("SELECT news.*, categories.name AS category_name FROM news
+          INNER JOIN categories ON news.category_id = categories.id WHERE news.id = $id");
+
+        $obj_select->execute();
+        $news =  $obj_select->fetch(PDO::FETCH_ASSOC);
+        return $news;
+    }
 }

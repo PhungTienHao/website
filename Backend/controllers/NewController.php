@@ -126,8 +126,8 @@ class NewController extends Controller
             $category_id = $_POST['category_id'];
             $title = $_POST['title'];
             $summary = $_POST['summary'];
+            $price =$_POST['price'];
             $content = $_POST['content'];
-
             $seo_title = $_POST['seo_title'];
             $seo_description= $_POST['seo_description'];
             $seo_keywords = $_POST['seo_keywords'];
@@ -168,6 +168,7 @@ class NewController extends Controller
                 $new_model->title = $title;
                 $new_model->avatar = $filename;
                 $new_model->summary = $summary;
+                $new_model->price=$price;
                 $new_model->content = $content;
                 $new_model->seo_title = $seo_title;
                 $new_model->seo_description = $seo_description;
@@ -181,16 +182,16 @@ class NewController extends Controller
                 } else {
                     $_SESSION['error'] = 'Update dữ liệu thất bại';
                 }
-                header('Location: index.php?controller=spnb');
+                header('Location: index.php?controller=new');
                 exit();
             }
         }
         $category_model = new Category();
         $categories = $category_model->getAll();
 
-        $this->content = $this->render('views/spnb/update.php', [
+        $this->content = $this->render('views/news/update.php', [
             'categories' => $categories,
-            'new' => $news,
+            'news' => $news,
         ]);
         require_once 'views/layouts/main.php';
     }
@@ -199,7 +200,7 @@ class NewController extends Controller
     {
         if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
             $_SESSION['error'] = 'ID không hợp lệ';
-            header('Location: index.php?controller=spnb');
+            header('Location: index.php?controller=new');
             exit();
         }
 
@@ -211,7 +212,7 @@ class NewController extends Controller
         } else {
             $_SESSION['error'] = 'Xóa dữ liệu thất bại';
         }
-        header('Location: index.php?controller=spnb');
+        header('Location: index.php?controller=new');
         exit();
     }
 }

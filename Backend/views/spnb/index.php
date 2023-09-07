@@ -39,9 +39,9 @@ require_once 'controllers/SpnbController.php';
                 <td><?php echo !empty($spnb['updated_at']) ? date('d-m-Y H:i:s', strtotime($spnb['updated_at'])) : '--' ?></td>
                 <td>
                     <?php
-                    $url_detail = "index.php?controller=product&action=detail&id=" . $spnb['id'];
-                    $url_update = "index.php?controller=product&action=update&id=" . $spnb['id'];
-                    $url_delete = "index.php?controller=product&action=delete&id=" . $spnb['id'];
+                    $url_detail = "index.php?controller=spnb&action=detail&id=" . $spnb['id'];
+                    $url_update = "index.php?controller=spnb&action=update&id=" . $spnb['id'];
+                    $url_delete = "index.php?controller=spnb&action=delete&id=" . $spnb['id'];
                     ?>
                     <a title="Chi tiết" href="<?php echo $url_detail ?>"><i class="fa fa-eye"></i></a> &nbsp;&nbsp;
                     <a title="Update" href="<?php echo $url_update ?>"><i class="fa fa-pencil-alt"></i></a> &nbsp;&nbsp;
