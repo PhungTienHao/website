@@ -8,26 +8,19 @@ class CartController extends Controller
 
   public function add()
   {
-
     if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
       $_SESSION['error'] = 'ID sản phẩm ko hợp lệ';
       header('Location: index.php');
       exit();
     }
-
     $product_id = $_GET['id'];
-
-    //lấy thông tin của sản phẩm sẽ thêm vào giỏ hàng
     $product_model = new Product();
     $product = $product_model->getById($product_id);
-    //cấu trúc giỏ hàng đang dự kiến như sau: product_id => mảng các thông tin tương ứng
-
-    //tạo ra 1 mảng giỏ hảng tương ứng với sản phẩm vừa lấy đc, để chuẩn bị thêm vào giỏ hàng
     $product_cart = [
       'name' => $product['title'],
       'price' => $product['price'],
       'avatar' => $product['avatar'],
-      'quantity' => 1, //mỗi lần click vào link thêm giỏ hàng tương đương với số lượng tăng 1
+      'quantity' => 1,
     ];
 
     //giỏ hàng sẽ dùng cơ chế session để lưu, chứ sẽ ko lưu vào csdl để tiết kiệm dữ liệu

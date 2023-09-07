@@ -15,12 +15,12 @@
 
               <?php
               $total_price = 0;
-              foreach ($_SESSION['cart'] AS $product_id => $product):
+              foreach ($_SESSION['cart'] AS $product_id => $product ):
                 ?>
                   <tr>
                       <td>
                           <img class="product-avatar img-responsive"
-                               src="../backend/assets/uploads/<?php echo $product['avatar'] ?>"
+                               src="../backend/assets/uploads/<?php echo $product['avatar']  ?>"
                                width="80">
                           <div class="content-product">
                               <a href="chi-tiet-san-pham/samsung-s9/5" class="content-product-a">
@@ -28,7 +28,6 @@
                           </div>
                       </td>
                       <td>
-<!--                      cần khéo léo đặt name cho input số lượng, để khi xử lý submit form update lại giỏ hànTin nổi bậtg sẽ đơn giản hơn    -->
                           <input type="number" min="0" name="<?php echo $product_id?>" class="product-amount form-control"
                                  value="<?php echo $product['quantity'] ?>">
                       </td>
