@@ -101,7 +101,6 @@ SELECT * FROM products where id = $id ");
           return $obj_insert;
     }
 
-
     public function delete($id)
     {
         $obj_delete = $this->connection
