@@ -2,11 +2,14 @@
 require_once 'helpers/Helper.php';
 require_once 'Models/Spnb.php';
 require_once 'controllers/SpnbController.php';
+echo'<pre>';
+print_r($spnb);
+echo'</pre>';
 ?>
 
 <h2>Danh sách Các Sản Phẩm Nổi Bật</h2>
-<a href="index.php?controller=spnb&action=create" class="btn btn-success">
-    <i class="fa fa-plus"></i> Thêm mới
+<a href="index.php?controller=spnb&action=select" class="btn btn-success">
+    <i class="fa fa-plus"></i> Chọn Sản phẩm Hiển Thị
 </a>
 <table class="table table-bordered">
     <tr>
@@ -39,12 +42,9 @@ require_once 'controllers/SpnbController.php';
                 <td><?php echo !empty($spnb['updated_at']) ? date('d-m-Y H:i:s', strtotime($spnb['updated_at'])) : '--' ?></td>
                 <td>
                     <?php
-                    $url_detail = "index.php?controller=spnb&action=detail&id=" . $spnb['id'];
-                    $url_update = "index.php?controller=spnb&action=update&id=" . $spnb['id'];
+
                     $url_delete = "index.php?controller=spnb&action=delete&id=" . $spnb['id'];
                     ?>
-                    <a title="Chi tiết" href="<?php echo $url_detail ?>"><i class="fa fa-eye"></i></a> &nbsp;&nbsp;
-                    <a title="Update" href="<?php echo $url_update ?>"><i class="fa fa-pencil-alt"></i></a> &nbsp;&nbsp;
                     <a title="Xóa" href="<?php echo $url_delete ?>" onclick="return confirm('Are you sure delete?')"><i
                             class="fa fa-trash"></i></a>
                 </td>
