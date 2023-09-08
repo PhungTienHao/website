@@ -22,7 +22,7 @@
 <!--                            <img src="assets/images/avatar.jpg" class="icon-language">-->
 <!--                        </a>-->
                     </li>
-                <li>
+                    <li>
                         <div class="navbar-custom-menu">
                             <ul class="nav navbar-nav" >
                                 <li class="dropdown user user-menu" >
@@ -70,13 +70,14 @@
                     <img class="logo" src="assets/images/logo.png">
                 </a>
                 <div>
-                    <form action="index.php?controller=product&action=search"  method="get">
+                    <form action="index.php?controller=search&action=search"  method="get">
                             <div class="row height d-flex justify-content-center align-items-center">
 
                                     <div class="form-search">
 
                                         <i class="fa fa-search"></i>
-                                        <input type="text" name="search" class="form-control form-search-input" placeholder="Search anything...">
+                                        <input type="hidden" name="search" value="product">
+                                        <input type="text" name="search" class="form-control form-search-input" placeholder="Search anything..." value="<?php echo (isset($_GET['search'])) ? $_GET['search']:'' ;  ?>">
 
                                         <span class="left-pan"><input type="submit" value="search"><i class="fa fa-microphone"></i></span>
 
@@ -84,6 +85,7 @@
 
                             </div>
                     </form>
+
                     <ul class="header-navigation" data-show-menu-on-mobile>
 
                         <li>
@@ -175,31 +177,3 @@
         <!-- sidebar menu end -->
     </div>
 </div>
-<?php
-//if(isset($_REQUEST['search'])){
-//    $search = addslashes($_GET['search']);
-//    if(empty($search)){
-//        echo"yc nhập sản phầm cần tìm";
-//    }
-//    else{
-//        $query=" select * from products where title like'%$search%'";
-//        $sql=mysqli_query($query);
-//        $num =mysqli_num_rows($sql);
-//        if($num > 0 && $search !=""){
-//            echo"$num kết quả trả về với từ khóa $search";
-//            echo'<table>';
-//            while($row =mysqli_fetch_assoc($sql)){
-//                echo '<tr>';
-//                    echo"<td>{$row['title']}</td>";
-//                    echo"<td>{$row['avatar']}</td>";
-//                echo '</tr>';
-//            }
-//            echo'</table>';
-//        }
-//        else{
-//            echo"không tìm thấy kết quả";
-//        }
-//    }
-//}
-//
-//?>

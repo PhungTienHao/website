@@ -3,6 +3,7 @@ require_once 'controllers/Controller.php';
 require_once 'models/Product.php';
 require_once 'models/Category.php';
 require_once 'models/Pagination.php';
+require_once 'models/Search.php';
 class ProductController extends Controller {
   public function showAll() {
 
@@ -55,7 +56,6 @@ class ProductController extends Controller {
       'pagination' => $pagination,
 
     ]);
-
     require_once 'views/layouts/main.php';
   }
 
@@ -72,9 +72,11 @@ class ProductController extends Controller {
     $product = $product_model->getById($id);
 
     $this->content = $this->render('views/products/detail.php', [
-      'product' => $product
+        'product' => $product
     ]);
     require_once 'views/layouts/main.php';
   }
+
+
 
 }

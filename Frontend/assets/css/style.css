@@ -5607,3 +5607,6 @@ span.team-title {
         margin: 5px auto;
     }
 }
+#name,#email {
+    width: 42%;
+}
