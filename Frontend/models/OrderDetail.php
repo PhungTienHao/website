@@ -4,16 +4,20 @@ class OrderDetail extends Model {
   public $order_id;
   public $product_id;
   public $quantity;
+  public $product_name;
+  public $product_price;
 
-  public function insert() {
-    $sql_insert = "INSERT INTO order_details(`order_id`, `product_id`, `quantity`) VALUES(:order_id, :product_id, :quantity) ";
-    $obj_insert = $this->connection->prepare($sql_insert);
-    $arr_insert = [
-      ':order_id' => $this->order_id,
-      ':product_id' => $this->product_id,
-      ':quantity' => $this->quantity,
-    ];
+      public function insert($order_id, $product_name, $product_price, $quantity) {
+          $sql_insert = "INSERT INTO order_details(order_id, product_name, product_price, quantity) VALUES (:order_id, :product_name, :product_price, :quantity) ";
+          $obj_insert = $this->connection->prepare($sql_insert);
+          $arr_insert = [
+              ':order_id' => $order_id,
+              ':product_name' => $product_name,
+              ':product_price' => $product_price,
+              ':quantity' => $quantity,
+          ];
 
-    return $obj_insert->execute($arr_insert);
-  }
+          return $obj_insert->execute($arr_insert);
+      }
+
 }

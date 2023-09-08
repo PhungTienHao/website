@@ -9,8 +9,8 @@ class Order extends Model {
   public $note;
   public $price_total;
   public $payment_status;
-  public function insert() {
-    $sql_insert = "INSERT INTO orders(`fullname`, `address`, `mobile`, `email`, `note`, `price_total`, `payment_status`)
+  public function insertOrder() {
+    $sql_insert = "INSERT INTO orders(fullname, address, mobile, email, note, price_total, payment_status)
     VALUES (:fullname, :address, :mobile, :email, :note, :price_total, :payment_status)";
     $obj_insert = $this->connection->prepare($sql_insert);
     $arr_insert = [
@@ -26,9 +26,6 @@ class Order extends Model {
     $order_id = $this->connection->lastInsertId();
 
     return $order_id;
-
-//    return $obj_insert->execute($arr_insert);
-
   }
 
   public function getOrder($id) {
@@ -38,4 +35,14 @@ class Order extends Model {
 
     return $obj_select->fetch(PDO::FETCH_ASSOC);
   }
+    public function updatePaymentStatus($id, $payment_status) {
+        $sql_update = "UPDATE orders SET payment_status=:payment_status WHERE id=:id";
+
+        $obj_update = $this->connection->prepare($sql_update);
+        $updates = [
+            ':payment_status' => $payment_status, // 0 - Chưa thanh toán, 1 = Đã thanh toán
+            ':id' => $id
+        ];
+        return $obj_update->execute($updates);
+    }
 }

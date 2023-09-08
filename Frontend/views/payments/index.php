@@ -35,66 +35,66 @@ require_once 'helpers/Helper.php';
             </div>
             <div class="col-md-6 col-sm-6">
                 <h5 class="center-align">Thông tin đơn hàng của bạn</h5>
-              <?php
-              //biến lưu tổng giá trị đơn hàng
-              $total = 0;
-              if (isset($_SESSION['cart'])):
-                ?>
-                  <table class="table table-bordered">
-                      <tbody>
-                      <tr>
-                          <th width="40%">Tên sản phẩm</th>
-                          <th width="12%">Số lượng</th>
-                          <th>Giá</th>
-                          <th>Thành tiền</th>
-                      </tr>
-                      <?php foreach ($_SESSION['cart'] AS $product_id => $cart):
-                        $product_link = 'san-pham/' . Helper::getSlug($cart['name']) . "/$product_id";
-                        ?>
-                          <tr>
-                              <td>
-                                <?php if (!empty($cart['avatar'])): ?>
-                                    <img class="product-avatar img-responsive"
-                                         src="../backend/assets/uploads/<?php echo $cart['avatar']; ?>" width="60"/>
-                                <?php endif; ?>
-                                  <div class="content-product">
-                                      <a href="<?php echo $product_link; ?>" class="content-product-a">
-                                        <?php echo $cart['name']; ?>
-                                      </a>
-                                  </div>
-                              </td>
-                              <td>
+                <?php
+                //biến lưu tổng giá trị đơn hàng
+                $total = 0;
+                if (isset($_SESSION['cart'])):
+                    ?>
+                    <table class="table table-bordered">
+                        <tbody>
+                        <tr>
+                            <th width="40%">Tên sản phẩm</th>
+                            <th width="12%">Số lượng</th>
+                            <th>Giá</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                        <?php foreach ($_SESSION['cart'] AS $product_id => $cart):
+                            $product_link = 'san-pham/' . Helper::getSlug($cart['name']) . "/$product_id";
+                            ?>
+                            <tr>
+                                <td>
+                                    <?php if (!empty($cart['avatar'])): ?>
+                                        <img class="product-avatar img-responsive"
+                                             src="../backend/assets/uploads/<?php echo $cart['avatar']; ?>" width="60"/>
+                                    <?php endif; ?>
+                                    <div class="content-product">
+                                        <a href="<?php echo $product_link; ?>" class="content-product-a">
+                                            <?php echo $cart['name']; ?>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
                               <span class="product-amount">
                                   <?php echo $cart['quantity']; ?>
                               </span>
-                              </td>
-                              <td>
+                                </td>
+                                <td>
                               <span class="product-price-payment">
                                  <?php echo number_format($cart['price'], 0, '.', '.') ?> vnđ
                               </span>
-                              </td>
-                              <td>
+                                </td>
+                                <td>
                               <span class="product-price-payment">
                                   <?php
                                   $price_total = $cart['price'] * $cart['quantity'];
                                   $total += $price_total;
                                   ?>
-                                <?php echo number_format($price_total, 0, '.', '.') ?> vnđ
+                                  <?php echo number_format($price_total, 0, '.', '.') ?> vnđ
                               </span>
-                              </td>
-                          </tr>
-                      <?php endforeach; ?>
-                      <tr>
-                          <td colspan="5" class="product-total">
-                              Tổng giá trị đơn hàng:
-                              <span class="product-price">
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        <tr>
+                            <td colspan="5" class="product-total">
+                                Tổng giá trị đơn hàng:
+                                <span class="product-price">
                                 <?php echo number_format($total, 0, '.', '.') ?> vnđ
                             </span>
-                          </td>
-                      </tr>
-                      </tbody>
-                  </table>
-              <?php endif; ?>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                <?php endif; ?>
 
             </div>
         </div>
