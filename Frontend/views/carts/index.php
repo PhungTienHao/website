@@ -11,6 +11,7 @@
                 <th>Thành tiền</th>
                 <th></th>
             </tr>
+            <?php if (!empty($_SESSION['cart'])): ?>
 
             <?php
             $total = 0;
@@ -58,6 +59,7 @@
                     Tổng giá trị đơn hàng:
                     <span class="product-price">
              <?php echo number_format($total); ?> vnđ
+                        <?php endif; ?>
             </span>
                 </td>
             </tr>
