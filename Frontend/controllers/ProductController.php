@@ -5,7 +5,6 @@ require_once 'models/Category.php';
 require_once 'models/Pagination.php';
 class ProductController extends Controller {
   public function showAll() {
-
     $params = [];
 
     if (isset($_POST['filter'])) {
@@ -30,29 +29,25 @@ class ProductController extends Controller {
             $str_price .= " OR products.price >= 3000000";
           }
         }
-        //cắt bỏ từ khóa OR ở vị trí ban đầu
+
         $str_price = substr($str_price, 3);
         $str_price = "($str_price)";
         $params['price'] = $str_price;
       }
     }
-
     $params_pagination = [
       'total' => 5,
       'limit' => 1,
       'full_mode' => FALSE,
     ];
-    //xử lý phân trang
     $pagination_model = new Pagination($params_pagination);
     $pagination = $pagination_model->getPagination();
-    //get products
+
     $product_model = new Product();
     $products = $product_model->getProductInHomePage($params);
 
-    //get categories để filter
     $category_model = new Category();
     $categories = $category_model->getAll();
-
 
     $this->content = $this->render('views/products/show_all.php', [
       'products' => $products,

@@ -1,5 +1,6 @@
 <?php
 require_once 'models/Model.php';
+
 class Product extends Model {
 
   public function getProductInHomePage($params = []) {
@@ -44,11 +45,7 @@ class Product extends Model {
     $products = $obj_select->fetchAll(PDO::FETCH_ASSOC);
     return $products;
   }
-  /**
-   * Lấy thông tin sản phẩm theo id
-   * @param $id
-   * @return mixed
-   */
+
   public function getById($id)
   {
     $obj_select = $this->connection
@@ -59,6 +56,22 @@ class Product extends Model {
     $product =  $obj_select->fetch(PDO::FETCH_ASSOC);
     return $product;
   }
+    public function getAll()
+    {
+        $obj_select = $this->connection
+            ->prepare("SELECT products.*, categories.name AS category_name FROM products 
+                        INNER JOIN categories ON categories.id = products.category_id
+                        WHERE TRUE $this->str_search
+                        ORDER BY products.created_at DESC
+                        ");
+
+        $arr_select = [];
+        $obj_select->execute($arr_select);
+        $categories = $obj_select->fetchAll(PDO::FETCH_ASSOC);
+
+        return $categories;
+    }
+
 
 }
 

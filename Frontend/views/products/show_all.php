@@ -1,8 +1,9 @@
-<!--Chức nwang filter do kết hợp với rewrite url nên ko dùng phương thức GET cho form, vì xử lý rewrite sẽ rất phức tạp
-thay vào đó sẽ dùng POST
--->
+
 <?php
 require_once 'helpers/Helper.php';
+//echo '<pre>';
+//print_r($categories);
+//echo'<pre>';
 ?>
 <div class="container">
     <div class="row">
