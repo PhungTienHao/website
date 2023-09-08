@@ -8,9 +8,9 @@ class AssessController extends Controller
         if (isset($_POST['submit'])) {
             $name = $_POST['name'];
             $email = $_POST['email'];
-            $assess = $_POST['asess'];
+            $assess = $_POST['assess'];
             if (empty($name)||empty($email)||empty($assess)) {
-                $this->error = 'không được gửi đánh giá trống ';}
+               $this->error = 'không được gửi đánh giá trống';}
                 if (empty($this->error)) {
                     $assess_model = new Assess();
                     $assess_model->name = $name;
@@ -22,7 +22,7 @@ class AssessController extends Controller
                     } else {
                         $_SESSION['error'] = 'Gửi đánh giá thất bại';
                     }
-                    header('Location: index.php?controller=assess');
+                    header('Location: contact.html');
                     exit();
                 }
 
