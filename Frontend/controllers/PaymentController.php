@@ -32,7 +32,7 @@ class PaymentController extends Controller
                     header('location:index.php?controller=payment&action=online');
                     exit();
                 }
-
+                unset($_SESSION['cart']);
             }
 
         }

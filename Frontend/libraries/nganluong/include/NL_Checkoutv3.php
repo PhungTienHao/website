@@ -8,7 +8,6 @@
 			public $receiver_email = '';
 			public $cur_code = 'vnd';
 			
-	
 
 			function __construct($merchant_id, $merchant_password, $receiver_email,$url_api)
 			{				
