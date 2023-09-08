@@ -100,6 +100,27 @@
         </select>
     </div>
     <div class="form-group">
+        <label for="is_feature">Kiểu Sản Phẩm</label>
+        <select name="is_feature" class="form-control" id="is_feature">
+            <?php
+            $selected_spbt = '';
+            $selected_spnb = '';
+            if (isset($_POST['is_feature'])) {
+                switch ($_POST['is_feature']) {
+                    case 0:
+                        $selected_spnb = 'selected';
+                        break;
+                    case 1:
+                        $selected_spbt = 'selected';
+                        break;
+                }
+            }
+            ?>
+            <option value="0" <?php echo $selected_spnb; ?>>spbt</option>
+            <option value="1" <?php echo $selected_spbt ?>>spnb</option>
+        </select>
+    </div>
+    <div class="form-group">
         <input type="submit" name="submit" value="Save" class="btn btn-primary"/>
         <a href="index.php?controller=product&action=index" class="btn btn-default">Back</a>
     </div>

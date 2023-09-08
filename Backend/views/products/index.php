@@ -33,6 +33,7 @@ require_once 'helpers/Helper.php';
                 <td><?php echo number_format($product['price']) ?></td>
                 <td><?php echo $product['amount'] ?></td>
                 <td><?php echo Helper::getStatusText($product['status']) ?></td>
+
                 <td><?php echo date('d-m-Y H:i:s', strtotime($product['created_at'])) ?></td>
                 <td><?php echo !empty($product['updated_at']) ? date('d-m-Y H:i:s', strtotime($product['updated_at'])) : '--' ?></td>
                 <td>

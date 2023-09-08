@@ -18,7 +18,7 @@ class Product extends Model
     public $status;
     public $created_at;
     public $updated_at;
-
+public $is_feature;
     public $str_search = '';
 
     public function __construct()
@@ -51,12 +51,22 @@ class Product extends Model
 
         return $products;
     }
+    public function getspnb()
+    {
+        $obj_select = $this->connection
+            ->prepare("SELECT products.*, categories.name AS category_name FROM products 
+                        INNER JOIN categories ON categories.id = products.category_id
+                        WHERE TRUE $this->str_search AND products.is_feature = 1
+                        ORDER BY products.created_at DESC
+                        ");
 
-    /**
-     * Lấy thông tin của sản phẩm đang có trên hệ thống
-     * @param array Mảng các tham số phân trang
-     * @return array
-     */
+        $arr_select = [];
+        $obj_select->execute($arr_select);
+        $products = $obj_select->fetchAll(PDO::FETCH_ASSOC);
+
+        return $products;
+    }
+
     public function getAllPagination($arr_params)
     {
         $limit = $arr_params['limit'];
@@ -89,15 +99,11 @@ class Product extends Model
         return $obj_select->fetchColumn();
     }
 
-    /**
-     * Insert dữ liệu vào bảng products
-     * @return bool
-     */
     public function insert()
     {
         $obj_insert = $this->connection
-            ->prepare("INSERT INTO products(category_id, title, avatar, price, amount, summary, content, seo_title, seo_description, seo_keywords, status) 
-                                VALUES (:category_id, :title, :avatar, :price, :amount, :summary, :content, :seo_title, :seo_description, :seo_keywords, :status)");
+            ->prepare("INSERT INTO products(category_id, title, avatar, price, amount, summary, content, seo_title, seo_description, seo_keywords, status,is_feature) 
+                                VALUES (:category_id, :title, :avatar, :price, :amount, :summary, :content, :seo_title, :seo_description, :seo_keywords, :status, :is_feature)");
         $arr_insert = [
             ':category_id' => $this->category_id,
             ':title' => $this->title,
@@ -110,15 +116,12 @@ class Product extends Model
             ':seo_description' => $this->seo_description,
             ':seo_keywords' => $this->seo_keywords,
             ':status' => $this->status,
+            ':is_feature'=>$this->is_feature,
         ];
         return $obj_insert->execute($arr_insert);
     }
 
-    /**
-     * Lấy thông tin sản phẩm theo id
-     * @param $id
-     * @return mixed
-     */
+
     public function getById($id)
     {
         $obj_select = $this->connection
@@ -134,7 +137,7 @@ class Product extends Model
     {
         $obj_update = $this->connection
             ->prepare("UPDATE products SET category_id=:category_id, title=:title, avatar=:avatar, price=:price,amount=:amount,
-            summary=:summary, content=:content, seo_title=:seo_title, seo_description=:seo_description, seo_keywords=:seo_keywords, status=:status, updated_at=:updated_at WHERE id = $id
+            summary=:summary, content=:content, seo_title=:seo_title, seo_description=:seo_description, seo_keywords=:seo_keywords, status=:status, updated_at=:updated_at,is_feature=:is_feature WHERE id = $id
 ");
         $arr_update = [
             ':category_id' => $this->category_id,
@@ -149,6 +152,7 @@ class Product extends Model
             ':seo_keywords' => $this->seo_keywords,
             ':status' => $this->status,
             ':updated_at' => $this->updated_at,
+            ':is_feature'=>$this->is_feature,
         ];
         return $obj_update->execute($arr_update);
     }

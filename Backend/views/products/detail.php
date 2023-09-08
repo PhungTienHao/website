@@ -42,6 +42,10 @@ require_once 'helpers/Helper.php';
         <th>Status</th>
         <td><?php echo Helper::getStatusText($product['status']) ?></td>
     </tr>
+<!--    <tr>-->
+<!--        <th>Kiểu sp</th>-->
+<!--        <td>--><?php //echo Helper::getSpText($product['is_feature']) ?><!--</td>-->
+<!--    </tr>-->
     <tr>
         <th>Created at</th>
         <td><?php echo date('d-m-Y H:i:s', strtotime($product['created_at'])) ?></td>

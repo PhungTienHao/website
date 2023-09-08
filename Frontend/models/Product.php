@@ -23,6 +23,27 @@ class Product extends Model {
     $products = $obj_select->fetchAll(PDO::FETCH_ASSOC);
     return $products;
   }
+  public function getspnb($params = []) {
+    $str_filter = '';
+    if (isset($params['category'])) {
+      $str_category = $params['category'];
+      $str_filter .= " AND categories.id IN $str_category";
+    }
+    if (isset($params['price'])) {
+      $str_price = $params['price'];
+      $str_filter .= " AND $str_price";
+    }
+    $sql_select = "SELECT products.*, categories.name 
+          AS category_name FROM products
+          INNER JOIN categories ON products.category_id = categories.id
+          WHERE products.status = 1 $str_filter AND products.is_feature =1";
+
+    $obj_select = $this->connection->prepare($sql_select);
+    $obj_select->execute();
+
+    $products = $obj_select->fetchAll(PDO::FETCH_ASSOC);
+    return $products;
+  }
   /**
    * Lấy thông tin sản phẩm theo id
    * @param $id

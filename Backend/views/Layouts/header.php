@@ -99,7 +99,7 @@ if (isset($_SESSION['user'])) {
                 </a>
             </li>
             <li>
-                <a href="index.php?controller=spnb&action=index" class="b">
+                <a href="index.php?controller=product&action=spnb" class="b">
                     <i class="fa fa-code"></i> <span>Quản lý Sản Phẩm Nổi Bật</span>
                     <span class="pull-right-container">
             </span>

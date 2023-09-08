@@ -62,28 +62,55 @@
         <input type="text" name="seo_keywords" value="<?php echo isset($_POST['seo_keywords']) ? $_POST['seo_keywords'] : '' ?>"
                class="form-control" id="seo-keywords"/>
     </div>
+    <div class="form-group">
+            <label for="status">Trạng thái</label>
+            <select name="status" class="form-control" id="status">
+              <?php
+              $selected_disabled = '';
+              $selected_active = '';
+              if ($product['status'] == 0) {
+                $selected_disabled = 'selected';
+              } else {
+                $selected_active = 'selected';
+              }
+              if (isset($_POST['status'])) {
+                switch ($_POST['status']) {
+                  case 0:
+                    $selected_disabled = 'selected';
+                    break;
+                  case 1:
+                    $selected_active = 'selected';
+                    break;
+                }
+              }
+              ?>
+                <option value="0" <?php echo $selected_disabled; ?>>Disabled</option>
+                <option value="1" <?php echo $selected_active ?>>Active</option>
+            </select>
+        </div>
 
     <div class="form-group">
-        <label for="status">Trạng thái</label>
-        <select name="status" class="form-control" id="status">
+        <label for="is_feature">Kiểu Sản Phẩm</label>
+        <select name="is_feature" class="form-control" id="is_feature">
             <?php
-            $selected_active = '';
-            $selected_disabled = '';
-            if (isset($_POST['status'])) {
-                switch ($_POST['status']) {
+            $selected_spbt = '';
+            $selected_spnb = '';
+            if (isset($_POST['is_feature'])) {
+                switch ($_POST['is_feature']) {
                     case 0:
-                        $selected_disabled = 'selected';
+                        $selected_spnb = 'selected';
                         break;
                     case 1:
-                        $selected_active = 'selected';
+                        $selected_spbt = 'selected';
                         break;
                 }
             }
             ?>
-            <option value="0" <?php echo $selected_disabled; ?>>Disabled</option>
-            <option value="1" <?php echo $selected_active ?>>Active</option>
+            <option value="0" <?php echo $selected_spnb; ?>>spbt</option>
+            <option value="1" <?php echo $selected_spbt ?>>spnb</option>
         </select>
     </div>
+
 
     <div class="form-group">
         <input type="submit" name="submit" value="Save" class="btn btn-primary"/>
