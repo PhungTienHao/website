@@ -5,7 +5,6 @@ require_once 'models/Category.php';
 require_once 'models/Pagination.php';
 class ProductController extends Controller {
   public function showAll() {
-    $params = [];
 
     if (isset($_POST['filter'])) {
       if (isset($_POST['category'])) {
@@ -40,6 +39,7 @@ class ProductController extends Controller {
       'limit' => 1,
       'full_mode' => FALSE,
     ];
+
     $pagination_model = new Pagination($params_pagination);
     $pagination = $pagination_model->getPagination();
 

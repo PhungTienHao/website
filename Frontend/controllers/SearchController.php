@@ -13,8 +13,19 @@ public function show(){
         }else{
         $search_model = new Search();
         $search = $search_model->search();
-        $this->content = $this->render('views/layouts/header.php', [
+        $this->content = $this->render('views/products/search.php', [
             'search' => $search,]);}
         require_once 'views/layouts/main.php';
-}
+}}
+    public function detail() {
+
+        $id = $_GET['id'];
+        $product_model = new Product();
+        $product = $product_model->getById($id);
+
+        $this->content = $this->render('views/products/detail.php', [
+            'product' => $product
+        ]);
+        require_once 'views/layouts/main.php';
+    }
 }

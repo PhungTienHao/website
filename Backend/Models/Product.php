@@ -32,12 +32,18 @@ public $is_feature;
         }
     }
 
-    /**
-     * Lấy thông tin của sản phẩm đang có trên hệ thống
-     * @return array
-     */
-    public function getAll()
+    public function getAll($params = [])
     {
+        $str_search = 'WHERE TRUE';
+        if (isset($params['name']) && !empty($params['name'])) {
+            $name = $params['name'];
+
+            $str_search .= " AND `name` LIKE '%$name%'";
+        }
+        if (isset($params['status'])) {
+            $status = $params['status'];
+            $str_search .= " AND `status` = $status";
+        }
         $obj_select = $this->connection
             ->prepare("SELECT products.*, categories.name AS category_name FROM products 
                         INNER JOIN categories ON categories.id = products.category_id
@@ -67,30 +73,23 @@ public $is_feature;
         return $products;
     }
 
-    public function getAllPagination($arr_params)
+    public function getAllPagination($params = [])
     {
-        $limit = $arr_params['limit'];
-        $page = $arr_params['page'];
+        $limit = $params['limit'];
+        $page = $params['page'];
         $start = ($page - 1) * $limit;
         $obj_select = $this->connection
-            ->prepare("SELECT products.*, categories.name AS category_name FROM products 
-                        INNER JOIN categories ON categories.id = products.category_id
-                        WHERE TRUE $this->str_search
-                        ORDER BY products.updated_at DESC, products.created_at DESC
-                        LIMIT $start, $limit
-                        ");
+            ->prepare("SELECT * FROM products LIMIT $start, $limit");
 
-        $arr_select = [];
-        $obj_select->execute($arr_select);
+//    do PDO coi tất cả các param luôn là 1 string, nên cần sử dụng bindValue / bindParam cho các tham số start và limit
+//        $obj_select->bindParam(':limit', $limit, PDO::PARAM_INT);
+//        $obj_select->bindParam(':start', $start, PDO::PARAM_INT);
+        $obj_select->execute();
         $products = $obj_select->fetchAll(PDO::FETCH_ASSOC);
 
         return $products;
     }
 
-    /**
-     * Tính tổng số bản ghi đang có trong bảng products
-     * @return mixed
-     */
     public function countTotal()
     {
         $obj_select = $this->connection->prepare("SELECT COUNT(id) FROM products WHERE TRUE $this->str_search");

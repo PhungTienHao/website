@@ -1,11 +1,8 @@
 
 <?php
 require_once 'helpers/Helper.php';
-//echo '<pre>';
-//print_r($categories);
-//echo'<pre>';
+
 ?>
-<?php echo $search ?>
 <div class="container">
     <div class="row">
         <div class="main-left col-md-3 col-sm-3 col-xs-12">
@@ -100,9 +97,9 @@ require_once 'helpers/Helper.php';
         <div class="main-right col-md-9 col-sm-9 col-xs-12">
             <h2>Danh sách sản phẩm</h2>
           <?php if (!empty($products)): ?>
-              <h1 class="post-list-title">
-                  <a href="danh-sach-san-pham.html" class="link-category-item">Sản phẩm mới nhất</a>
-              </h1>
+<!--              <h1 class="post-list-title">-->
+<!--                  <a href="danh-sach-san-pham.html" class="link-category-item">Sản phẩm mới nhất</a>-->
+<!--              </h1>-->
               <div class="link-secondary-wrap row">
                 <?php foreach ($products AS $product):
                   $slug = Helper::getSlug($product['title']);
@@ -127,7 +124,6 @@ require_once 'helpers/Helper.php';
                     </span>
                     </div>
                 <?php endforeach; ?>
-
 
               </div>
               <?php echo $pagination; ?>

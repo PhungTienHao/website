@@ -176,30 +176,30 @@
     </div>
 </div>
 <?php
-if(isset($_REQUEST['search'])){
-    $search = addslashes($_GET['search']);
-    if(empty($search)){
-        echo"yc nhập sản phầm cần tìm";
-    }
-    else{
-        $query=" select * from products where title like'%$search%'";
-        $sql=mysqli_query($query);
-        $num =mysqli_num_rows($sql);
-        if($num > 0 && $search !=""){
-            echo"$num kết quả trả về với từ khóa $search";
-            echo'<table>';
-            while($row =mysqli_fetch_assoc($sql)){
-                echo '<tr>';
-                    echo"<td>{$row['title']}</td>";
-                    echo"<td>{$row['avatar']}</td>";
-                echo '</tr>';
-            }
-            echo'</table>';
-        }
-        else{
-            echo"không tìm thấy kết quả";
-        }
-    }
-}
-
-?>
+//if(isset($_REQUEST['search'])){
+//    $search = addslashes($_GET['search']);
+//    if(empty($search)){
+//        echo"yc nhập sản phầm cần tìm";
+//    }
+//    else{
+//        $query=" select * from products where title like'%$search%'";
+//        $sql=mysqli_query($query);
+//        $num =mysqli_num_rows($sql);
+//        if($num > 0 && $search !=""){
+//            echo"$num kết quả trả về với từ khóa $search";
+//            echo'<table>';
+//            while($row =mysqli_fetch_assoc($sql)){
+//                echo '<tr>';
+//                    echo"<td>{$row['title']}</td>";
+//                    echo"<td>{$row['avatar']}</td>";
+//                echo '</tr>';
+//            }
+//            echo'</table>';
+//        }
+//        else{
+//            echo"không tìm thấy kết quả";
+//        }
+//    }
+//}
+//
+//?>

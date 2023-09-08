@@ -20,3 +20,5 @@ RewriteRule phuong-thuc-thanh-toan.html index.php?controller=payment&action=paym
 #rewrite cho trang cảm ơn đã đặt hàng
 RewriteRule cam-on.html index.php?controller=payment&action=thank
 RewriteRule news/(.*)/([0-9]{1,}).html index.php?controller=home&action=detail&slug=$1&id=$2
+
+RewriteRule contact.html index.php?controller=assess&action=create

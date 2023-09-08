@@ -106,8 +106,8 @@ if (isset($_SESSION['user'])) {
                 </a>
             </li>
             <li>
-                <a href="index.php?controller=new&action=index" class="b">
-                    <i class="fa fa-code"></i> <span>Quản lý Tin Tức Hiển Thị</span>
+                <a href="index.php?controller=assess&action=index" class="b">
+                    <i class="fa fa-code"></i> <span>Kiểm Tra Đánh Giá Khách Hàng</span>
                     <span class="pull-right-container">
             </span>
                 </a>

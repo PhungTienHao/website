@@ -13,10 +13,31 @@ class ProductController extends Controller
 
     $category_model = new Category();
     $categories = $category_model->getAll();
+      $params = [
+          'limit' => 5,
+          'query_string' => 'page',
+          'controller' => 'category',
+          'action' => 'index',
+          'full_mode' => FALSE,
+      ];
+      $page = 1;
+      if (isset($_GET['page'])) {
+          $page = $_GET['page'];
+      }
+      if (isset($_GET['name'])) {
+          $params['query_additional'] = '&name=' . $_GET['name'];
+      }
+      $count_total = $category_model->countTotal();
+      $params['total'] = $count_total;
+      $params['page'] = $page;
+      $pagination = new Pagination($params);
+      $pages = $pagination->getPagination();
+      $categories = $category_model->getAllPagination($params);
 
     $this->content = $this->render('views/products/index.php', [
         'products' => $products,
         'categories' => $categories,
+        'pages' => $pages,
     ]);
     require_once 'views/layouts/main.php';
   }

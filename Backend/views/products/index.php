@@ -49,10 +49,13 @@ require_once 'helpers/Helper.php';
                 </td>
             </tr>
         <?php endforeach; ?>
-
+        <tr>
+            <td colspan="7"><?php echo $pages; ?></td>
+        </tr>
     <?php else: ?>
         <tr>
             <td colspan="9">No data found</td>
         </tr>
+
     <?php endif; ?>
 </table>
