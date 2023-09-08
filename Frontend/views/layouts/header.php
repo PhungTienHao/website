@@ -71,15 +71,20 @@
                     <img class="logo" src="assets/images/logo.png">
                 </a>
                 <div>
-            <div class="row height d-flex justify-content-center align-items-center">
+                    <form action="index.php?controller=product&action=search"  method="get">
+                            <div class="row height d-flex justify-content-center align-items-center">
 
-                    <div class="form-search">
-                        <i class="fa fa-search"></i>
-                        <input type="text" class="form-control form-search-input" placeholder="Search anything...">
-                        <span class="left-pan"><i class="fa fa-microphone"></i></span>
-                    </div>
+                                    <div class="form-search">
 
-            </div>
+                                        <i class="fa fa-search"></i>
+                                        <input type="text" class="form-control form-search-input" placeholder="Search anything...">
+
+                                        <span class="left-pan"><input type="submit" name="seach" value="seach"><i class="fa fa-microphone"></i></span>
+
+                                    </div>
+
+                            </div>
+                    </form>
                     <ul class="header-navigation" data-show-menu-on-mobile>
 
                         <li>
@@ -171,3 +176,30 @@
         <!-- sidebar menu end -->
     </div>
 </div>
+<?php
+if(isset($_REQUEST['seach'])){
+    $seach = addslashes($_GET['seach']);
+    if(empty($seach)){
+        echo"yc nhập sản phầm cần tìm";
+    }
+    else{
+        $query=" select * from products where title like'%$seach%'";
+        $sql=mysqli_query($query);
+        $num =mysqli_num_rows($sql);
+        if($num > 0 && $seach !=""){
+            echo"$num kết quả trả về với từ khóa $seach";
+            echo'<table>';
+            while($row =mysqli_fetch_assoc($sql)){
+                echo '<tr>';
+                    echo"<td>{$row['title']}</td>";
+                    echo"<td>{$row['avatar']}</td>";
+                echo '</tr>';
+            }
+            echo'</table>';
+        }
+        else{
+            echo"không tìm thấy kết quả";
+        }
+    }
+}
+?>
