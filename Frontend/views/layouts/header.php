@@ -1,6 +1,5 @@
 
 
-
 <div class="header-top nopc">
     <div class="container">
         <div class="row" >
@@ -77,9 +76,9 @@
                                     <div class="form-search">
 
                                         <i class="fa fa-search"></i>
-                                        <input type="text" class="form-control form-search-input" placeholder="Search anything...">
+                                        <input type="text" name="search" class="form-control form-search-input" placeholder="Search anything...">
 
-                                        <span class="left-pan"><input type="submit" name="seach" value="seach"><i class="fa fa-microphone"></i></span>
+                                        <span class="left-pan"><input type="submit" value="search"><i class="fa fa-microphone"></i></span>
 
                                     </div>
 
@@ -177,17 +176,17 @@
     </div>
 </div>
 <?php
-if(isset($_REQUEST['seach'])){
-    $seach = addslashes($_GET['seach']);
-    if(empty($seach)){
+if(isset($_REQUEST['search'])){
+    $search = addslashes($_GET['search']);
+    if(empty($search)){
         echo"yc nhập sản phầm cần tìm";
     }
     else{
-        $query=" select * from products where title like'%$seach%'";
+        $query=" select * from products where title like'%$search%'";
         $sql=mysqli_query($query);
         $num =mysqli_num_rows($sql);
-        if($num > 0 && $seach !=""){
-            echo"$num kết quả trả về với từ khóa $seach";
+        if($num > 0 && $search !=""){
+            echo"$num kết quả trả về với từ khóa $search";
             echo'<table>';
             while($row =mysqli_fetch_assoc($sql)){
                 echo '<tr>';
@@ -202,4 +201,5 @@ if(isset($_REQUEST['seach'])){
         }
     }
 }
+
 ?>

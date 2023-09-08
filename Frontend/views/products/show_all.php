@@ -5,6 +5,7 @@ require_once 'helpers/Helper.php';
 //print_r($categories);
 //echo'<pre>';
 ?>
+<?php echo $search ?>
 <div class="container">
     <div class="row">
         <div class="main-left col-md-3 col-sm-3 col-xs-12">
