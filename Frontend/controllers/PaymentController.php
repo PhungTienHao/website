@@ -15,7 +15,7 @@ class PaymentController extends Controller
             $note=$_POST['note'];
             if(empty($this->error)){
                 $order_model =new Order();
-                // mặc định đơn hàng là chưa thanh toán
+
                 $payment_status=0;
                 foreach ($_SESSION['cart'] AS $cart_item){
                     $price_total +=
@@ -27,8 +27,7 @@ class PaymentController extends Controller
                     $detail_model =new OrderDetail();
                     $is_insert = $detail_model->insert($order_id,$cart_item['name'],$cart_item['price'],$cart_item['quantity']);
                 }
-// gửi mail xác nhận đơn hàng
-                Helper::sendMail($email,'tiêu đề','nội dung');
+                Helper::sendMail($email,'Fuchao Game Store xin chào bạn','bạn đã đặt mua 1 đơn hàng từ website của chúng tôi?');
                 if($_POST['method']==0){
                     header('location:index.php?controller=payment&action=online');
                     exit();

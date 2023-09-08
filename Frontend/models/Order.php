@@ -27,6 +27,13 @@ class Order extends Model {
 
     return $order_id;
   }
+    public function online() {
+        if (isset($_POST['submit'])) {
+            require_once 'libraries/vnpay_php/vnpay_create_payment.php';
+        }
+        $view_vnpay = $this->render('libraries/vnpay_php/vnpay_pay.php');
+        echo $view_vnpay;
+    }
 
   public function getOrder($id) {
     $sql_select = "SELECT * FROM orders WHERE `id` = $id";

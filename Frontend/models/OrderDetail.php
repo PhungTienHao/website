@@ -6,6 +6,7 @@ class OrderDetail extends Model {
   public $quantity;
   public $product_name;
   public $product_price;
+  public $total_cart;
 
       public function insert($order_id, $product_name, $product_price, $quantity) {
           $sql_insert = "INSERT INTO order_details(order_id, product_name, product_price, quantity) VALUES (:order_id, :product_name, :product_price, :quantity) ";

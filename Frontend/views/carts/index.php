@@ -1,4 +1,4 @@
-<!--Timeline items start -->
+
 <div class="timeline-items container">
     <h2>Giỏ hàng của bạn</h2>
     <form action="" method="post">
@@ -13,7 +13,6 @@
             </tr>
 
             <?php
-            // Khai báo tổng giá trị đơn hàng
             $total = 0;
             foreach ($_SESSION['cart']
                      AS $product_id => $cart): ?>
@@ -30,7 +29,6 @@
                         </div>
                     </td>
                     <td>
-                        <!--  cần khéo léo đặt name cho input số lượng, để khi xử lý submit form update lại giỏ hànTin nổi bậtg sẽ đơn giản hơn    -->
                         <input type="number" min="0"
                                name="<?php echo $product_id; ?>"
                                class="product-amount form-control"
@@ -42,8 +40,7 @@
                     <td>
                         <?php
                         $total_item = $cart['price'] * $cart['quantity'];
-                        // Cộng dồn để lấy ra tổng giá trị đơn hàng
-                        $total_cart += $total_item;
+                      $total += $total_item;
                         echo number_format($total_item);
                         ?>
                     </td>
@@ -60,7 +57,7 @@
                 <td colspan="5" style="text-align: right">
                     Tổng giá trị đơn hàng:
                     <span class="product-price">
-             <?php echo number_format($total_cart); ?> vnđ
+             <?php echo number_format($total); ?> vnđ
             </span>
                 </td>
             </tr>
@@ -74,4 +71,3 @@
         </table>
     </form>
 </div>
-<!--Timeline items end -->

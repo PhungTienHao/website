@@ -32,14 +32,13 @@ class CartController extends Controller
               $_SESSION['cart'][$id] = $cart_item;
           }
       }
-      echo '<pre>';
-      print_r($_SESSION['cart']);
-      echo '</pre>';
+//      echo '<pre>';
+//      print_r($_SESSION['cart']);
+//      echo '</pre>';
   }
 
   public function index()
   {
-
       if (isset($_POST['submit'])) {
           foreach ($_SESSION['cart'] AS $id => $cart_item) {
               $_SESSION['cart'][$id]['quantity'] = $_POST[$id];
