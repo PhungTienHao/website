@@ -60,6 +60,34 @@ require_once 'helpers/Helper.php';
                     <br/>
                     <input type="checkbox" name="price[]" value="4" <?php echo $price4_checked; ?> /> Trên 3tr
                     <br/>
+                    <b>Khoảng giá</b> <br/>
+                    <?php
+                    $category1_checked = '';
+                    $category2_checked = '';
+                    $category3_checked = '';
+                    $category4_checked = '';
+                    if (isset($_POST['category'])) {
+                        foreach ($_POST['category'] as $category) {
+                            if ($category == mobile) {
+                                $category1_checked = 'checked';
+                            }
+                            if ($category == ps) {
+                                $category2_checked = 'checked';
+                            }
+                            if ($category == xbox) {
+                                $category3_checked = 'checked';
+                            }
+                            if ($category == 4) {
+                                $category4_checked = 'checked';
+                            }
+                        }
+                    }
+                    ?>
+                    <input type="checkbox" name="price[]" value="1" <?php echo $category1_checked; ?> /> mobile  <br/>
+                    <input type="checkbox" name="price[]" value="2" <?php echo $category2_checked; ?> /> ps         <br/>
+                    <input type="checkbox" name="price[]" value="3" <?php echo $category3_checked; ?> /> xbox          <br/>
+                    <input type="checkbox" name="price[]" value="4" <?php echo $category4_checked; ?> /> Trên 3tr
+                    <br/>
                 </div>
                 <div class="form-group">
                     <input type="submit" name="filter" value="Filter" class="btn btn-primary"/>
