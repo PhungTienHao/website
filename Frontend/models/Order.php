@@ -9,7 +9,7 @@ class Order extends Model {
     public $note;
     public $price_total;
     public $payment_status;
-    public function insert() {
+    public function insertorder() {
         $sql_insert = "INSERT INTO orders(`fullname`, `address`, `mobile`, `email`, `note`, `price_total`, `payment_status`)
     VALUES (:fullname, :address, :mobile, :email, :note, :price_total, :payment_status)";
         $obj_insert = $this->connection->prepare($sql_insert);

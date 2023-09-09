@@ -41,7 +41,7 @@ class PaymentController extends Controller
                 //mặc định là chưa thanh toán
                 $order_model->payment_status = 0;
                 //lưu vào bảng orders
-                $order_id = $order_model->insert();
+                $order_id = $order_model->insertorder();
                 if ($order_id > 0) {
                     //lưu vào bảng order_details
                     $order_detail = new OrderDetail();
@@ -49,17 +49,17 @@ class PaymentController extends Controller
                     foreach ($_SESSION['cart'] AS $product_id => $cart) {
                         $order_detail->product_id = $product_id;
                         $order_detail->quantity = $cart['quantity'];
-                        $order_detail->insert();
+                        $order_detail->insertdetail();
                     }
 
-                    //xóa thông tin giỏ hàng đi
+
 //          unset($_SESSION['cart']);
-                    //trường hợp chọn phương thức thanh toán là COD thì chuyển tới trang cảm ơn
+
                     if ($method == 1) {
                         $order_model->id = $order_id;
                         //lấy nội dung mail từ template có sẵn
                         $body = $this->render('views/payments/mail_template_order.php', ['order' => $order_model]);
-//gửi mail xác nhận đã thanh toán
+
                         Helper::sendMail($email, 'Subject', $body, 'nguyenvietmanhit@gmail.com', 'yichffdzhetottuw');
                         $url_redirect = $_SERVER['SCRIPT_NAME'] . '/cam-on.html';
                         header("Location: $url_redirect");
