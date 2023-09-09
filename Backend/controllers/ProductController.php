@@ -165,7 +165,8 @@ class ProductController extends Controller
       $seo_description= $_POST['seo_description'];
       $seo_keywords = $_POST['seo_keywords'];
       $status = $_POST['status'];
-        $product_model->is_feature = $is_feature;
+      $is_feature =$_POST['is_feature'];
+//        $product_model->is_feature = $is_feature;
       //xử lý validate
       if (empty($title)) {
         $this->error = 'Không được để trống title';

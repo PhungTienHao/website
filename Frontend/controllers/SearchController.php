@@ -13,7 +13,7 @@ public function show(){
         }else{
         $search_model = new Search();
         $search = $search_model->search();
-        $this->content = $this->render('views/products/search.php', [
+        $this->content = $this->render('views/products/sk.php', [
             'search' => $search,]);}
         require_once 'views/layouts/main.php';
 }}
