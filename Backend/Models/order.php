@@ -22,4 +22,13 @@ class Order extends Model
 
         return $order;
     }
+    public function getdetail(){
+        $obj_select = $this->connection
+            ->prepare("SELECT * FROM order_detail ");
+        $arr_select = [];
+        $obj_select->execute($arr_select);
+        $detail = $obj_select->fetchAll(PDO::FETCH_ASSOC);
+
+        return $detail;
+    }
 }

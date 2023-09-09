@@ -20,10 +20,10 @@ class ProductController extends Controller {
             $str_price .= " OR products.price < 1000000";
           }
           if ($price == 2) {
-            $str_price .= " OR (products.price >= 1000000 AND products.price < 20000000)";
+            $str_price .= " OR (products.price >= 1000000 AND products.price < 2000000)";
           }
           if ($price == 3) {
-            $str_price .= " OR (products.price >= 2000000 AND products.price < 30000000)";
+            $str_price .= " OR (products.price >= 2000000 AND products.price < 3000000)";
           }
           if ($price == 4) {
             $str_price .= " OR products.price >= 3000000";

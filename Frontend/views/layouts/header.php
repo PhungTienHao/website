@@ -35,11 +35,11 @@
                                             <img src="assets/images/avatar.jpg" class="img-circle" alt="User Image">
                                         </li>
 
-                                        <li class="user-footer">
-                                            <div class="pull-right">
-                                                <a href="index.php?controller=user&action=login" class="btn btn-default btn-flat">Đăng Nhập</a>
-                                            </div>
-                                        </li>
+<!--                                        <li class="user-footer">-->
+<!--                                            <div class="pull-right">-->
+<!--                                                <a href="index.php?controller=user&action=login" class="btn btn-default btn-flat">Đăng Nhập</a>-->
+<!--                                            </div>-->
+<!--                                        </li>-->
                                     </ul>
                                 </li>
                             </ul>
@@ -93,8 +93,7 @@
                         </li>
 
                         <li>
-                            <a href="news.html" class="material-button submenu-toggle">Tin tức <span
-                                        class="fa fa-angle-down"></span></a>
+<!--                            -->
                             <div class="header-submenu">
                                 <ul>
                                     <li><a href="index.html">Email</a></li>
