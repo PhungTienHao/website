@@ -4595,6 +4595,7 @@ ul.pagination {
     color: #829994;
     margin: 50px 0;
     margin-top: 0;
+    padding: 10px;
 }
 
 ul.pagination li {
@@ -4619,6 +4620,7 @@ ul.pagination a {
     display: inline-block;
     border: 1px solid #cde0dc;
     text-decoration: none;
+    padding: 10px;
 }
 
 .product-price {

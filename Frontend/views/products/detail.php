@@ -45,65 +45,35 @@
             <h4 class="link-category-item">Sản phẩm khác</h4>
             <ul class="news-relative">
                 <li>
-                    <a href='product_detail.html' class="news-relative-link">
+                    <a href='san-pham/xbox-series-s-512gb/14.html' class="news-relative-link">
                                 <span class="news-relative-img">
-                                <img src="assets/images/samsung-galaxy-note-10-plus-silver-400x460.png"
-                                     alt="no-image" title="SamSung Note 10"
-                                     class="detail-relative-img"/>
+                                <img src="assets/images/xbox.jpg"class="detail-relative-img"/>
                                 </span>
                         <span class="detail-relative-content">
-                                    SamSung Note 10
+                                   Xbox Series S 512GB
                                 </span>
                     </a>
                 </li>
                 <li>
-                    <a href='product_detail.html' class="news-relative-link">
+                    <a href='san-pham/ps5/11.html' class="news-relative-link">
                                 <span class="news-relative-img">
-                                <img src="assets/images/samsung-galaxy-note-10-plus-silver-400x460.png"
-                                     alt="no-image" title="SamSung Note 10"
-                                     class="detail-relative-img"/>
+                                <img src="assets/images/plsn5.webp"class="detail-relative-img"/>
                                 </span>
                         <span class="detail-relative-content">
-                                    SamSung Note 10
+                                    Playstaysion 5
                             </span>
                     </a>
                 </li>
                 <li>
-                    <a href='product_detail.html' class="news-relative-link">
+                    <a href='san-pham/nintendo-switch-new-version-mario-choose-one-bundle/15.html' class="news-relative-link">
                                 <span class="news-relative-img">
-                                <img src="assets/images/samsung-galaxy-note-10-plus-silver-400x460.png"
-                                     alt="no-image" title="SamSung Note 10"
-                                     class="detail-relative-img"/>
+                                <img src="assets/images/original.jpg"class="detail-relative-img"/>
                                 </span>
                         <span class="detail-relative-content">
-                                    SamSung Note 10
-                            </span>
+                                    Nintendo Switch
                     </a>
                 </li>
-                <li>
-                    <a href='product_detail.html' class="news-relative-link">
-                                <span class="news-relative-img">
-                                <img src="assets/images/samsung-galaxy-note-10-plus-silver-400x460.png"
-                                     alt="no-image" title="SamSung Note 10"
-                                     class="detail-relative-img"/>
-                                </span>
-                        <span class="detail-relative-content">
-                                    SamSung Note 10
-                            </span>
-                    </a>
-                </li>
-                <li>
-                    <a href='product_detail.html' class="news-relative-link">
-                                <span class="news-relative-img">
-                                <img src="assets/images/samsung-galaxy-note-10-plus-silver-400x460.png"
-                                     alt="no-image" title="SamSung Note 10"
-                                     class="detail-relative-img"/>
-                                </span>
-                        <span class="detail-relative-content">
-                                    SamSung Note 10
-                            </span>
-                    </a>
-                </li>
+
             </ul>
         </div>
     </div>
