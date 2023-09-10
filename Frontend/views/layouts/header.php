@@ -5,46 +5,46 @@
         <div class="row" >
 <!--            <div class=" col-md-4 col-sm-4 col-xs-12">-->
             <div class=" info">
-                <a class="info-contact" href="tel:0331231234">
-                    <i class="fas fa-phone-alt"></i> 0331231234
+                <a class="info-contact" href="tel:0338680362">
+                    <i class="fas fa-phone-alt"></i> 0338680362
                 </a>
-                <a class="info-contact" href="mailto:fuchaogamestore@gmail.com">
+                <a class="info-contact" href="mailto:haotienphung@gmail.com">
                     <i class="far fa-envelope"></i> fuchaogame@gmail.com
                 </a>
             </div>
             <div class="mini-logo" >
                 <ul class="header-navigation" data-show-menu-on-mobile="" >
 
-                    <li>
-                            <img src="assets/images/icon-flag-vn.png" class="icon-language">
-
-<!--                        <a href="index.php?controller=user&action=login" class="link-icon-laguage material-button submenu-toggle">-->
-<!--                            <img src="assets/images/avatar.jpg" class="icon-language">-->
-<!--                        </a>-->
-                    </li>
-                    <li>
-                        <div class="navbar-custom-menu">
-                            <ul class="nav navbar-nav" >
-                                <li class="dropdown user user-menu" >
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="assets/images/avatar.jpg" class="user-image" style="width: 23px; " >
-                                        <span class="hidden-xs"></span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="user-header">
-                                            <img src="assets/images/avatar.jpg" class="img-circle" alt="User Image">
-                                        </li>
-
+<!--                    <li>-->
+<!--                            <img src="assets/images/icon-flag-vn.png" class="icon-language">-->
+<!---->
+<!--                       <a href="index.php?controller=user&action=login" class="link-icon-laguage material-button submenu-toggle">-->
+<!--                           <img src="assets/images/avatar.jpg" class="icon-language">-->
+<!--                       </a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <div class="navbar-custom-menu">-->
+<!--                            <ul class="nav navbar-nav" >-->
+<!--                                <li class="dropdown user user-menu" >-->
+<!--                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+<!--                                        <img src="assets/images/avatar.jpg" class="user-image" style="width: 23px; " >-->
+<!--                                        <span class="hidden-xs"></span>-->
+<!--                                    </a>-->
+<!--                                    <ul class="dropdown-menu">-->
+<!--                                        <li class="user-header">-->
+<!--                                            <img src="assets/images/avatar.jpg" class="img-circle" alt="User Image">-->
+<!--                                        </li>-->
+<!---->
 <!--                                        <li class="user-footer">-->
 <!--                                            <div class="pull-right">-->
-<!--                                                <a href="index.php?controller=user&action=login" class="btn btn-default btn-flat">Đăng Nhập</a>-->
-<!--                                            </div>-->
-<!--                                        </li>-->
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+<!--                                               <a href="index.php?controller=user&action=login" class="btn btn-default btn-flat">Đăng Nhập</a>-->
+<!--                                           </div>-->
+<!--                                      </li>-->
+<!--                                    </ul>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </li>-->
                 </ul>
             </div>
         </div>

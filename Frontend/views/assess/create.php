@@ -1,10 +1,9 @@
 <?php ?>
 <div class="row">
-    <div class="col-md-6">
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1861.9196567342478!2d105.76815155952197!3d21.039114531068307!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1694222356334!5m2!1sen!2sus" width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="col-md-6" style=:"">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1861.9196567342478!2d105.76815155952197!3d21.039114531068307!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1694222356334!5m2!1sen!2sus" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-<div class="col-md-6">
+<div class="col-md-62">
     <form class="contact_form" action="" method="POST">
         <h1 class="h11">Hòm Thư Góp Ý</h1>
         <div class="row">
