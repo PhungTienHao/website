@@ -91,66 +91,95 @@ require_once 'controllers/HomeController.php';
 <div class="news-wrap">
     <div class="news container">
         <h1 class="post-list-title">
-            <a href="/news.html" class="link-category-item">Siêu Khuyến Mại Nhân Dịp Khai Trương</a>
-        </h1>
-        <div class="row">
-            <?php if (!empty($news)): ?>
-<!--                <div class="link-secondary-wrap row">-->
-                    <?php foreach ($news AS $news):
-                        $slug = Helper::getSlug($news['title']);
-                        $product_link = "news/$slug/" . $news['id'] . ".html";
-                        $product_cart_add = "them-vao-gio-hang/" . $news['id'] . ".html";
-                        ?>
-                        <div class="service-link col-md-3 col-sm-6 col-xs-12">
-                            <a href="<?php echo $product_link; ?>">
-                                <img class="secondary-img img-responsive" title="<?php echo $news['title'] ?>"
-                                     src="../backend/assets/uploads/<?php echo $news['avatar'] ?>"
-                                     alt="<?php echo $news['title'] ?>"/>
-                                <span class="shop-title">
-                        <?php echo $news['title'] ?>
+            Siêu Khuyến Mại Nhân Dịp Khai Trương <br>
+            Tặng kèm khi mua trên website những sản phẩm sau :
+        </h1> </div>
 
-
-                    </span>
-                            </a>
-                            <p>Giá cũ : <del><?php echo $news['summary'] ?></del> </p>
-                            <span class="shop-price">
-                            <p> Giá mới :<?php echo number_format($news['price']) ?></p>
-                </span>
-
-                            <span data-id="<?php echo $news['id'] ?>" class="add-to-cart">
-                        <a href="<?php echo $product_cart_add ?>" style="color: inherit">Thêm vào giỏ</a>
-                    </span>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
-            </div>
-<!--            <div class="col-md-4 col-sm-4 col-xs-12 category-two-item">-->
-<!--                <a href="news_detail.html" class="two-item-link-heading">-->
-<!--                    <span class="new-image-content">-->
-<!--                        <img src="assets/images/news.jpg"-->
-<!--                             title="BÍ MẬT SƠN TINH CAMP"-->
-<!--                             alt="BÍ MẬT SƠN TINH CAMP"-->
-<!--                             class="post-image-avatar img-responsive">-->
+<!--        <div class="row">-->
+<!--            --><?php //if (!empty($news)): ?>
+<!--               <div class="link-secondary-wrap row">-->
+<!--                    --><?php //foreach ($news AS $news):
+//                        $slug = Helper::getSlug($news['title']);
+//                        $product_link = "news/$slug/" . $news['id'] . ".html";
+//                        $product_cart_add = "them-vao-gio-hang/" . $news['id'] . ".html";
+//                        ?>
+<!--                        <div class="service-link col-md-3 col-sm-6 col-xs-12">-->
+<!--                            <a href="--><?php //echo $product_link; ?><!--">-->
+<!--                                <img class="secondary-img img-responsive" title="--><?php //echo $news['title'] ?><!--"-->
+<!--                                     src="../backend/assets/uploads/--><?php //echo $news['avatar'] ?><!--"-->
+<!--                                     alt="--><?php //echo $news['title'] ?><!--"/>-->
+<!--                                <span class="shop-title">-->
+<!--                        --><?php //echo $news['title'] ?>
+<!---->
+<!---->
 <!--                    </span>-->
-<!--                </a>-->
-<!--                <div class="news-content-wrap">-->
-<!--                    <h3 class="category-heading timeline-post-title">-->
-<!--                        <a href="#">-->
-<!--                            BÍ MẬT SƠN TINH CAMP </a>-->
-<!--                    </h3>-->
-<!--                    <div class="news-description">-->
-<!--                        Hàng trăm năm qua, không ít những câu chuyện truyền tai nhau sản sinh ra nơi hòn đảo Sơn-->
-<!--                        Tinh xinh đẹp. Họ không cùng màu da, không cùng tôn giáo, họ đến từ nhiều nơi và họ là-->
-<!--                        những-->
-<!--                        con người sôi nổi, thích phiêu lưu. Có phải vì những lời kể ấy đã lôi cuốn họ tìm đến-->
-<!--                        Sơn-->
-<!--                        Tinh, hay chính vì sự hoang dã tuyệt đẹp của không gian, bởi sự trù phú của sản-->
-<!--                    </div>-->
+<!--                            </a>-->
+<!--                            <p>Giá cũ : <del>--><?php //echo $news['summary'] ?><!--</del> </p>-->
+<!--                            <span class="shop-price">-->
+<!--                            <p> Giá mới :--><?php //echo number_format($news['price']) ?><!--</p>-->
+<!--                </span>-->
+<!---->
+<!--                            <span data-id="--><?php //echo $news['id'] ?><!--" class="add-to-cart">-->
+<!--                        <a href="--><?php //echo $product_cart_add ?><!--" style="color: inherit">Thêm vào giỏ</a>-->
+<!--                    </span>-->
+<!--                        </div>-->
+<!--                    --><?php //endforeach; ?>
 <!--                </div>-->
+<!--            --><?php //endif; ?>
 <!--            </div>-->
-        </div>
+        <div class="news">
+            <div class="col-md-4 col-sm-4 col-xs-12 category-two-item">
+
+                    <span class="new-image-content">
+                        <img src="assets/images/OIP.jpg"
+                             title="Một cặp ngón tay chơi game"
+                             class="post-image-avatar img-responsive">
+                    </span>
+
+                <div class="news-content-wrap">
+                    <h3 class="category-heading timeline-post-title">
+
+                            Một cặp ngón tay chơi game
+                    </h3>
+                </div>
+            </div><div class="col-md-4 col-sm-4 col-xs-12 category-two-item">
+
+                    <span class="new-image-content">
+                        <img src="assets/images/tai nghe.jpg"
+                             title="Một bộ tai nghe gaming"
+                             class="post-image-avatar img-responsive">
+                    </span>
+
+                <div class="news-content-wrap">
+                    <h3 class="category-heading timeline-post-title">
+
+                        Một bộ tai nghe gaming
+                    </h3>
+                </div>
+            </div><div class="col-md-4 col-sm-4 col-xs-12 category-two-item">
+
+                    <span class="new-image-content">
+                        <img src="assets/images/voucher-khuyen-mai-2.jpg"
+                             title="Một voucher áp dụng cho lần mua hàng sau"
+                             class="post-image-avatar img-responsive">
+                    </span>
+
+                <div class="news-content-wrap">
+                    <h3 class="category-heading timeline-post-title">
+
+                        Một voucher áp dụng cho lần mua hàng sau
+                    </h3>
+                </div>
+            </div>
+    </div>
+
     </div>
 </div>
+<style>
+.news {
+display: flex;
+flex-wrap: wrap;
+}
 
+</style>
 <!--END NEWS-->
