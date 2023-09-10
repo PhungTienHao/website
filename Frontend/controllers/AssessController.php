@@ -27,7 +27,7 @@ class AssessController extends Controller
                 }
 
     }
-        $this->content = $this->render('views/assess/create.php', [
+        $this->content = $this->render('views/assess/contact.php', [
             'assess' => $assess,
         ]);
         require_once 'views/layouts/main.php';
