@@ -17,12 +17,8 @@ class CartController extends Controller
 
         $product_id = $_GET['id'];
 
-        //lấy thông tin của sản phẩm sẽ thêm vào giỏ hàng
         $product_model = new Product();
         $product = $product_model->getById($product_id);
-        //cấu trúc giỏ hàng đang dự kiến như sau: product_id => mảng các thông tin tương ứng
-
-        //tạo ra 1 mảng giỏ hảng tương ứng với sản phẩm vừa lấy đc, để chuẩn bị thêm vào giỏ hàng
         $product_cart = [
             'name' => $product['title'],
             'price' => $product['price'],
@@ -30,9 +26,6 @@ class CartController extends Controller
             'quantity' => 1, //mỗi lần click vào link thêm giỏ hàng tương đương với số lượng tăng 1
         ];
 
-        //giỏ hàng sẽ dùng cơ chế session để lưu, chứ sẽ ko lưu vào csdl để tiết kiệm dữ liệu
-        //nếu chưa từng thêm sản phẩm nào vào giỏ hàng, tương đương với giỏ hàng chưa đc tạo mới, thì sẽ khởi tạo session giỏ hàng này
-        //sau đó add sản phẩm đầu tiên vào
         if (!isset($_SESSION['cart'])) {
             $_SESSION['cart'][$product_id] = $product_cart;
         } //trường hợp tồn tại giỏ hàng r thì lại xảy ra 2 trường hợp

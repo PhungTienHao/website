@@ -5,12 +5,13 @@ require_once 'helpers/Helper.php';
 <h2>Danh Sách Đơn Hàng</h2>
 <table class="table table-bordered">
     <tr>
-        <th>STT</th>
+        <th>ID_Đơn Hàng</th>
         <th>Tên Khách</th>
         <th>Địa chỉ</th>
         <th>Sdt</th>
         <th>email</th>
         <th>ghi chú</th>
+        <th>ID_Sản Phẩm</th>
         <th>Tổng Giá Trị Đơn Hàng</th>
         <th>trạng thái thanh toán</th>
         <th>Ngày mua</th>
@@ -26,6 +27,7 @@ require_once 'helpers/Helper.php';
                 <td><?php echo number_format($order['mobile']) ?></td>
                 <td><?php echo $order['email'] ?></td>
                 <td><?php echo $order['note'] ?></td>
+                <td><?php echo $order['product_id']?></td>
                 <td><?php echo $order['price_total'] ?></td>
                 <td><?php echo Helper::getpaymentStatusText($order['payment_status']) ?></td>
 
@@ -34,7 +36,7 @@ require_once 'helpers/Helper.php';
                     <?php
                     $url_detail = "index.php?controller=order&action=detail&id=" . $order['id'];
                     ?>
-                    <a title="Chi tiết" href="<?php echo $url_detail ?>"><i class="fa fa-eye"></i></a> &nbsp;&nbsp;
+<!--                    <a title="Chi tiết" href="--><?php //echo $url_detail ?><!--"><i class="fa fa-eye"></i></a> &nbsp;&nbsp;-->
 
                 </td>
             </tr>

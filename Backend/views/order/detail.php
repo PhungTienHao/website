@@ -3,7 +3,7 @@ require_once 'helpers/Helper.php';
 ?>
 <table class="table table-bordered">
     <tr>
-        <th>STT</th>
+        <th>Order_id</th>
         <td><?php echo $order['id']?></td>
     </tr>
     <tr>

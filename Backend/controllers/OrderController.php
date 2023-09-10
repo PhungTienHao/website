@@ -15,9 +15,9 @@ class OrderController extends Controller
         require_once 'views/layouts/main.php';
     }
     public function detail(){
-        $detail_model = new Detail();
+        $detail_model = new Order();
         $detail = $detail_model->getdetail();
-        $this->content = $this->render('views/order/detail.php',[
+        $this->content = $this->render('views/order/index.php',[
             'detail'=>$detail,
         ]);
         require_once 'views/layouts/main.php';
