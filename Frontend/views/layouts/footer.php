@@ -79,22 +79,22 @@
 
 <ul class="icon-service-wrap">
     <li data-toggle="tooltip" data-placement="left" title="Gọi ngay cho chúng tôi">
-        <a href="tel:0999999999">
+        <a href="tel:0338680362">
             <img src="assets/images/icon-phone.png" class="icon-service-img"/>
         </a>
     </li>
     <li data-toggle="tooltip" data-placement="left" title="Chat với chúng tôi qua Zalo">
-        <a href="//zalo.me/0999999999" target="_blank">
+        <a href="//zalo.me/0338680362" target="_blank">
             <img src="assets/images/icon-zalo.png" class="icon-service-img"/>
         </a>
     </li>
     <li data-toggle="tooltip" data-placement="left" title="Gửi mail cho chúng tôi">
-        <a href="mailto:abc@gmail.com">
+        <a href="mailto:haotienphung@gmail.com@gmail.com">
             <img src="assets/images/icon-mail.png" class="icon-service-img"/>
         </a>
     </li>
     <li data-toggle="tooltip" data-placement="left" title="Liên hệ với chúng tôi">
-        <a href="/lien-he.html" target="_blank">
+        <a href="website/Frontend/contact.html" target="_blank">
             <img src="assets/images/icon-map.png" class="icon-service-img"/>
         </a>
     </li>
