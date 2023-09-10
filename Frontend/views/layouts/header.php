@@ -76,10 +76,10 @@
                                     <div class="form-search">
 
                                         <i class="fa fa-search"></i>
-                                        <input type="hidden" name="search" value="product">
+
                                         <input type="text" name="search" class="form-control form-search-input" placeholder="Search anything..." value="<?php echo (isset($_GET['search'])) ? $_GET['search']:'' ;  ?>">
 
-                                        <span class="left-pan"><input type="submit" value="search"><i class="fa fa-microphone"></i></span>
+                                        <span class="left-pan"><i class="fa fa-microphone"></i></span>
 
                                     </div>
 
