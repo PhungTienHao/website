@@ -65,6 +65,7 @@ require_once 'helpers/Helper.php';
                     $category2_checked = '';
                     $category3_checked = '';
                     $category4_checked = '';
+                    $category5_checked = '';
                     if (isset($_POST['category'])) {
                         foreach ($_POST['category'] as $category) {
                             if ($category == mobile) {
@@ -76,8 +77,11 @@ require_once 'helpers/Helper.php';
                             if ($category == xbox) {
                                 $category3_checked = 'checked';
                             }
-                            if ($category == 4) {
+                            if ($category == PC) {
                                 $category4_checked = 'checked';
+                            }
+                            if ($category == 5) {
+                                $category5_checked = 'checked';
                             }
                         }
                     }
@@ -85,7 +89,7 @@ require_once 'helpers/Helper.php';
                     <input type="checkbox" name="price[]" value="1" <?php echo $category1_checked; ?> /> mobile  <br/>
                     <input type="checkbox" name="price[]" value="2" <?php echo $category2_checked; ?> /> ps         <br/>
                     <input type="checkbox" name="price[]" value="3" <?php echo $category3_checked; ?> /> xbox          <br/>
-                    <input type="checkbox" name="price[]" value="4" <?php echo $category4_checked; ?> /> Trên 3tr
+                    <input type="checkbox" name="price[]" value="4" <?php echo $category4_checked; ?> /> PC
                     <br/>
                 </div>
                 <div class="form-group">
@@ -126,7 +130,7 @@ require_once 'helpers/Helper.php';
                 <?php endforeach; ?>
 
               </div>
-              <?php echo $pagination; ?>
+<?php echo $paginations; ?>
           <?php endif; ?>
         </div>
     </div>

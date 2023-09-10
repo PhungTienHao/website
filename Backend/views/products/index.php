@@ -50,7 +50,7 @@ require_once 'helpers/Helper.php';
             </tr>
         <?php endforeach; ?>
         <tr>
-            <td colspan="7"><?php echo $pages; ?></td>
+            <td colspan="7"><?php echo $paginations; ?></td>
         </tr>
     <?php else: ?>
         <tr>

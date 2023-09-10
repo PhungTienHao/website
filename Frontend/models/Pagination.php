@@ -152,7 +152,7 @@ class Pagination
           $data .= "<li><a href=''>...</a></li>";
         }
       }
-//ngược lại nếu là chế độ fullpage
+
     }
     //hiển thị full page
     else {

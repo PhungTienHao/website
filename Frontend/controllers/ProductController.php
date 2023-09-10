@@ -36,7 +36,7 @@ class ProductController extends Controller {
       }
     }
     $params_pagination = [
-      'total' => 5,
+      'total' => 3,
       'limit' => 1,
       'full_mode' => FALSE,
     ];
@@ -53,7 +53,7 @@ class ProductController extends Controller {
     $this->content = $this->render('views/products/show_all.php', [
       'products' => $products,
       'categories' => $categories,
-      'pagination' => $pagination,
+      'paginations' => $pagination,
 
     ]);
     require_once 'views/layouts/main.php';
