@@ -93,7 +93,7 @@ if (isset($_SESSION['user'])) {
             </li>
             <li>
                 <a href="index.php?controller=user&action=index" class="b">
-                    <i class="fa fa-user"></i> <span>Quản lý user</span>
+                    <i class="fa fa-user"></i> <span>Quản lý Tài Khoản Admin</span>
                     <span class="pull-right-container">
             </span>
                 </a>
@@ -107,7 +107,7 @@ if (isset($_SESSION['user'])) {
             </li>
             <li>
                 <a href="index.php?controller=assess&action=index" class="b">
-                    <i class="fa fa-code"></i> <span>Kiểm Tra Đánh Giá Khách Hàng</span>
+                    <i class="fa fa-code"></i> <span>Xem Đánh Giá Khách Hàng</span>
                     <span class="pull-right-container">
             </span>
                 </a>

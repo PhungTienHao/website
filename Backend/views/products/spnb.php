@@ -40,7 +40,7 @@ require_once 'helpers/Helper.php';
                     <?php
                     $url_detail = "index.php?controller=product&action=detail&id=" . $product['id'];
                     $url_update = "index.php?controller=product&action=update&id=" . $product['id'];
-                    $url_delete = "index.php?controller=product&action=delete&id=" . $product['id'];
+                    $url_delete = "index.php?controller=product&action=change&id=" . $product['id'];
                     ?>
                     <a title="Chi tiết" href="<?php echo $url_detail ?>"><i class="fa fa-eye"></i></a> &nbsp;&nbsp;
                     <a title="Update" href="<?php echo $url_update ?>"><i class="fa fa-pencil-alt"></i></a> &nbsp;&nbsp;

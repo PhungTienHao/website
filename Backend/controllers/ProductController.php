@@ -258,6 +258,25 @@ class ProductController extends Controller
     header('Location: index.php?controller=product');
     exit();
   }
+    public function change()
+    {
+        if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+            $_SESSION['error'] = 'ID không hợp lệ';
+            header('Location: index.php?controller=product');
+            exit();
+        }
+
+        $id = $_GET['id'];
+        $product_model = new Product();
+        $is_delete = $product_model->change($id);
+        if ($is_delete) {
+            $_SESSION['success'] = 'Xóa dữ liệu thành công';
+        } else {
+            $_SESSION['error'] = 'Xóa dữ liệu thất bại';
+        }
+        header('Location: index.php?controller=product');
+        exit();
+    }
     public function spnb()
     {
         $product_model = new Product();

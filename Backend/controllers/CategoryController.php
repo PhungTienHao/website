@@ -8,6 +8,7 @@ class CategoryController extends Controller
   public function index()
   {
     $category_model = new Category();
+    $categories = $category_model->getAll();
     $params = [
       'limit' => 5,
       'query_string' => 'page',

@@ -34,6 +34,27 @@ class ProductController extends Controller {
         $str_price = "($str_price)";
         $params['price'] = $str_price;
       }
+//        if (isset($_POST['category'])) {
+//            $str_category = '';
+//            foreach ($_POST['category'] AS $category) {
+//                if ($category == 1) {
+//                    $str_price .= " OR products.price < 1000000";
+//                }
+//                if ($category == 2) {
+//                    $str_price .= " OR (products.price >= 1000000 AND products.price < 2000000)";
+//                }
+//                if ($category == 3) {
+//                    $str_price .= " OR (products.price >= 2000000 AND products.price < 3000000)";
+//                }
+//                if ($category == 4) {
+//                    $str_price .= " OR products.price >= 3000000";
+//                }
+//            }
+//
+//            $str_price = substr($str_price, 3);
+//            $str_price = "($str_price)";
+//            $params['price'] = $str_price;
+//        }
     }
     $params_pagination = [
       'total' => 3,
@@ -45,7 +66,7 @@ class ProductController extends Controller {
     $pagination = $pagination_model->getPagination();
 
     $product_model = new Product();
-    $products = $product_model->getProductInHomePage($params);
+    $products = $product_model->getProductInHomePage();
 
     $category_model = new Category();
     $categories = $category_model->getAll();

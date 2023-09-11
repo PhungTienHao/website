@@ -59,13 +59,12 @@ require_once 'helpers/Helper.php';
                     <br/>
                     <input type="checkbox" name="price[]" value="4" <?php echo $price4_checked; ?> /> Trên 3tr
                     <br/>
-                    <b>Khoảng giá</b> <br/>
+                    <b>Danh Mục</b> <br/>
                     <?php
                     $category1_checked = '';
                     $category2_checked = '';
                     $category3_checked = '';
                     $category4_checked = '';
-                    $category5_checked = '';
                     if (isset($_POST['category'])) {
                         foreach ($_POST['category'] as $category) {
                             if ($category == mobile) {
@@ -79,9 +78,6 @@ require_once 'helpers/Helper.php';
                             }
                             if ($category == PC) {
                                 $category4_checked = 'checked';
-                            }
-                            if ($category == 5) {
-                                $category5_checked = 'checked';
                             }
                         }
                     }
@@ -130,7 +126,7 @@ require_once 'helpers/Helper.php';
                 <?php endforeach; ?>
 
               </div>
-<?php echo $paginations; ?>
+<?php //echo $paginations; ?>
           <?php endif; ?>
         </div>
     </div>

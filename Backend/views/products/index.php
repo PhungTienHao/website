@@ -1,7 +1,20 @@
 <?php
 require_once 'helpers/Helper.php';
 ?>
-
+<h1>Tìm kiếm</h1>
+<form action="" method="get">
+    <input type="hidden" name="controller" value="product"/>
+    <input type="hidden" name="action" value="index"/>
+    <div class="form-group">
+        <label style="color: black" >Nhập tên sản phẩm</label>
+        <input style="color: black" type="text" name="name" value="<?php echo isset($_GET['name']) ? $_GET['name'] : '' ?>"
+               class="form-control"/>
+    </div>
+    <div class="form-group">
+        <input type="submit" name="submit" value="Tìm kiếm" class="btn btn-success"/>
+        <a href="index.php?controller=product" class="btn btn-secondary">Xóa filter</a>
+    </div>
+</form>
 <h2>Danh sách sản phẩm</h2>
     <a href="index.php?controller=product&action=create" class="btn btn-success">
         <i class="fa fa-plus"></i> Thêm mới
@@ -50,7 +63,7 @@ require_once 'helpers/Helper.php';
             </tr>
         <?php endforeach; ?>
         <tr>
-            <td colspan="7"><?php echo $paginations; ?></td>
+            <td colspan="7"><?php echo $pages; ?></td>
         </tr>
     <?php else: ?>
         <tr>

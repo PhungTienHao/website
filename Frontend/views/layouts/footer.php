@@ -20,7 +20,7 @@
                 <div>
                     <strong>Thông tin liên hệ</strong>
                     Tòa nhà CMC, Số 11, Phố Duy Tân, Phường Dịch Vọng Hậu, Cầu Giấy, Hà Nội <br/>
-                    Hotline: 0331231234 <br/>
+                    Hotline: 0338680362 <br/>
                     Email: fuchaogame@gmail.com
                 </div>
             </div>

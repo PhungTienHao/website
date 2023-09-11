@@ -34,6 +34,7 @@ public $is_feature;
 
     public function getAll($params = [])
     {
+
         $str_search = 'WHERE TRUE';
         if (isset($params['name']) && !empty($params['name'])) {
             $name = $params['name'];
@@ -160,6 +161,12 @@ public $is_feature;
     {
         $obj_delete = $this->connection
             ->prepare("DELETE FROM products WHERE id = $id");
+        return $obj_delete->execute();
+    }
+    public function change($id)
+    {
+        $obj_delete = $this->connection
+            ->prepare("UPDATE products set is_feature = 0 where id=$id");
         return $obj_delete->execute();
     }
 }
