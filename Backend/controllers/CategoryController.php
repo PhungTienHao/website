@@ -171,7 +171,6 @@ class CategoryController extends Controller
         header('Location: index.php?controller=category&action=index');
         exit();
       }
-
     }
     $this->content = $this->render('views/categories/update.php', ['category' => $category]);
     require_once 'views/layouts/main.php';

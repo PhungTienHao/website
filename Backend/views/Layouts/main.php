@@ -13,14 +13,14 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<body class="hold-transition skin-blue sidebar-mini" >
+<div class="wrapper" ">
     
     <?php require_once 'header.php';
     ?>
 
-    <div class="content-wrapper">
-        <section class="content">
+    <div class="content-wrapper" style="background-image:assets/images/nen.jpg">
+        <section class="content" >
 
             <?php if (!empty($this->error)): ?>
                 <div class="alert alert-danger"><?php echo $this->error ?></div>

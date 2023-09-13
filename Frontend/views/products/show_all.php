@@ -1,6 +1,8 @@
 
 <?php
 require_once 'helpers/Helper.php';
+require_once 'models/Product.php';
+require_once 'controllers/ProductController.php';
 
 ?>
 <div class="container">
@@ -70,27 +72,27 @@ require_once 'helpers/Helper.php';
                     $category4_checked = '';
                     if (isset($_POST['category'])) {
                         foreach ($_POST['category'] as $category) {
-                            if ($category == 6) {
+                            if ($category == 1) {
                                 $category1_checked = 'checked';
                             }
-                            if ($category == 7) {
+                            if ($category == 2) {
                                 $category2_checked = 'checked';
                             }
-                            if ($category == 8) {
+                            if ($category == 3) {
                                 $category3_checked = 'checked';
                             }
-                            if ($category == 9) {
+                            if ($category == 4) {
                                 $category4_checked = 'checked';
                             }
                         }
                     }
                     ?>
-                    <input type="checkbox" name="category[]" value="6" <?php echo $category1_checked; ?> />Tay cầm <br/>
-                    <input type="checkbox" name="category[]" value="7" <?php echo $category2_checked; ?> />Mobile
+                    <input type="checkbox" name="category[]" value="1" <?php echo $category1_checked; ?> />Tay cầm <br/>
+                    <input type="checkbox" name="category[]" value="2" <?php echo $category2_checked; ?> />Mobile
                     <br/>
-                    <input type="checkbox" name="category[]" value="8" <?php echo $category3_checked; ?> />Xbox
+                    <input type="checkbox" name="category[]" value="3" <?php echo $category3_checked; ?> />Xbox
                     <br/>
-                    <input type="checkbox" name="category[]" value="9" <?php echo $category4_checked; ?> />PC
+                    <input type="checkbox" name="category[]" value="4" <?php echo $category4_checked; ?> />PC
                     <br/>
 
                 </div>
@@ -101,6 +103,7 @@ require_once 'helpers/Helper.php';
             </form>
         </div>
         <div class="main-right col-md-9 col-sm-9 col-xs-12">
+
             <h2>Danh sách sản phẩm</h2>
           <?php if (!empty($products)): ?>
               <div class="link-secondary-wrap row">
@@ -130,7 +133,10 @@ require_once 'helpers/Helper.php';
 
               </div>
 
-          <?php endif; ?>
+          <?php endif;
+
+          ?>
+
         </div>
     </div>
 

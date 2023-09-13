@@ -22,7 +22,7 @@ class Pagination
     //tổng số bản ghi trên trang
     'total' => 5,
     //giới hạn bản ghi trên 1 trang
-    'limit' => 0,
+    'limit' => 1,
     //controller xử lý phân trang
     'controller' => '',
     //action xử lý phân trang

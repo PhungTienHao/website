@@ -11,38 +11,38 @@ class ProductController extends Controller {
         if (isset($_POST['category'])) {
             $str_category = '';
             foreach ($_POST['category'] AS $category) {
-                if ($category == 6) {
-                    $str_category .= " OR categories.id = 6 ";
+                if ($category == 1) {
+                    $str_category .= " AND products.category_id = 6 ";
                 }
-                if ($category == 7) {
-                    $str_category .= " OR categories.id = 7";
+                if ($category == 2) {
+                    $str_category .= " AND products.category_id = 7";
                 }
-                if ($category == 8) {
-                    $str_category .= " OR categories.id = 8";
+                if ($category == 3) {
+                    $str_category .= " AND products.category_id = 8";
                 }
-                if ($category == 9) {
-                    $str_category .= " OR categories.id = 9";
+                if ($category == 4) {
+                    $str_category .= " AND products.category_id = 9";
                 }
             }
 
             $str_category = substr($str_category,3);
-            $str_category = "($category)";
+            $str_category = "($str_category)";
             $params['category'] = $str_category;
         }
       if (isset($_POST['price'])) {
         $str_price = '';
         foreach ($_POST['price'] AS $price) {
           if ($price == 1) {
-            $str_price .= " OR products.price < 1000000";
+            $str_price .= " AND products.price < 1000000";
           }
           if ($price == 2) {
-            $str_price .= " OR (products.price >= 1000000 AND products.price < 3000000)";
+            $str_price .= " AND (products.price >= 1000000 AND products.price < 3000000)";
           }
           if ($price == 3) {
-            $str_price .= " OR (products.price >= 3000000 AND products.price < 6000000)";
+            $str_price .= " AND (products.price >= 3000000 AND products.price < 6000000)";
           }
           if ($price == 4) {
-            $str_price .= " OR products.price >= 6000000";
+            $str_price .= " AND products.price >= 6000000";
           }
         }
 

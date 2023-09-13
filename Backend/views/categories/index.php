@@ -69,7 +69,8 @@
                      title="Chi tiết">
                       <i class="fa fa-eye"></i>
                   </a>
-                  <a href="index.php?controller=category&action=update&id=<?php echo $category['id'] ?>" title="Sửa">
+                  <a href="index.php?controller=category&action=update&id=<?php echo $category['id'] ?>"
+                     title="Sửa">
                       <i class="fa fa-pencil-alt"></i>
                   </a>
                   <a href="index.php?controller=category&action=delete&id=<?php echo $category['id'] ?>" title="Xóa"
@@ -79,9 +80,9 @@
               </td>
           </tr>
     <?php endforeach ?>
-      <tr>
-          <td colspan="7"><?php echo $pages; ?></td>
-      </tr>
+<!--      <tr>-->
+<!--          <td colspan="7">--><?php //echo $pages; ?><!--</td>-->
+<!--      </tr>-->
 
   <?php else: ?>
       <tr>
