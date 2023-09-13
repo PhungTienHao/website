@@ -291,4 +291,23 @@ class ProductController extends Controller
         ]);
         require_once 'views/layouts/main.php';
     }
+    public function changespnb()
+    {
+        if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+            $_SESSION['error'] = 'ID không hợp lệ';
+            header('Location: index.php?controller=product');
+            exit();
+        }
+
+        $id = $_GET['id'];
+        $product_model = new Product();
+        $is_delete = $product_model->changespnb($id);
+        if ($is_delete) {
+            $_SESSION['success'] = 'Thay đổi sản phẩm thành sản phẩm nổi bật thành công';
+        } else {
+            $_SESSION['error'] = 'Thay đổi thất bại';
+        }
+        header('Location: index.php?controller=product');
+        exit();
+    }
 }

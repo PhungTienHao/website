@@ -169,4 +169,9 @@ public $is_feature;
             ->prepare("UPDATE products set is_feature = 0 where id=$id");
         return $obj_delete->execute();
     }
+    public function changespnb($id){
+        $obj_delete = $this->connection
+            ->prepare("UPDATE products set is_feature = 1 where id=$id");
+        return $obj_delete->execute();
+    }
 }

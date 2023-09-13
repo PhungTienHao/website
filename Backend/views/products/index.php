@@ -31,6 +31,7 @@ require_once 'helpers/Helper.php';
         <th>Created_at</th>
         <th>Updated_at</th>
         <th></th>
+        <th>Chọn spnb</th>
     </tr>
     <?php if (!empty($products)): ?>
         <?php foreach ($products as $product): ?>
@@ -59,6 +60,13 @@ require_once 'helpers/Helper.php';
                     <a title="Update" href="<?php echo $url_update ?>"><i class="fa fa-pencil-alt"></i></a> &nbsp;&nbsp;
                     <a title="Xóa" href="<?php echo $url_delete ?>" onclick="return confirm('Are you sure delete?')"><i
                                 class="fa fa-trash"></i></a>
+                </td>
+                <td>
+                    <?php
+                    $url_change = "index.php?controller=product&action=changespnb&id=" . $product['id'];
+                    ?>
+                    <a title="Chọn spnb" href="<?php echo $url_change ?>"><i class="fa fa-upload"></i></a>
+
                 </td>
             </tr>
         <?php endforeach; ?>
