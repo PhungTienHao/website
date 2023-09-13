@@ -41,7 +41,7 @@ class Product extends Model {
           AS category_name FROM products
           INNER JOIN categories ON products.category_id = categories.id
           WHERE products.status = 1 $str_filter AND products.is_feature =1";
-var_dump($sql_select);
+//var_dump($sql_select);
     $obj_select = $this->connection->prepare($sql_select);
     $obj_select->execute();
 
