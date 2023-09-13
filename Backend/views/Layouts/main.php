@@ -20,7 +20,8 @@
     <?php require_once 'header.php';
     ?>
 
-    <div class="content-wrapper" style="background-image:assets/images/nen.jpg">
+<!--   <div class="content-wrapper" style="background-image:url(assets/images/nen5.jpg)"> -->
+<div class="content-wrapper">
         <section class="content" >
 
             <?php if (!empty($this->error)): ?>

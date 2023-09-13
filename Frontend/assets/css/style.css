@@ -316,11 +316,16 @@ a {
 
     padding-left: 10px;
 }
+.h{
+    display:flex;
+    flex-wrap: wrap;
+}
 
 .form-search-input{
 
     height: 55px;
     text-indent: 33px;
+    width:591px;
     border-radius: 10px;
 }
 
@@ -608,9 +613,8 @@ a {
     flex-wrap: wrap;
 }
 .info{
-    display:flex;
-    flex-wrap: wrap;
-    margin-left: 15px;
+    display:grid;
+    margin-left: 20px;
 }
 .mini-logo{
     margin-left: 420px;
@@ -4231,6 +4235,7 @@ ul, li {
     right: 0;
     height: 40px;
     background: #21431e;
+
 }
 
 .product-title {

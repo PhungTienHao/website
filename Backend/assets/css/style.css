@@ -5,6 +5,7 @@
 .content-wrap {
   min-height: 0 !important;
   overflow: auto;
+
 }
 .body-user{
   background-image:url(../images/bk.jpg);
@@ -56,4 +57,5 @@ label {
   background-repeat: round;
   filter: brightness(0.5);
 }
+
 
