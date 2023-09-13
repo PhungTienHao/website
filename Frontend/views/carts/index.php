@@ -18,17 +18,18 @@
                 foreach ($_SESSION['cart'] AS $product_id => $product):
                     ?>
                     <tr>
-                        <td>
+                        <td style="display:flex;">
+                            <a href="chi-tiet-san-pham/samsung-s9/5" class="content-product-a">
                             <img class="product-avatar img-responsive"
                                  src="../backend/assets/uploads/<?php echo $product['avatar'] ?>"
                                  width="80">
                             <div class="content-product">
-                                <a href="chi-tiet-san-pham/samsung-s9/5" class="content-product-a">
+
                                     <?php echo $product['name'] ?> </a>
                             </div>
                         </td>
                         <td>
-                            <!--                      cần khéo léo đặt name cho input số lượng, để khi xử lý submit form update lại giỏ hànTin nổi bậtg sẽ đơn giản hơn    -->
+
                             <input type="number" min="0" name="<?php echo $product_id?>" class="product-amount form-control"
                                    value="<?php echo $product['quantity'] ?>">
                         </td>
@@ -49,14 +50,19 @@
                         </td>
                     </tr>
                 <?php endforeach; ?>
-
                 <tr>
-                    <td colspan="5" style="text-align: right">
-                        Tổng giá trị đơn hàng:
-                        <span class="product-price">
-                                            <?php echo number_format($total_price); ?> vnđ
-                                                </span>
+                    <td colspan="4" >Phí vận chuyển :
                     </td>
+                    <td ><b>Miễn phí </b></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: left">
+                        Tổng giá trị đơn hàng:
+
+                    </td>
+                    <td> <span class="product-price" style="color:red;">
+                                            <?php echo number_format($total_price); ?> vnđ
+                                                </span></td>
                 </tr>
                 <tr>
                     <td colspan="5" class="product-payment">

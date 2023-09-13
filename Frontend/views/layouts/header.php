@@ -79,15 +79,8 @@
 
                             </div>
                     </form>
-                        <div class=" info">
-                            <a class="info-contact" href="tel:0338680362">
-                                <i class="fas fa-phone-alt"></i> 0338680362
-                            </a>
-                            <a class="info-contact" href="mailto:haotienphung@gmail.com">
-                                <i class="far fa-envelope"></i> fuchaogame@gmail.com
-                            </a>
-                        </div>
                     </div>
+
 
 
                     <ul class="header-navigation" data-show-menu-on-mobile>
@@ -131,7 +124,14 @@
                     </ul>
             </div>
 
-
+                <div class=" info">
+                    <a class="info-contact" href="tel:0338680362">
+                        <i class="fas fa-phone-alt"></i> 0338680362
+                    </a>
+                    <a class="info-contact" href="mailto:haotienphung@gmail.com">
+                        <i class="far fa-envelope"></i> fuchaogame@gmail.com
+                    </a>
+                </div>
         <div class="header-right with-seperator">
             <!-- header right menu start -->
             <ul class="header-navigation">
@@ -180,15 +180,4 @@
         <!-- sidebar menu end -->
     </div>
 </div>
-<style>
-    .info{
-        display:grid;
-    }
-    .h{
-        display:flex;
-        flex-wrap: wrap;
-    }
-    .form-search{
-        width:591px;
-    }
-</style>
+
