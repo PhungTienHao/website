@@ -42,5 +42,4 @@ public function show(){
         require_once 'views/search/search.php';
     }
 
-
 }

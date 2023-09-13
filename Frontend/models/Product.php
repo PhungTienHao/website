@@ -45,7 +45,9 @@ class Product extends Model {
 
     $products = $obj_select->fetchAll(PDO::FETCH_ASSOC);
     return $products;
+
   }
+
     public function countTotal()
     {
         $obj_select = $this->connection->prepare("SELECT COUNT(id) FROM products WHERE TRUE $this->str_search");
