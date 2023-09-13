@@ -8,7 +8,7 @@ class Product extends Model {
     $str_filter = '';
     if (isset($params['category'])) {
       $str_category = $params['category'];
-      $str_filter .= "AND categories.id IN $str_category";
+      $str_filter .= "AND $str_category";
     }
     if (isset($params['price'])) {
       $str_price = $params['price'];
@@ -62,6 +62,18 @@ class Product extends Model {
     $product =  $obj_select->fetch(PDO::FETCH_ASSOC);
     return $product;
   }
+    public function searchProducts($keyword) {
+
+        $stmt = $this->connection->prepare("SELECT * FROM products WHERE `title` LIKE :keyword");
+        $keyword = "%" . $keyword . "%"; // Thêm dấu % cho tìm kiếm một phần từ khóa
+        $stmt->bindParam(':keyword', $keyword, PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        $searchResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $searchResults;
+    }
 
 }
 

@@ -9,9 +9,25 @@ class ProductController extends Controller {
       $params = [];
     if (isset($_POST['filter'])) {
         if (isset($_POST['category'])) {
-            $category = implode(',', $_POST['category']);
-            $str_category_id = "($category)";
-            $params['category'] = $str_category_id;
+            $str_category = '';
+            foreach ($_POST['category'] AS $category) {
+                if ($category == 6) {
+                    $str_category .= " OR categories.id = 6 ";
+                }
+                if ($category == 7) {
+                    $str_category .= " OR categories.id = 7";
+                }
+                if ($category == 8) {
+                    $str_category .= " OR categories.id = 8";
+                }
+                if ($category == 9) {
+                    $str_category .= " OR categories.id = 9";
+                }
+            }
+
+            $str_category = substr($str_category,3);
+            $str_category = "($category)";
+            $params['category'] = $str_category;
         }
       if (isset($_POST['price'])) {
         $str_price = '';
@@ -20,13 +36,13 @@ class ProductController extends Controller {
             $str_price .= " OR products.price < 1000000";
           }
           if ($price == 2) {
-            $str_price .= " OR (products.price >= 1000000 AND products.price < 2000000)";
+            $str_price .= " OR (products.price >= 1000000 AND products.price < 3000000)";
           }
           if ($price == 3) {
-            $str_price .= " OR (products.price >= 2000000 AND products.price < 3000000)";
+            $str_price .= " OR (products.price >= 3000000 AND products.price < 6000000)";
           }
           if ($price == 4) {
-            $str_price .= " OR products.price >= 3000000";
+            $str_price .= " OR products.price >= 6000000";
           }
         }
 
@@ -35,32 +51,8 @@ class ProductController extends Controller {
         $params['price'] = $str_price;
       }
     }
-//        if (isset($_POST['category'])) {
-//            $category = implode(',', $_POST['category']);
-//            $str_category_id = "($category)";
-//            $params['category'] = $str_category_id;
-//            foreach ($_POST['category'] AS $category) {
-//                if ($category == 1) {
-//                    $str_category_id .= " OR products.category_id = 7";
-//                }
-//                if ($category == 2) {
-//                    $str_category_id .= "  OR products.category_id = 6";
-//                }
-//                if ($category == 3) {
-//                    $str_category_id .= " OR products.category_id = 8";
-//                }
-//                if ($category == 4) {
-//                    $str_category_id .= " OR products.category_id = 9";
-//                }
-//            }
-//
-//            $str_category = substr($str_category_id, 3);
-//            $str_category = "($str_category)";
-//            $params['category_id'] = $str_category;
-//        }
-//    }
       $params_pagination = [
-          'total' => 3,
+          'total' => 5,
           'limit' => 1,
           'full_mode' => FALSE,
       ];
@@ -100,6 +92,19 @@ class ProductController extends Controller {
     ]);
     require_once 'views/layouts/main.php';
   }
+    public function search() {
+        // Lấy tham số tìm kiếm từ URL
+        $searchKeyword = isset($_GET['timkiem']) ? $_GET['timkiem'] : '';
+
+        // Tạo thể hiện của model Product
+        $productModel = new Product();
+
+        // Gọi hàm tìm kiếm sản phẩm dựa trên $searchKeyword
+        $searchResults = $productModel->searchProducts($searchKeyword);
+
+        // Trả về kết quả tìm kiếm cho view hiển thị
+        require_once 'views/products/show-all.php';
+    }
 
 
 

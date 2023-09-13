@@ -70,7 +70,7 @@
                     <img class="logo" src="assets/images/logo.png">
                 </a>
                 <div>
-                    <form action="index.php?controller=search&action=search"  method="get">
+                    <form action="index.php?controller=product&action=search"  method="get">
                             <div class="row height d-flex justify-content-center align-items-center">
 
                                     <div class="form-search">

@@ -20,7 +20,7 @@ class Pagination
 //    kê ở trên
   public $params = [
     //tổng số bản ghi trên trang
-    'total' => 0,
+    'total' => 5,
     //giới hạn bản ghi trên 1 trang
     'limit' => 0,
     //controller xử lý phân trang

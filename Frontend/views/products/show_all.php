@@ -8,25 +8,25 @@ require_once 'helpers/Helper.php';
         <div class="main-left col-md-3 col-sm-3 col-xs-12">
             <h3>Lọc</h3>
             <form action="" method="POST">
-              <?php if (!empty($categories)): ?>
-                  <div class="form-group">
-                      <b>Danh mục</b> <br/>
-                    <?php foreach ($categories AS $category):
-                      $category_checked = '';
-                      if (isset($_POST['category'])) {
-                        if (in_array($category['id'], $_POST['category'])) {
-                          $category_checked = 'checked';
-                        }
-                      }
-                      ?>
-                        <input type="checkbox" name="category[]"
-                               value="<?php echo $category['id']; ?>" <?php echo $category_checked; ?> />
-                      <?php echo $category['name']; ?>
-                        <br/>
-                    <?php endforeach; ?>
-
-                  </div>
-              <?php endif; ?>
+<!--              --><?php //if (!empty($categories)): ?>
+<!--                  <div class="form-group">-->
+<!--                      <b>Danh mục</b> <br/>-->
+<!--                    --><?php //foreach ($categories AS $category):
+//                      $category_checked = '';
+//                      if (isset($_POST['category'])) {
+//                        if (in_array($category['id'], $_POST['category'])) {
+//                          $category_checked = 'checked';
+//                        }
+//                      }
+//                      ?>
+<!--                        <input type="checkbox" name="category[]"-->
+<!--                               value="--><?php //echo $category['id']; ?><!--" --><?php //echo $category_checked; ?><!-- />-->
+<!--                      --><?php //echo $category['name']; ?>
+<!--                        <br/>-->
+<!--                    --><?php //endforeach; ?>
+<!---->
+<!--                  </div>-->
+<!--              --><?php //endif; ?>
 
                 <div class="form-group">
                     <b>Khoảng giá</b> <br/>
@@ -53,16 +53,49 @@ require_once 'helpers/Helper.php';
                   }
                   ?>
                     <input type="checkbox" name="price[]" value="1" <?php echo $price1_checked; ?> /> Dưới 1tr <br/>
-                    <input type="checkbox" name="price[]" value="2" <?php echo $price2_checked; ?> /> Từ 1 - 2tr
+                    <input type="checkbox" name="price[]" value="2" <?php echo $price2_checked; ?> /> Từ 1 - 3tr
                     <br/>
-                    <input type="checkbox" name="price[]" value="3" <?php echo $price3_checked; ?> /> Từ 2 - 3tr
+                    <input type="checkbox" name="price[]" value="3" <?php echo $price3_checked; ?> /> Từ 3 - 6tr
                     <br/>
-                    <input type="checkbox" name="price[]" value="4" <?php echo $price4_checked; ?> /> Trên 3tr
+                    <input type="checkbox" name="price[]" value="4" <?php echo $price4_checked; ?> /> Trên 6tr
                     <br/>
 
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="filter" value="Filter" class="btn btn-primary"/>
+                    <b>Danh Mục</b> <br/>
+                    <?php
+                    $category1_checked = '';
+                    $category2_checked = '';
+                    $category3_checked = '';
+                    $category4_checked = '';
+                    if (isset($_POST['category'])) {
+                        foreach ($_POST['category'] as $category) {
+                            if ($category == 6) {
+                                $category1_checked = 'checked';
+                            }
+                            if ($category == 7) {
+                                $category2_checked = 'checked';
+                            }
+                            if ($category == 8) {
+                                $category3_checked = 'checked';
+                            }
+                            if ($category == 9) {
+                                $category4_checked = 'checked';
+                            }
+                        }
+                    }
+                    ?>
+                    <input type="checkbox" name="category[]" value="6" <?php echo $category1_checked; ?> />Tay cầm <br/>
+                    <input type="checkbox" name="category[]" value="7" <?php echo $category2_checked; ?> />Mobile
+                    <br/>
+                    <input type="checkbox" name="category[]" value="8" <?php echo $category3_checked; ?> />Xbox
+                    <br/>
+                    <input type="checkbox" name="category[]" value="9" <?php echo $category4_checked; ?> />PC
+                    <br/>
+
+                </div>
+                <div class="form-group">
+                    <input type="submit"  name="filter" value="Filter" class="btn btn-primary"/>
                     <a href="danh-sach-san-pham.html" class="btn btn-default">Xóa filter</a>
                 </div>
             </form>
