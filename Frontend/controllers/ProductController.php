@@ -57,6 +57,7 @@ class ProductController extends Controller {
           'full_mode' => FALSE,
       ];
 
+
     $pagination_model = new Pagination($params_pagination);
     $pagination = $pagination_model->getPagination();
 

@@ -6,9 +6,18 @@ require_once 'controllers/ProductController.php';
 
 ?>
 <div class="container">
+        <section class="content-header">
+
+            <ol class="breadcrumb">
+                <li><a href="index.php"><i class="fa fa-dashboard"></i> Trang chủ</a></li>->
+                <li class="active">Trang sản phẩm</li>
+            </ol>
+            <hr >
+        </section>
+
     <div class="row">
         <div class="main-left col-md-3 col-sm-3 col-xs-12">
-            <h3>Lọc</h3>
+
             <form action="" method="POST">
 <!--              --><?php //if (!empty($categories)): ?>
 <!--                  <div class="form-group">-->
@@ -31,7 +40,7 @@ require_once 'controllers/ProductController.php';
 <!--              --><?php //endif; ?>
 
                 <div class="form-group">
-                    <b>Khoảng giá</b> <br/>
+                    <b> <h3 style="background-color: #0a90eb;text-align: center;color: white;"> Giá</h3></b> <br/>
                   <?php
                   $price1_checked = '';
                   $price2_checked = '';
@@ -64,7 +73,7 @@ require_once 'controllers/ProductController.php';
 
                 </div>
                 <div class="form-group">
-                    <b>Danh Mục</b> <br/>
+                    <b> <h3 style="background-color: #0a90eb;text-align: center;color: white;">Loại </h3></b> <br/>
                     <?php
                     $category1_checked = '';
                     $category2_checked = '';
@@ -97,8 +106,9 @@ require_once 'controllers/ProductController.php';
 
                 </div>
                 <div class="form-group">
-                    <input type="submit"  name="filter" value="Filter" class="btn btn-primary"/>
-                    <a href="danh-sach-san-pham.html" class="btn btn-default">Xóa filter</a>
+                    <input type="submit"  name="filter" value="lọc" class="btn btn-primary"/>
+                    <br>
+                    <a href="danh-sach-san-pham.html" class="btn btn-default">Xóa lọc</a>
                 </div>
             </form>
         </div>
