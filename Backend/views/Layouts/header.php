@@ -118,6 +118,13 @@ if (isset($_SESSION['user'])) {
             </span>
                 </a>
             </li>
+            <li>
+                <a href="index.php?controller=new&action=index" class="b">
+                    <i class="fa fa-code"></i> <span>Quản lý Tin Tức</span>
+                    <span class="pull-right-container">
+            </span>
+                </a>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->
@@ -171,7 +178,7 @@ if (isset($_SESSION['user'])) {
         <!--        <p class="alert alert-success">Thành công</p>-->
     </section>
 </div
-<<<<<<< HEAD
+
 <!--<style>-->
 <!--    a.b {-->
 <!--        font-size: 23px;-->
@@ -195,7 +202,7 @@ if (isset($_SESSION['user'])) {
 <!--        font-size: 24px;-->
 <!--    }-->
 <!--</style>-->
-=======
+
 <style>
 
 

@@ -3,7 +3,7 @@ require_once 'controllers/Controller.php';
 require_once 'models/Product.php';
 require_once 'models/Category.php';
 require_once 'models/Pagination.php';
-require_once 'models/Search.php';
+
 class ProductController extends Controller {
   public function showAll() {
       $params = [];

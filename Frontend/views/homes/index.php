@@ -47,7 +47,6 @@ require_once 'controllers/HomeController.php';
     </div>
 </div>
 
-<!--    PRODUCT-->
 <div class="product-wrap">
     <div class="product container">
 
@@ -85,9 +84,7 @@ require_once 'controllers/HomeController.php';
 
     </div>
 </div>
-<!--    END PRODUCT-->
 
-<!--NEWS-->
 <div class="news-wrap">
     <div class="news container">
         <h1 class="post-list-title">
@@ -174,11 +171,49 @@ require_once 'controllers/HomeController.php';
     </div>
 
     </div>
+
+<div class="news-wraps">
+        <div class="news container">
+            <h1 class="post-list-title">
+                Tin Tức Công Nghệ
+            </h1>
+            <?php if (!empty($news)): ?>
+                <div class="link-secondary-wrap row">
+                    <?php foreach ($news AS $news):
+                        $slug = Helper::getSlug($news['name']);
+                        $news_link = "tin-tuc/$slug/" . $news['id'] . ".html";
+                        ?>
+                        <div class="service-link col-md-3 col-sm-6 col-xs-12">
+                            <a href="<?php echo $news_link; ?>">
+                                <img class="anh" title="<?php echo $news['name'] ?>"
+                                     src="../backend/assets/uploads/<?php echo $news['avatar'] ?>"
+                                     alt="<?php echo $news['name'] ?>"/>
+                                <span class="shop-title">
+                        <?php echo $news['name'] ?>
+                    </span>
+                            </a>
+                            <span class="shop-summary">
+                            <?php echo $news['summary'] ?>
+                </span>
+
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+
 </div>
+</div>
+
+
 <style>
 .news {
 display: flex;
 flex-wrap: wrap;
+}
+.service-link a img {
+    height: 300px;
+    transition: all 0.3s ease 0s;
+    width: 900px;
 }
 
 </style>

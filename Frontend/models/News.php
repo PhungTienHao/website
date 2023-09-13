@@ -1,6 +1,6 @@
 <?php
 require_once 'models/Model.php';
-require_once 'controllers/NewController.php';
+require_once 'controllers/HomeController.php';
 
 class News extends Model {
     public $id;
@@ -10,7 +10,7 @@ class News extends Model {
     public $content;
     public $created_at;
 
-    public function getAll(){
+    public function getAlll(){
         $sql_select = "SELECT * FROM news";
         $obj_select = $this->connection->prepare($sql_select);
         $obj_select->execute();
