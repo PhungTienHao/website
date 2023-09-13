@@ -6,13 +6,13 @@ require_once 'models/Pagination.php';
 require_once 'models/Search.php';
 class ProductController extends Controller {
   public function showAll() {
-
+      $params = [];
     if (isset($_POST['filter'])) {
-      if (isset($_POST['category'])) {
-        $category = implode(',', $_POST['category']);
-        $str_category_id = "($category)";
-        $params['category'] = $str_category_id;
-      }
+        if (isset($_POST['category'])) {
+            $category = implode(',', $_POST['category']);
+            $str_category_id = "($category)";
+            $params['category'] = $str_category_id;
+        }
       if (isset($_POST['price'])) {
         $str_price = '';
         foreach ($_POST['price'] AS $price) {
@@ -34,33 +34,36 @@ class ProductController extends Controller {
         $str_price = "($str_price)";
         $params['price'] = $str_price;
       }
+    }
 //        if (isset($_POST['category'])) {
-//            $str_category = '';
+//            $category = implode(',', $_POST['category']);
+//            $str_category_id = "($category)";
+//            $params['category'] = $str_category_id;
 //            foreach ($_POST['category'] AS $category) {
 //                if ($category == 1) {
-//                    $str_price .= " OR products.price < 1000000";
+//                    $str_category_id .= " OR products.category_id = 7";
 //                }
 //                if ($category == 2) {
-//                    $str_price .= " OR (products.price >= 1000000 AND products.price < 2000000)";
+//                    $str_category_id .= "  OR products.category_id = 6";
 //                }
 //                if ($category == 3) {
-//                    $str_price .= " OR (products.price >= 2000000 AND products.price < 3000000)";
+//                    $str_category_id .= " OR products.category_id = 8";
 //                }
 //                if ($category == 4) {
-//                    $str_price .= " OR products.price >= 3000000";
+//                    $str_category_id .= " OR products.category_id = 9";
 //                }
 //            }
 //
-//            $str_price = substr($str_price, 3);
-//            $str_price = "($str_price)";
-//            $params['price'] = $str_price;
+//            $str_category = substr($str_category_id, 3);
+//            $str_category = "($str_category)";
+//            $params['category_id'] = $str_category;
 //        }
-    }
-    $params_pagination = [
-      'total' => 3,
-      'limit' => 1,
-      'full_mode' => FALSE,
-    ];
+//    }
+      $params_pagination = [
+          'total' => 3,
+          'limit' => 1,
+          'full_mode' => FALSE,
+      ];
 
     $pagination_model = new Pagination($params_pagination);
     $pagination = $pagination_model->getPagination();
@@ -78,7 +81,7 @@ class ProductController extends Controller {
 
     ]);
     require_once 'views/layouts/main.php';
-  }
+    }
 
   public function detail() {
     if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {

@@ -1,5 +1,6 @@
 <?php
 require_once 'models/Model.php';
+require_once 'controllers/ProductController.php';
 
 class Product extends Model {
 
@@ -7,11 +8,11 @@ class Product extends Model {
     $str_filter = '';
     if (isset($params['category'])) {
       $str_category = $params['category'];
-      $str_filter .= " AND categories.id IN $str_category";
+      $str_filter .= "AND categories.id IN $str_category";
     }
     if (isset($params['price'])) {
       $str_price = $params['price'];
-      $str_filter .= " AND $str_price";
+      $str_filter .= "AND $str_price";
     }
     $sql_select = "SELECT products.*, categories.name 
           AS category_name FROM products
@@ -61,23 +62,6 @@ class Product extends Model {
     $product =  $obj_select->fetch(PDO::FETCH_ASSOC);
     return $product;
   }
-    public function getAll()
-    {
-        $obj_select = $this->connection
-            ->prepare("SELECT products.*, categories.name AS category_name FROM products 
-                        INNER JOIN categories ON categories.id = products.category_id
-                        WHERE TRUE $this->str_search
-                        ORDER BY products.created_at DESC
-                        ");
-
-        $arr_select = [];
-        $obj_select->execute($arr_select);
-        $categories = $obj_select->fetchAll(PDO::FETCH_ASSOC);
-
-        return $categories;
-    }
-
-
 
 }
 
