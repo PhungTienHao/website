@@ -13,6 +13,8 @@ class Helper
     const STATUS_DISABLED_TEXT = 'Disabled';
     const STATUS_ACTIV_TEXT = 'Đã Thanh Toán';
     const STATUS_DISABLE_TEXT = 'Chưa Thanh Toán';
+    const STATUS_ACTI_TEXT = 'Hiển thị ở trang chủ';
+    const STATUS_DISA_TEXT = 'Không hiện ở trang chủ';
 
     /**
      * Get status text
@@ -42,6 +44,18 @@ class Helper
                 break;
         }
         return $status_text;
+    }
+    public static function getnewText($is_home = 0) {
+        $is_home_text = '';
+        switch ($is_home) {
+            case self::STATUS_ACTIVE:
+                $is_home_text = self::STATUS_ACTI_TEXT;
+                break;
+            case self::STATUS_DISABLED:
+                $is_home_text = self::STATUS_DISA_TEXT;
+                break;
+        }
+        return $is_home_text;
     }
 
   public static function getSlug($str) {

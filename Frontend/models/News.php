@@ -8,10 +8,11 @@ class News extends Model {
     public $summary;
     public $avatar;
     public $content;
+    public $is_home;
     public $created_at;
 
     public function getAlll(){
-        $sql_select = "SELECT * FROM news";
+        $sql_select = "SELECT * FROM news WHERE news.is_home = 1";
         $obj_select = $this->connection->prepare($sql_select);
         $obj_select->execute();
 

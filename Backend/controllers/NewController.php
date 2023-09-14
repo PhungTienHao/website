@@ -18,6 +18,7 @@ class NewController extends Controller {
             $name = $_POST['name'];
             $summary = $_POST['summary'];
             $content = $_POST['content'];
+            $is_home = $_POST['is_home'];
 
 
             if (empty($name)) {
@@ -57,6 +58,7 @@ class NewController extends Controller {
                 $news_model->avatar = $filename;
                 $news_model->summary = $summary;
                 $news_model->content = $content;
+                $news_model->is_home = $is_home;
 
                 $is_insert = $news_model->insert();
                 if ($is_insert) {
@@ -105,6 +107,7 @@ class NewController extends Controller {
             $name = $_POST['name'];
             $summary = $_POST['summary'];
             $content = $_POST['content'];
+            $is_home = $_POST['is_home'];
             if (empty($name)) {
                 $this->error = 'Không được để trống tên';
             } else if ($_FILES['avatar']['error'] == 0) {
@@ -140,6 +143,7 @@ class NewController extends Controller {
                 $news_model->avatar = $filename;
                 $news_model->summary = $summary;
                 $news_model->content = $content;
+                $news_model->is_home = $is_home;
 
                 $is_update = $news_model->update($id);
                 if ($is_update) {

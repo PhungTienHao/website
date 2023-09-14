@@ -26,6 +26,10 @@ require_once 'helpers/Helper.php';
         <th>Mô tả chi tiết</th>
         <td><?php echo $news['content']?></td>
     </tr>
+    <tr>
+        <th>Trạng thái</th>
+        <td><?php echo Helper::getnewText($news['is_home']); ?></td>
+    <tr>
 
         <th>Created at</th>
         <td><?php echo date('d-m-Y H:i:s', strtotime($news['created_at'])) ?></td>

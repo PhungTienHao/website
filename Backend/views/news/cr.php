@@ -22,6 +22,27 @@
         <textarea name="content" id="content"
                   class="form-control"></textarea>
     </div>
+    <div class="form-group">
+        <label for="is_home">Hiển thị ra trang chủ ?</label>
+        <select name="is_home" class="form-control" id="is_home">
+            <?php
+            $selected_showhome = '';
+            $selected_not = '';
+            if (isset($_POST['is_home'])) {
+                switch ($_POST['is_home']) {
+                    case 0:
+                        $selected_showhome = 'selected';
+                        break;
+                    case 1:
+                        $selected_not = 'selected';
+                        break;
+                }
+            }
+            ?>
+            <option value="0" <?php echo $selected_showhome; ?>>không hiển thị ở home</option>
+            <option value="1" <?php echo $selected_not ?>>hiển thị ở home</option>
+        </select>
+    </div>
 
     <div class="form-group">
         <input type="submit" name="submit" value="Save" class="btn btn-primary"/>

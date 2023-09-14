@@ -12,6 +12,7 @@ require_once 'helpers/Helper.php';
         <th>Avatar</th>
         <th>summary</th>
         <th>content</th>
+        <th>Hiển thị</th>
         <th>Created_at</th>
         <th></th>
 
@@ -28,7 +29,7 @@ require_once 'helpers/Helper.php';
                 </td>
                 <td><?php echo $news['summary'] ?></td>
                 <td><?php echo $news['content'] ?></td>
-
+                <td><?php echo Helper::getnewText($news['is_home']); ?></td>
 
                 <td><?php echo date('d-m-Y H:i:s', strtotime($news['created_at'])) ?></td>
                 <td>
