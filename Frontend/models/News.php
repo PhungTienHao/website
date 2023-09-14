@@ -20,5 +20,12 @@ class News extends Model {
         return $news;
     }
 
+public function Allnews(){
+    $sql_select = "SELECT * FROM news ";
+    $obj_select = $this->connection->prepare($sql_select);
+    $obj_select->execute();
+    $news = $obj_select->fetchAll(PDO::FETCH_ASSOC);
+    return $news;
 
+}
 }

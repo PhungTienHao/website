@@ -23,4 +23,8 @@ RewriteRule news/(.*)/([0-9]{1,}).html index.php?controller=home&action=detail&s
 
 RewriteRule contact.html index.php?controller=assess&action=create
 
+RewriteRule news.html index.php?controller=new&action=showAll
+
+
+
 RewriteRule tin-tuc/(.*)/([0-9]{1,}).html index.php?controller=new&action=detail&slug=$1&id=$2

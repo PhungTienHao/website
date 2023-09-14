@@ -90,14 +90,7 @@
                         </li>
 
                         <li>
-<!--                            -->
-                            <div class="header-submenu">
-                                <ul>
-                                    <li><a href="index.html">Email</a></li>
-                                    <li><a href="index2.html">Hosting/a></li>
-                                    <li><a href="index3.html">Tên miền</a></li>
-                                </ul>
-                            </div>
+                            <a href="news.html" class="material-button submenu-toggle">Tin Tức</a>
                         </li>
                         <li>
                             <a href="danh-sach-san-pham.html" class="material-button submenu-toggle">Sản phẩm</a>
