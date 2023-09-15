@@ -5,43 +5,55 @@ require_once 'models/Product.php';
 require_once 'controllers/ProductController.php';
 
 ?>
-<div class="container">
-    <section class="content-header">
-        <ol class="breadcrumb">
-            <li><a href="index.php"><i class="fa fa-dashboard"></i> Trang chủ</a></li>->
-            <li class="active">Trang Tin Tức</li>
-        </ol>
-        <hr >
-    </section>
-    <h2>Tin Tức Công Nghệ mới nhất</h2>
-    <?php if (!empty($news)): ?>
-    <div class="link-secondary-wrap ">
-        <?php foreach ($news AS $news):
-        $slug = Helper::getSlug($news['name']);
-        $product_link = "tin-tuc/$slug/" . $news['id'] . ".html";
-        ?>
-    <div class="row" >
-        <div class="main-right col">
-                <img class="secondary-img img-responsive" title="<?php echo $news['name'] ?>"
-                     src="../backend/assets/uploads/<?php echo $news['avatar'] ?>"     width="540px"  height="304px" >
 
-        </div>
-        <div class="service-link col ">
-            <b style="font-size:50px;"><?php echo $news['name'] ?></b>
-                            <a href="<?php echo $product_link; ?>">
-                                <span class="shop-title"></span>
-                        <?php echo $news['summary'] ?>
-        </div>
+<div class="row" >
+    <div class="side-baner banner-left col-md-2" style=" position:fixed ;width:173px">
+        <a href="#"><img  class="img-banner"src="assets/images/dt.png" height="557px"></a>
     </div>
-        <br>
-        <?php endforeach; ?>
+    <div class="container col-md-8">
+        <section class="content-header">
+            <ol class="breadcrumb">
+                <li><a href="index.php"><i class="fa fa-dashboard"></i> Trang chủ</a></li>->
+                <li class="active">Trang Tin Tức</li>
+            </ol>
+            <hr >
+        </section>
+        <h2>Tin Tức Công Nghệ mới nhất</h2>
+        <?php if (!empty($news)): ?>
+        <div class="link-secondary-wrap ">
+            <?php foreach ($news AS $news):
+                $slug = Helper::getSlug($news['name']);
+                $product_link = "tin-tuc/$slug/" . $news['id'] . ".html";
+                ?>
+
+
+                <div class="row" >
+
+                    <div class="main-right col">
+                        <img class="secondary-img img-responsive" title="<?php echo $news['name'] ?>"
+                             src="../backend/assets/uploads/<?php echo $news['avatar'] ?>"     width="540px"  height="304px" >
+
+                    </div>
+                    <div class="service-link col ">
+                        <b style="font-size:50px;"><?php echo $news['name'] ?></b>
+                        <a href="<?php echo $product_link; ?>">
+                            <span class="shop-title"></span>
+                            <?php echo $news['summary'] ?>
+                    </div>
+                </div>
+
+                <br>
+            <?php endforeach; ?>
             <?php endif;
 
             ?>
 
 
+
+        </div>
+
     </div>
-
-</div>
-
+    <div class="side-baner banner-left col-md-2" style="position:fixed ;width:173px">
+        <a href="#"><img  class="img-banner"src="assets/images/dt.png" height="557px"></a>
+    </div>
 
