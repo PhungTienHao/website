@@ -359,7 +359,7 @@ a {
 }
 
 .header-navigation > li {
-    margin-right: 45px;
+    margin-right: 31px;
     display: inline-block;
     position: relative;
 }
@@ -615,6 +615,7 @@ a {
 .info{
     display:grid;
     margin-left: 20px;
+    width: 269px;
 }
 .mini-logo{
     margin-left: 420px;
