@@ -52,6 +52,7 @@ abbr[title] {
 
 b, strong {
     font-weight: bolder
+    font-size: 24px;
 }
 
 dfn {
@@ -4218,7 +4219,7 @@ ul, li {
 
 .service-link {
     margin-bottom: 25px;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .two-item-title {
