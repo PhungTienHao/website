@@ -76,7 +76,7 @@
 
 
 
-            <!--Timeline items end -->
+
             <div class="detail-content-wrap">
                 <div class="detail-summary">
                     <strong><?php echo $product['summary']; ?></strong>
@@ -122,7 +122,8 @@
                                 <img src="assets/images/original.jpg"class="detail-relative-img"/>
                                 </span>
                         <span class="detail-relative-content">
-                                    Nintendo Switch
+                            Nintendo Switch
+                        </span>
                     </a>
                 </li>
 

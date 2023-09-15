@@ -33,7 +33,7 @@ require_once 'controllers/ProductController.php';
                     <div class="service-link col-md-6 col-sm-6 col-xs-12">
 
                         <a href="<?php echo $product_link; ?>">
-                            <span class="shop-title"></span>
+                            <span class="shop-title-1"></span>
                             <b ><?php echo $news['summary'] ?></b></a>
                     </div>
                 </div>

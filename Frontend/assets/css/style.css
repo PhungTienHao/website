@@ -3546,7 +3546,7 @@ ul, li {
 }
 
 .header-menu .header-navigation {
-    height: 70px;
+    height: 50px;
 }
 
 .view-account .side-bar .user-info .meta li {
@@ -4281,6 +4281,7 @@ ul, li {
 .info-contact {
     margin-right: 16px;
     color: #fff;
+    margin-top: 12px;
 }
 
 .info-contact i {
@@ -4855,6 +4856,14 @@ pre {
     margin-bottom: 3px;
     height: 23px;
     overflow: hidden;
+    text-align: center;
+}
+.shop-title-1 {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 3px;
+    height: 23px;
+    overflow: hidden;
 }
 
 td .content-product-a {
@@ -4869,6 +4878,8 @@ td .product-avatar.img-responsive {
 
 .shop-price {
     color: #21431e;
+    text-align: center;
+    display: block;
 }
 
 .product-wrap {
@@ -4894,6 +4905,7 @@ td .product-avatar.img-responsive {
     padding: 6px 15px;
     margin: 8px auto;
     cursor: pointer;
+    text-align: center;
 }
 
 .shop-content {
