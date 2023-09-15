@@ -6,8 +6,6 @@ require_once 'controllers/ProductController.php';
 
 ?>
 
-
-
     <div class="container">
         <section class="content-header">
             <ol class="breadcrumb">
@@ -36,7 +34,7 @@ require_once 'controllers/ProductController.php';
 
                         <a href="<?php echo $product_link; ?>">
                             <span class="shop-title"></span>
-                            <b ><?php echo $news['summary'] ?></b>
+                            <b ><?php echo $news['summary'] ?></b></a>
                     </div>
                 </div>
 
