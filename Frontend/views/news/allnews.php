@@ -6,11 +6,9 @@ require_once 'controllers/ProductController.php';
 
 ?>
 
-<div class="row" >
-    <div class="side-baner banner-left col-md-2" style=" position:fixed ;width:173px">
-        <a href="#"><img  class="img-banner"src="assets/images/dt.png" height="557px"></a>
-    </div>
-    <div class="container col-md-8">
+
+
+    <div class="container">
         <section class="content-header">
             <ol class="breadcrumb">
                 <li><a href="index.php"><i class="fa fa-dashboard"></i> Trang chủ</a></li>->
@@ -31,14 +29,14 @@ require_once 'controllers/ProductController.php';
 
                     <div class="main-right col">
                         <img class="secondary-img img-responsive" title="<?php echo $news['name'] ?>"
-                             src="../backend/assets/uploads/<?php echo $news['avatar'] ?>"     width="540px"  height="304px" >
+                             src="../backend/assets/uploads/<?php echo $news['avatar'] ?>"     width="300px"  height="200px" >
 
                     </div>
                     <div class="service-link col ">
-                        <b style="font-size:50px;"><?php echo $news['name'] ?></b>
+
                         <a href="<?php echo $product_link; ?>">
                             <span class="shop-title"></span>
-                            <?php echo $news['summary'] ?>
+                            <b ><?php echo $news['summary'] ?></b>
                     </div>
                 </div>
 
@@ -48,12 +46,10 @@ require_once 'controllers/ProductController.php';
 
             ?>
 
-
-
         </div>
+    </div>
 
-    </div>
-    <div class="side-baner banner-left col-md-2" style="position:fixed ;width:173px">
-        <a href="#"><img  class="img-banner"src="assets/images/dt.png" height="557px"></a>
-    </div>
+
+
+
 
