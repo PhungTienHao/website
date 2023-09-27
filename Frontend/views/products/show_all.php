@@ -39,77 +39,77 @@ require_once 'controllers/ProductController.php';
 <!--                  </div>-->
 <!--              --><?php //endif; ?>
 
-                <div class="form-group">
-                    <b> <h3 style="background-color: #0a90eb;text-align: center;color: white;"> Giá</h3></b> <br/>
-                  <?php
-                  $price1_checked = '';
-                  $price2_checked = '';
-                  $price3_checked = '';
-                  $price4_checked = '';
-                  if (isset($_POST['price'])) {
-                    foreach ($_POST['price'] as $price) {
-                      if ($price == 1) {
-                        $price1_checked = 'checked';
-                      }
-                      if ($price == 2) {
-                        $price2_checked = 'checked';
-                      }
-                      if ($price == 3) {
-                        $price3_checked = 'checked';
-                      }
-                      if ($price == 4) {
-                        $price4_checked = 'checked';
-                      }
-                    }
-                  }
-                  ?>
-                    <input type="checkbox" name="price[]" value="1" <?php echo $price1_checked; ?> /> Dưới 1tr <br/>
-                    <input type="checkbox" name="price[]" value="2" <?php echo $price2_checked; ?> /> Từ 1 - 3tr
-                    <br/>
-                    <input type="checkbox" name="price[]" value="3" <?php echo $price3_checked; ?> /> Từ 3 - 6tr
-                    <br/>
-                    <input type="checkbox" name="price[]" value="4" <?php echo $price4_checked; ?> /> Trên 6tr
-                    <br/>
-
-                </div>
-                <div class="form-group">
-                    <b> <h3 style="background-color: #0a90eb;text-align: center;color: white;">Loại </h3></b> <br/>
-                    <?php
-                    $category1_checked = '';
-                    $category2_checked = '';
-                    $category3_checked = '';
-                    $category4_checked = '';
-                    if (isset($_POST['category'])) {
-                        foreach ($_POST['category'] as $category) {
-                            if ($category == 1) {
-                                $category1_checked = 'checked';
-                            }
-                            if ($category == 2) {
-                                $category2_checked = 'checked';
-                            }
-                            if ($category == 3) {
-                                $category3_checked = 'checked';
-                            }
-                            if ($category == 4) {
-                                $category4_checked = 'checked';
-                            }
-                        }
-                    }
-                    ?>
-                    <input type="checkbox" name="category[]" value="1" <?php echo $category1_checked; ?> />Tay cầm <br/>
-                    <input type="checkbox" name="category[]" value="2" <?php echo $category2_checked; ?> />Mobile
-                    <br/>
-                    <input type="checkbox" name="category[]" value="3" <?php echo $category3_checked; ?> />Xbox
-                    <br/>
-                    <input type="checkbox" name="category[]" value="4" <?php echo $category4_checked; ?> />PC
-                    <br/>
-
-                </div>
-                <div class="form-group">
-                    <input type="submit"  name="filter" value="lọc" class="btn btn-primary"/>
-                    <br>
-                    <a href="danh-sach-san-pham.html" class="btn btn-default">Xóa lọc</a>
-                </div>
+<!--                <div class="form-group">-->
+<!--                    <b> <h3 style="background-color: #0a90eb;text-align: center;color: white;"> Giá</h3></b> <br/>-->
+<!--                  --><?php
+//                  $price1_checked = '';
+//                  $price2_checked = '';
+//                  $price3_checked = '';
+//                  $price4_checked = '';
+//                  if (isset($_POST['price'])) {
+//                    foreach ($_POST['price'] as $price) {
+//                      if ($price == 1) {
+//                        $price1_checked = 'checked';
+//                      }
+//                      if ($price == 2) {
+//                        $price2_checked = 'checked';
+//                      }
+//                      if ($price == 3) {
+//                        $price3_checked = 'checked';
+//                      }
+//                      if ($price == 4) {
+//                        $price4_checked = 'checked';
+//                      }
+//                    }
+//                  }
+//                  ?>
+<!--                    <input type="checkbox" name="price[]" value="1" --><?php //echo $price1_checked; ?><!-- /> Dưới 1tr <br/>-->
+<!--                    <input type="checkbox" name="price[]" value="2" --><?php //echo $price2_checked; ?><!-- /> Từ 1 - 3tr-->
+<!--                    <br/>-->
+<!--                    <input type="checkbox" name="price[]" value="3" --><?php //echo $price3_checked; ?><!-- /> Từ 3 - 6tr-->
+<!--                    <br/>-->
+<!--                    <input type="checkbox" name="price[]" value="4" --><?php //echo $price4_checked; ?><!-- /> Trên 6tr-->
+<!--                    <br/>-->
+<!---->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <b> <h3 style="background-color: #0a90eb;text-align: center;color: white;">Loại </h3></b> <br/>-->
+<!--                    --><?php
+//                    $category1_checked = '';
+//                    $category2_checked = '';
+//                    $category3_checked = '';
+//                    $category4_checked = '';
+//                    if (isset($_POST['category'])) {
+//                        foreach ($_POST['category'] as $category) {
+//                            if ($category == 1) {
+//                                $category1_checked = 'checked';
+//                            }
+//                            if ($category == 2) {
+//                                $category2_checked = 'checked';
+//                            }
+//                            if ($category == 3) {
+//                                $category3_checked = 'checked';
+//                            }
+//                            if ($category == 4) {
+//                                $category4_checked = 'checked';
+//                            }
+//                        }
+//                    }
+//                    ?>
+<!--                    <input type="checkbox" name="category[]" value="1" --><?php //echo $category1_checked; ?><!-- />Tay cầm <br/>-->
+<!--                    <input type="checkbox" name="category[]" value="2" --><?php //echo $category2_checked; ?><!-- />Mobile-->
+<!--                    <br/>-->
+<!--                    <input type="checkbox" name="category[]" value="3" --><?php //echo $category3_checked; ?><!-- />Xbox-->
+<!--                    <br/>-->
+<!--                    <input type="checkbox" name="category[]" value="4" --><?php //echo $category4_checked; ?><!-- />PC-->
+<!--                    <br/>-->
+<!---->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <input type="submit"  name="filter" value="lọc" class="btn btn-primary"/>-->
+<!--                    <br>-->
+<!--                    <a href="danh-sach-san-pham.html" class="btn btn-default">Xóa lọc</a>-->
+<!--                </div>-->
             </form>
         </div>
         <div class="main-right col-md-9 col-sm-9 col-xs-12">

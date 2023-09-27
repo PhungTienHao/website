@@ -5213,15 +5213,18 @@ span.team-title {
         padding: 10px 0;
         width: 100%;
         text-align: center;
+
     }
 
     .icon-service-wrap li {
         width: 25%;
         margin: 0 10px;
+
     }
 
     .icon-service-img {
         max-height: 35px;
+
     }
 
     .info-image img {

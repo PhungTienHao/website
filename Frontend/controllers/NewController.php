@@ -22,12 +22,11 @@ class NewController extends Controller {
             header("Location: $url_redirect");
             exit();
         }
-
         $id = $_GET['id'];
         $news_model = new News();
         $news = $news_model->getById($id);
         $this->content = $this->render('views/news/detail.php', [
-            'news' => $news
+            'news' => $news,
         ]);
         require_once 'views/layouts/main.php';
     }

@@ -28,4 +28,11 @@ public function Allnews(){
     return $news;
 
 }
+public function getById($id){
+    $sql_select = "SELECT * FROM news where news.id = $id";
+    $obj_select = $this->connection->prepare($sql_select);
+    $obj_select->execute();
+    $news = $obj_select->fetchAll(PDO::FETCH_ASSOC);
+    return $news;
+}
 }
