@@ -7,28 +7,13 @@ require_once 'models/Pagination.php';
 class ProductController extends Controller {
   public function showAll() {
       $params = [];
-    if (isset($_POST['filter'])) {
-        if (isset($_POST['category'])) {
-            $str_category = '';
-            foreach ($_POST['category'] AS $category) {
-                if ($category == 1) {
-                    $str_category .= " AND products.category_id = 6 ";
-                }
-                if ($category == 2) {
-                    $str_category .= " AND products.category_id = 7";
-                }
-                if ($category == 3) {
-                    $str_category .= " AND products.category_id = 8";
-                }
-                if ($category == 4) {
-                    $str_category .= " AND products.category_id = 9";
-                }
-            }
-
-            $str_category = substr($str_category,3);
-            $str_category = "($str_category)";
-            $params['category'] = $str_category;
-        }
+      if (isset($_POST['filter'])) {
+          if (isset($_POST['category'])) {
+              $category = implode(',', $_POST['category']);
+              //chuyển thành chuỗi sau để sử dụng câu lệnh in_array
+              $str_category_id = "($category)";
+              $params['category'] = $str_category_id;
+          }
       if (isset($_POST['price'])) {
         $str_price = '';
         foreach ($_POST['price'] AS $price) {
@@ -56,22 +41,16 @@ class ProductController extends Controller {
           'limit' => 1,
           'full_mode' => FALSE,
       ];
-
-
     $pagination_model = new Pagination($params_pagination);
     $pagination = $pagination_model->getPagination();
-
     $product_model = new Product();
     $products = $product_model->getProductInHomePage();
-
     $category_model = new Category();
     $categories = $category_model->getAll();
-
     $this->content = $this->render('views/products/show_all.php', [
       'products' => $products,
       'categories' => $categories,
       'paginations' => $pagination,
-
     ]);
     require_once 'views/layouts/main.php';
     }
@@ -93,6 +72,7 @@ class ProductController extends Controller {
     ]);
     require_once 'views/layouts/main.php';
   }
+
     public function search() {
         // Lấy tham số tìm kiếm từ URL
         $searchKeyword = isset($_GET['timkiem']) ? $_GET['timkiem'] : '';
@@ -104,9 +84,8 @@ class ProductController extends Controller {
         $searchResults = $productModel->searchProducts($searchKeyword);
 
         // Trả về kết quả tìm kiếm cho view hiển thị
-        require_once 'views/products/show-all.php';
+        require_once 'views/layouts/search.php';
     }
-
 
 
 }

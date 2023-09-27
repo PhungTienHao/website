@@ -64,25 +64,15 @@
                 </a>
                 <div>
                     <div class="h">
-                    <form action="index.php?controller=product&action=search"  method="get">
-                            <div class="row height d-flex justify-content-center align-items-center">
-
-                                    <div class="form-search">
-
-                                        <i class="fa fa-search"></i>
-
-                                        <input type="text" name="search" class="form-control form-search-input" placeholder="Search anything..." value="<?php echo (isset($_GET['search'])) ? $_GET['search']:'' ;  ?>">
-
-                                        <span class="left-pan"><i class="fa fa-microphone"></i></span>
-
-                                    </div>
-
-                            </div>
+                    <form action="index.php?controller=product&action=search"  method="get" id="form-search" class="form-search">
+                                <div class="form-search">
+                                <input type="hidden" name="controller" value="product">
+                                <input type="hidden" name="action" value="search">
+                                        <input type="text" name="search" class="form-control form-search-input" placeholder="Search anything..." >
+                                        <input type="submit"  class="timkiem" name="search"  value="search">
+                                </div>
                     </form>
                     </div>
-
-
-
                     <ul class="header-navigation" data-show-menu-on-mobile>
 
                         <li>
