@@ -14,7 +14,7 @@
                       <?php echo $product['title']; ?>
                     </h3>
                     <div class="product-price">
-                      <?php echo number_format($product['price'], 0, '.', ','); ?>₫
+                      <?php echo number_format($product['price'], 0, '.', '.'); ?>₫
 
                     </div>
 

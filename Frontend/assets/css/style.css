@@ -290,12 +290,11 @@ a {
     width:100%;
 }
 
-.form-search .fa-search{
+ .fa-search{
 
     position: absolute;
-    top:20px;
-    left: 20px;
-    color: #9ca3af;
+
+    color: #000;
 
 }
 
@@ -309,9 +308,6 @@ a {
 
 }
 
-.left-pan{
-    padding-left: 7px;
-}
 
 .left-pan i{
 
