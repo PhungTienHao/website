@@ -21,7 +21,7 @@ class News extends Model {
     }
 
 public function Allnews(){
-    $sql_select = "SELECT * FROM news ";
+    $sql_select = "SELECT * FROM news ORDER BY news.created_at DESC ";
     $obj_select = $this->connection->prepare($sql_select);
     $obj_select->execute();
     $news = $obj_select->fetchAll(PDO::FETCH_ASSOC);
