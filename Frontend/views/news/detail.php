@@ -14,7 +14,7 @@ require_once 'controllers/ProductController.php';
         </ol>
         <hr >
     </section>
-    <h2>Tin Tức Công Nghệ mới nhất</h2>
+    <h3>Tin Tức Công Nghệ mới nhất</h3>
     <b>------------</b>
     <?php if (!empty($news)): ?>
         <?php foreach ($news AS $news):
@@ -44,9 +44,9 @@ require_once 'controllers/ProductController.php';
                             <section id="block-12" class="widget widget_block widget_text">
                                 <p class="has-text-align-center"><strong><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-black-color">TỔNG HỢP HÌNH ẢNH ĐẸP</mark></strong></p>
                             </section><section id="block-18" class="widget widget_block widget_media_image">
-                                <figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="100%" height="300" src="http://news.gearshop.vn/wp-content/uploads/2022/10/PC-IronMan-MK-III-Mod-By-Modding-Cafe-9-720x399.jpg" alt="" class="wp-image-2042"></figure>
+                                <figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="90%" height="250" src="http://news.gearshop.vn/wp-content/uploads/2022/10/PC-IronMan-MK-III-Mod-By-Modding-Cafe-9-720x399.jpg" alt="" class="wp-image-2042"></figure>
                             </section><section id="block-22" class="widget widget_block widget_media_image">
-                                <figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="100%" height="300" src="http://news.gearshop.vn/wp-content/uploads/2023/03/PC75B-Image-1-720x399.jpg" alt="" class="wp-image-2346"></figure>
+                                <figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="90%" height="250" src="http://news.gearshop.vn/wp-content/uploads/2023/03/PC75B-Image-1-720x399.jpg" alt="" class="wp-image-2346"></figure>
                             </section><section id="block-28" class="widget widget_block widget_media_image">
                                ></aside><!-- #secondary -->
                     </div>
