@@ -4066,6 +4066,11 @@ ul, li {
     }
 }
 
+.content-new{
+    padding:10px;
+
+}
+
 @media (min-width: 768px) {
     .view-account .side-bar .user-info {
         padding: 0;
