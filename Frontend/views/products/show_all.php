@@ -8,9 +8,9 @@ require_once 'controllers/ProductController.php';
 <div class="container">
     <div class="row">
         <div class="main-left col-md-3 col-sm-3 col-xs-12">
-            <h3>Lọc</h3>
+
             <form action="" method="POST">
-<<<<<<< HEAD
+
 <!--              --><?php //if (!empty($categories)): ?>
 <!--                  <div class="form-group">-->
 <!--                      <b>Danh mục</b> <br/>-->
@@ -102,7 +102,7 @@ require_once 'controllers/ProductController.php';
 <!--                    <br>-->
 <!--                    <a href="danh-sach-san-pham.html" class="btn btn-default">Xóa lọc</a>-->
 <!--                </div>-->
-=======
+
                 <?php if (!empty($categories)): ?>
                     <div class="form-group">
                         <b>Danh mục</b> <br/>
@@ -122,44 +122,43 @@ require_once 'controllers/ProductController.php';
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
-                <div class="form-group">
-                    <h3 style="background-color: #0a90eb;text-align: center;color: white;">Giá</h3>
-                     <br/>
-                    <?php
-                    $price1_checked = '';
-                    $price2_checked = '';
-                    $price3_checked = '';
-                    $price4_checked = '';
-                    if (isset($_POST['price'])) {
-                        foreach ($_POST['price'] as $price) {
-                            if ($price == 1) {
-                                $price1_checked = 'checked';
-                            }
-                            if ($price == 2) {
-                                $price2_checked = 'checked';
-                            }
-                            if ($price == 3) {
-                                $price3_checked = 'checked';
-                            }
-                            if ($price == 4) {
-                                $price4_checked = 'checked';
-                            }
-                        }
-                    }
-                    ?>
-                    <input type="checkbox" name="price[]" value="1" <?php echo $price1_checked; ?> /> Dưới 1tr <br/>
-                    <input type="checkbox" name="price[]" value="2" <?php echo $price2_checked; ?> /> Từ 1 - 2tr
-                    <br/>
-                    <input type="checkbox" name="price[]" value="3" <?php echo $price3_checked; ?> /> Từ 2 - 3tr
-                    <br/>
-                    <input type="checkbox" name="price[]" value="4" <?php echo $price4_checked; ?> /> Trên 3tr
-                    <br/>
-                </div>
-                <div class="form-group">
-                    <input type="submit" name="filter" value="Filter" class="btn btn-primary"/>
-                    <a href="danh-sach-san-pham.html" class="btn btn-default">Xóa filter</a>
-                </div>
->>>>>>> 70b07393f2c604690b42c000647d80315ae7326a
+<!--                <div class="form-group">-->
+<!--                    <h3 style="background-color: #0a90eb;text-align: center;color: white;">Giá</h3>-->
+<!--                     <br/>-->
+<!--                    --><?php
+//                    $price1_checked = '';
+//                    $price2_checked = '';
+//                    $price3_checked = '';
+//                    $price4_checked = '';
+//                    if (isset($_POST['price'])) {
+//                        foreach ($_POST['price'] as $price) {
+//                            if ($price == 1) {
+//                                $price1_checked = 'checked';
+//                            }
+//                            if ($price == 2) {
+//                                $price2_checked = 'checked';
+//                            }
+//                            if ($price == 3) {
+//                                $price3_checked = 'checked';
+//                            }
+//                            if ($price == 4) {
+//                                $price4_checked = 'checked';
+//                            }
+//                        }
+//                    }
+//                    ?>
+<!--                    <input type="checkbox" name="price[]" value="1" --><?php //echo $price1_checked; ?><!-- /> Dưới 1tr <br/>-->
+<!--                    <input type="checkbox" name="price[]" value="2" --><?php //echo $price2_checked; ?><!-- /> Từ 1 - 2tr-->
+<!--                    <br/>-->
+<!--                    <input type="checkbox" name="price[]" value="3" --><?php //echo $price3_checked; ?><!-- /> Từ 2 - 3tr-->
+<!--                    <br/>-->
+<!--                    <input type="checkbox" name="price[]" value="4" --><?php //echo $price4_checked; ?><!-- /> Trên 3tr-->
+<!--                    <br/>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <input type="submit" name="filter" value="Filter" class="btn btn-primary"/>-->
+<!--                    <a href="danh-sach-san-pham.html" class="btn btn-default">Xóa filter</a>-->
+<!--                </div>-->
             </form>
         </div>
         <div class="main-right col-md-9 col-sm-9 col-xs-12">

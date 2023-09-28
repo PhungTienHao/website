@@ -21,7 +21,7 @@ require_once 'helpers/Helper.php';
     </a>
 <table class="table table-bordered">
     <tr>
-        <th>ID</th>
+<!--        <th>ID</th>-->
         <th>Category name</th>
         <th>Title</th>
         <th>Avatar</th>
@@ -36,7 +36,7 @@ require_once 'helpers/Helper.php';
     <?php if (!empty($products)): ?>
         <?php foreach ($products as $product): ?>
             <tr>
-                <td><?php echo $product['id'] ?></td>
+<!--                <td>--><?php //echo $product['id'] ?><!--</td>-->
                 <td><?php echo $product['category_name'] ?></td>
                 <td><?php echo $product['title'] ?></td>
                 <td>
@@ -70,9 +70,9 @@ require_once 'helpers/Helper.php';
                 </td>
             </tr>
         <?php endforeach; ?>
-        <tr>
-            <td colspan="7"><?php echo $pages; ?></td>
-        </tr>
+<!--        <tr>-->
+<!--            <td colspan="7">--><?php //echo $pages; ?><!--</td>-->
+<!--        </tr>-->
     <?php else: ?>
         <tr>
             <td colspan="9">No data found</td>

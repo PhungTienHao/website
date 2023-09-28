@@ -69,7 +69,7 @@
                                 <input type="hidden" name="controller" value="product">
                                 <input type="hidden" name="action" value="search">
                                         <input type="text" name="search" class="form-control form-search-input" placeholder="Search anything..." >
-                                        <input type="submit"  class="timkiem" name="search"  value="search">
+
                                 </div>
                     </form>
                     </div>
