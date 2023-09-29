@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 11, 2023 lúc 09:27 AM
+-- Thời gian đã tạo: Th9 29, 2023 lúc 08:22 AM
 -- Phiên bản máy phục vụ: 10.4.27-MariaDB
 -- Phiên bản PHP: 8.2.0
 
@@ -76,6 +76,34 @@ INSERT INTO `categories` (`id`, `name`, `type`, `avatar`, `description`, `status
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(100) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `summary` text NOT NULL,
+  `avatar` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `is_home` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `news`
+--
+
+INSERT INTO `news` (`id`, `name`, `summary`, `avatar`, `content`, `created_at`, `is_home`) VALUES
+(2, 'Microsoft Paint', 'Microsoft Paint sắp sở hữu tính năng được dân Photoshop xài nhiều nhất: tách nền', '1694659689-news-news1.jpg', 'Tính năng xóa nền sắp được cập nhật vào Microsoft Paint, và nó hoàn toàn miễn phí luôn nhé.\r\n\r\nMicrosoft đang lên kế hoạch để cập nhật cho ứng dụng Paint tính năng xóa nền trong mấy tấm hình chỉ với 1 cú click chuột. Phiên bản preview hiện đã có mặt trong bản Windows Insider mới nhất (Canary và Dev Channels v.11.2306.30.0). Thông tin này được Microsoft thông báo trong bài blog của họ.\r\nMicrosoft đã thêm tùy chọn Remove Background vào phần bên trái của thanh ribbon phía trên. Nó sẽ tự động xóa phần nền ra khỏi bức hình. Hoặc bạn cũng có thể sử dụng công cụ chọn (select tool) để xóa 1 khu vực trong phần nền trong khu vực được chọn.\r\nViệc Microsoft bổ sung tính năng cho Paint là một điều rất đáng hoan nghênh, mà đây lại còn là tính năng cực kỳ thông dụng và hữu ích nữa. Tất nhiên, lượng người dùng Paint khó thể nào mà nhiều bằng Photoshop được, nhưng việc bổ sung một vài tính năng cơ bản như này cũng đủ khiến người dùng Windows vui vẻ cả tháng rồi.\r\n\r\nGần như ai ai cũng đều có máy chụp hình, nhưng không phải ai cũng cần xài Photoshop. Việc tách nền là một trong những việc lẻ tẻ mà rất nhiều người thường hay làm, mà nếu mua Photoshop về chỉ để tách nền cơ bản thì nó lại quá phung phí. Thế nên nếu tính năng của Paint xài ổn thì nó sẽ giúp chúng ta tiết kiệm rất nhiều thời gian và tiền bạc.', '2023-09-14 02:48:09', 1),
+(3, 'Windows File Explorer', 'Windows File Explorer dính lỗi khiến hiệu năng mở thư mục… tăng vọt', '1694659774-news-news2.jpg', 'Thành viên VivyVCCS có chia sẻ trên X (Twitter) chi tiết về lỗi (bug) mà người này mới phát hiện trong Windows File Explorer. Điều hài hước ở đây là lỗi này có thể cải thiện đáng kể hiệu năng mở các thư mục trong File Explorer. Muốn kích hoạt lỗi này thì người dùng cần phải can thiệp bằng cách thủ công, nhưng được cái là nó rất dễ để kích hoạt (nếu không muốn nói là dễ nhất trong số tất cả các lỗi).\r\nĐể kích hoạt, tất cả những gì bạn cần làm là mở File Explorer, bấm nút F11 để mở File Explorer dưới dạng toàn màn hình (full-screen), sau đó bấm F11 một lần nữa để thoát khỏi chế độ full-screen là xong. Một khi lỗi này được kích hoạt thì bạn sẽ thấy việc di chuyển giữa các thư mục nhanh hơn đáng kể, ngay cả khi 2 thư mục nằm trên 2 ổ cứng khác nhau.\r\n\r\nLỗi này liên quan đến phần mềm, cho nên bạn xài ổ cứng loại nào cũng sẽ thấy hiệu năng được cải thiện, từ SSD xịn sò nhất cho đến HDD cùi bắp nhất. Vấn đề duy nhất là thanh navbar sẽ bị “hỏng” khi kích hoạt lỗi này, nhưng tính ra việc đánh đổi này vẫn hời.\r\nFile Explorer từng là một ứng dụng phản hồi rất nhanh, nhất là trên những hệ điều hành cũ; nhưng vì một lý do nào đó mà nó càng ngày càng trở nên “cồng kềnh” và chậm chạp trong các phiên bản Windows 10 và 11. Thậm chí, trên nhiều diễn đàn cũng đã có không ít người dùng phàn nàn về tình trạng lag khi xài File Explorer trên Windows 10 và 11.', '2023-09-14 02:49:34', 1),
+(4, 'WordPad ', 'Sau gần 30 năm phục vụ người dùng, WordPad cuối cùng cũng bị Microsoft đưa lên thớt', '1694659824-news-news3.jpg', 'Vừa mới trảm Cortana xong, giờ Microsoft lại tiếp tục mài dao để chặt WordPad.\r\n\r\nHẳn các bạn vẫn còn nhớ đến WordPad – một ứng dụng nằm giữa Notepad và Microsoft Word, tức là nó không gọn nhẹ như Notepad mà cũng không đầy đủ chức năng như Microsoft Word. Trong bài viết “Deprecated features for Windows client” được đăng trên trang web chính cửa của Microsoft, họ cho biết WordPad không còn được cập nhật nữa và sẽ bị xóa khỏi Windows trong 1 bản cập nhật trong tương lai.\r\nĐồng thời, họ cũng khuyên người dùng chuyển qua xài Microsoft Word để tạo văn bản với nhiều công cụ hữu ích hơn, hoặc là xài Windows Notepad cho gọn nhẹ cũng được.', '2023-09-14 02:50:24', 1),
+(5, 'Nissin Cup Noodles', 'Xuất hiện mì ly gaming Nissin Cup Noodles chứa cafein để “buff” sức mạnh cho game thủ', '1694659865-news-news4.jpg', 'Ngoài nước tăng lực ra, giờ game thủ còn có thêm sự lựa chọn khác là mì ly gaming Nissin Cup Noodles.\r\n\r\nHãng Nissin Cup Noodles quyết định tấn công vào mảng gaming với sản phẩm mì ly chứa cafein. Theo thông cáo báo chí viết, lượng game thủ ở Nhật Bản đang tăng qua từng năm, nhất là những bạn trẻ, và con số này giờ đã vượt ngưỡng 50 triệu người rồi. Để đáp ứng nhu cầu này, lần đầu tiên trong lịch sử của Nissin Foods, họ sẽ tung ra 1 sản phẩm mới “thân thiện với game thủ”.', '2023-09-14 02:51:05', 1),
+(6, 'XM2we vs Pulsar X2 Wireless ', 'Endgame Gear XM2we vs Pulsar X2 Wireless – Đâu mới là mẫu chuột “SuperLight Killer” chuẩn nhất ?', '1695905416-news-news5.jpg', 'Endgame Gear XM2we vs Pulsar X2 Wireless được xem là 2 “siêu phẩm” – mệnh danh là “SuperLight Killer” khi so sánh với một sản phẩm nổi tiếng từ nhà Logitech. Nhưng không phải tự nhiên mà 2 mẫu chuột lại được đặt cho một biệt danh “mỹ miều” như nhiều anh em cả trong nước và nước ngoài bàn luận thì cùng xem qua tại Gearshop để hiểu về 2 em này nhé.\r\nĐược xem là mẫu chuột hủy diệt SuperLight – Mẫu chuột không dây đến từ nhà Logitech với form cầm đối xứng, phù hợp cho đa dạng kiểu cầm, nhưng đặc biệt và phù hợp nhất vẫn là form cầm Claw Grip hoặc Finger Grip.\r\nĐược tinh giản hết mức tối đa, để giúp chuột thực hiện đúng mục đích chính của minh. Số lượng nút bấm cũng tương đương trên cả 2 mẫu sản phẩm Pulsar vs Endgame Gear, mặt trên được làm tinh gọn và tỉ mỉ hơn, bao gồm các nút bấm cơ bản nhất: chỉ có chuột trái phải, con lăn, bên cạnh có 2 nút back và forward\r\nThiết kế nút bấm của pulsar có phần lõm vào ở 2 đầu ngón tay, trong khi đó Endgame thì tròn đều theo thiết kế chung của chuột.\r\nKhông phải tự nhiên cùng chung thiết kế mà Pulsar X2 lại có trọng lượng nhẹ hơn ~10gr so với Endgame. Lý do chính nằm ở mặt dưới của Pulsar có sự khác biệt lớn khi Pulsar đã khoét bớt 1 số lỗ để làm giảm trọng lượng chuột hơn và lộ ra bảng mạch nhìn rất hiện đại và theo xu hướng “khoe nội thất bên trong các thiết bị công nghệ” hiện nay, các bạn đừng lo lắng sợ vô nước vì nhà sản xuất công bố chuột có khả năng kháng nước nhẹ, cũng như cũng nằm ở mặt sau của chuột', '2023-09-28 12:50:16', 0),
+(7, 'sony', 'Lộ tin toàn bộ hệ thống của Sony đã bị hack bởi một nhóm ransomware “mới nhú”', '1695905561-news-news7.jpg', 'Nhóm Ransomed.vc tuyên bố là họ đã truy cập được khoảng 6000 tập tin của Sony.\r\n\r\nTrên dark web có một nhóm ransomware mới xuất hiện tên là Ransomed.vc, và họ tuyên bố là đã xâm nhập được toàn bộ hệ thống của Sony. Ransomed.vc chỉ mới hoạt động hồi tháng 9/2023 thôi, và có thông tin cho rằng nhóm này có mối liên kết với các diễn đàn và nhóm dark web trước đây. Ransomed.vc nói rằng họ sẽ không tống tiền Sony, mà họ sẽ bán những dữ liệu này, do Sony không muốn trả tiền chuộc.\r\nTrang Cyber Security Connect cho biết đợt hack lần này đã để lộ những tấm hình screenshot chụp trang đăng nhập nội bộ của Sony, slide trình chiếu PowerPoint nội bộ với các chi tiết về hệ thống test bench, vài tập tin Java, và một cây tài liệu chứa 6000 tập tin bị hack. 6000 tập tin này bao gồm rất nhiều thứ, chẳng hạn như những tập tin “build log”, tài nguyên về Java, dữ liệu HTML, vân vân. Nhiều tập tin được viết bằng tiếng Nhật.\r\nĐiều thú vị là Ransomed.vc có vẻ như là một tổ chức chuyên cung cấp dịch vụ ransomware. Điều đó có nghĩa là song song với các đợt hack lớn nhắm vào những công ty nổi tiếng, Ransomed.vc còn hợp tác với các bên khác để báo cáo về những lỗ hổng trong hệ thống của họ. Theo Cyber Security Connect, Ransomed.vc còn lợi dụng pháp luật để chèn ép nạn nhân.\r\n\r\nMặc dù Ransomed.vc chưa đưa ra giá bán cụ thể, họ có để lại thông tin liên lạc cho Sony và ngày “post date” là 28/09/2023. Đây có thể là ngày mà Ransomed.vc sẽ đăng tất cả lên trên mạng. Về phía Sony thì họ vẫn đang điều tra và chưa có phản hồi gì về vụ này.', '2023-09-28 12:52:41', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `orders`
 --
 
@@ -98,8 +126,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `fullname`, `address`, `mobile`, `email`, `note`, `price_total`, `payment_status`, `created_at`, `updated_at`) VALUES
-(20, NULL, 'phùng tiến hào', 'hn', 338680362, 'haotienphung@gmail.com', '', 10300000, 0, '2023-09-10 07:56:29', NULL),
-(21, NULL, 'phùng tiến hào', 'hn', 338680362, 'haotienphung@gmail.com', '', 31300000, 0, '2023-09-11 07:22:29', NULL);
+(24, NULL, 'phùng tiến hào', 'hn', 338680362, 'haotienphung@gmail.com', '', 7500000, 0, '2023-09-28 02:54:54', NULL),
+(25, NULL, 'phùng tiến hào', 'hn', 338680362, 'haotienphung@gmail.com', '', 10300000, 0, '2023-09-28 02:58:48', NULL);
 
 -- --------------------------------------------------------
 
@@ -118,11 +146,9 @@ CREATE TABLE `order_details` (
 --
 
 INSERT INTO `order_details` (`order_id`, `product_id`, `quantity`) VALUES
-(20, 12, 1),
-(20, 11, 1),
-(21, 11, 2),
-(21, 14, 1),
-(21, 20, 1);
+(24, 14, 1),
+(25, 11, 1),
+(25, 12, 1);
 
 -- --------------------------------------------------------
 
@@ -221,6 +247,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `orders`
 --
 ALTER TABLE `orders`
@@ -269,10 +301,16 @@ ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT cho bảng `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
