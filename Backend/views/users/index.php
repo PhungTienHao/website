@@ -1,17 +1,5 @@
 <?php ?>
-<form method="GET" action="">
-    <div class="form-group">
-        <label for="username" style="color:black">Username</label>
-        <input style="color:black" type="text" name="username" id="username"
-               value="<?php echo isset($_GET['username']) ? $_GET['username'] : '' ?>" class="form-control"/>
-        <input type="hidden" name="controller" value="user"/>
-        <input type="hidden" name="action" value="index"/>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Tìm kiếm" name="search" class="btn btn-primary"/>
-        <a href="index.php?controller=user" class="btn btn-default">Back</a>
-    </div>
-</form>
+
 
 <h2>Danh sách user</h2>
 <a href="index.php?controller=user&action=create" class="btn btn-success">
