@@ -62,7 +62,7 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
     }
 
     public function getUser($username){
-        $sql_select_one ="select * from users where username=:username";
+        $sql_select_one ="select * from users where username=:username AND users.quyenhan = 0";
         $obj_select_one = $this->connection->prepare($sql_select_one);
         $selects=[
             ':username'=>$username
@@ -72,7 +72,7 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
         return $user;
     }
     public function getAdmin($username){
-        $sql_select_one ="select * from admin where username=:username";
+        $sql_select_one ="select * from users where username=:username AND users.quyenhan = 1";
         $obj_select_one = $this->connection->prepare($sql_select_one);
         $selects=[
             ':username'=>$username
@@ -93,7 +93,6 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
                 ->prepare("SELECT COUNT(id) FROM users WHERE TRUE $this->str_search");
             $obj_select->execute();
             return $obj_select->fetchColumn();
-
 }
     public function getAllPagination($params = [])
     {
@@ -108,5 +107,4 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
         $users = $obj_select->fetchAll(PDO::FETCH_ASSOC);
         return $users;
     }
-
 }

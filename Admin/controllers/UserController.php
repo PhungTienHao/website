@@ -15,6 +15,7 @@ public function register(){
         $address = $_POST['address'];
         $email = $_POST['email'];
         $avatar = $_FILES['avatar'];
+        $quyenhan = $_POST['quyenhan'];
 
         if(empty($username)||empty($password)||empty($name)||empty($phone)||empty($address)||empty($email)||empty($repas)){
             $this->error='phải nhập đầy đủ thông tin';
@@ -63,6 +64,7 @@ public function register(){
             $user_model->address = $address;
             $user_model->email = $email;
             $user_model->avatar = $filename;
+            $user_model->quyenhan = $quyenhan;
 
             $is_register =$user_model ->registerUser();
             var_dump($is_register);
@@ -190,7 +192,7 @@ public function update(){
             $user_model->address = $address;
             $user_model->email = $email;
             $user_model->avatar = $filename;
-//            $user_model->status = $status;
+            $user_model->quyenhan = $quyenhan;
 
             $is_update = $user_model->update($id);
             if ($is_update) {
@@ -243,11 +245,11 @@ public function update(){
             'query_additional' => $query_additional
         ];
         $pagination = new Pagination($params);
-        $pages = $pagination->getPagination();
+//        $pages = $pagination->getPagination();
         $users = $user_model->getAllPagination($params);
      $this->content = $this->render('views/users/index.php', [
             'users' => $users,
-            'pages' => $pages,
+//                'pages' => $pages,
         ]);
 
         require_once 'views/layouts/main.php';

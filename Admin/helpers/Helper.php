@@ -15,6 +15,8 @@ class Helper
     const STATUS_DISABLE_TEXT = 'Chưa Thanh Toán';
     const STATUS_ACTI_TEXT = 'Hiển thị ở trang chủ';
     const STATUS_DISA_TEXT = 'Không hiện ở trang chủ';
+    const STATUS_AC_TEXT = 'Admin';
+    const STATUS_DIS_TEXT = 'User';
 
     /**
      * Get status text
@@ -56,6 +58,18 @@ class Helper
                 break;
         }
         return $is_home_text;
+    }
+    public static function getquyenhan($quyenhan = 0) {
+        $quyenhan_text = '';
+        switch ($quyenhan) {
+            case self::STATUS_ACTIVE:
+                $quyenhan_text = self::STATUS_AC_TEXT;
+                break;
+            case self::STATUS_DISABLED:
+                $quyenhan_text = self::STATUS_DIS_TEXT;
+                break;
+        }
+        return $quyenhan_text;
     }
 
   public static function getSlug($str) {
