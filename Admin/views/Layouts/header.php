@@ -52,7 +52,7 @@ if (isset($_SESSION['user'])) {
                                     out</a>
                             </div>
                             <div class="pull-left">
-                                <a href="http://localhost/website/Frontend/index.php" class="btn btn-default btn-flat">Chuyển
+                                <a href="http://localhost/website/users/index.php" class="btn btn-default btn-flat">Chuyển
                                 Sang Trang Chủ</a>
                             </div>
                         </li>
@@ -93,7 +93,7 @@ if (isset($_SESSION['user'])) {
             </li>
             <li>
                 <a href="index.php?controller=user&action=index" class="b">
-                    <i class="fa fa-user"></i> <span>Quản lý Tài Khoản Admin</span>
+                    <i class="fa fa-user"></i> <span>Quản lý Tài Khoản </span>
                     <span class="pull-right-container">
             </span>
                 </a>

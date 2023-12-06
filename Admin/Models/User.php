@@ -62,7 +62,7 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
     }
 
     public function getUser($username){
-        $sql_select_one ="select * from users where username=:username AND users.quyenhan = 0";
+        $sql_select_one ="select * from users where username=:username ";
         $obj_select_one = $this->connection->prepare($sql_select_one);
         $selects=[
             ':username'=>$username
