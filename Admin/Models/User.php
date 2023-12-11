@@ -89,10 +89,23 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
         return $obj_select->fetch(PDO::FETCH_ASSOC);
     }
     public function getTotal(){
+        $str_search = 'WHERE TRUE';
+        if (isset($params['name']) && !empty($params['name'])) {
+            $name = $params['name'];
+
+            $str_search .= " AND `name` LIKE '%$name%'";
+        }
+        if (isset($params['quyenhan'])) {
+            $quyenhan = $params['quyenhan'];
+            $str_search .= " AND `quyenhan` = $quyenhan";
+        }
             $obj_select = $this->connection
                 ->prepare("SELECT COUNT(id) FROM users WHERE TRUE $this->str_search");
             $obj_select->execute();
-            return $obj_select->fetchColumn();
+        $arr_select = [];
+        $obj_select->execute($arr_select);
+        $users = $obj_select->fetchAll(PDO::FETCH_ASSOC);
+            return $users;
 }
     public function getAllPagination($params = [])
     {

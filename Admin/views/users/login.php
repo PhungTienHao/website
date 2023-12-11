@@ -1,20 +1,11 @@
 
 <?php
-//views/users/login.php
+
 ?>
 
-<!--<div class="header-login">-->
-<!--    <div class="container-login">-->
-<!--        <div class="row">-->
-<!--            <div class="logo">-->
-<!--                <a><img src="assets/images/logo2 (3).png"></a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 <body class="body-user">
 <div class="container">
-    <h2 class="h-user">  đăng Nhập</h2>
+    <h2 class="h-user">  Đăng Nhập</h2>
     <form action="" method="post" >
         <div class="form-group">
 

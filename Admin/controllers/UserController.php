@@ -100,7 +100,7 @@ public function register(){
                     if($is_login){
                         $_SESSION['user']=$user;
                         $_SESSION['success']='đăng nhập thành công';
-                        header('location:index.php?controller=product&action=index');
+                        header('location:website/users/index.php');
                         exit();
                     }
                     $this->error='sai tk';
@@ -157,7 +157,7 @@ public function update(){
         $phone = $_POST['phone'];
         $email = $_POST['email'];
         $address = $_POST['address'];
-        $status = $_POST['status'];
+        $quyenhan = $_POST['quyenhan'];
         //xử lý validate
         if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $this->error = 'Email không đúng định dạng';
@@ -249,7 +249,6 @@ public function update(){
         $users = $user_model->getAllPagination($params);
      $this->content = $this->render('views/users/index.php', [
             'users' => $users,
-//                'pages' => $pages,
         ]);
 
         require_once 'views/layouts/main.php';
