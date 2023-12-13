@@ -1,7 +1,12 @@
-<?php ?>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+</head>
+<body>
 <section class="content-header">
 
     <ol class="breadcrumb">
@@ -32,71 +37,4 @@
 
     </form>
 </div></div>
-<script>
-    $(function() {
-        $("#contact_form").validate({
-            rules: {
-                "name": {
-                    required: true,
-                    minlength: 6,
-                    maxlength: 12,
-                    alpha_numericRegex: true
-                },
-                "assess": {
-                    required: true,
-                    minlength: 6,
-                    maxlength: 20,
-
-                },
-                "email": {
-                    required: true,
-                    maxlength: 200,
-                    email: true
-                },
-
-            },
-            messages: {
-                "name": {
-                    required: "Vui lòng điền tên đăng nhập",
-                    minlength: "Vui lòng nhập ít nhất {0} ký tự",
-                    maxlength: "Vui lòng nhập tối đa {0} ký tự",
-                    alpha_numericRegex:"Chỉ nhập ký tự chữ và số"
-                },
-                "email": {
-                    required: "Vui lòng điền email",
-                    maxlength: "Vui lòng nhập tối đa {0} ký tự",
-                    email: "Vui lòng điền email hợp lệ, ví dụ: example@mailinator.com",
-                },
-                "assess": {
-                    required: "Vui lòng điền thông tin liên hệ",
-                    minlength: "Vui lòng nhập ít nhất {0} ký tự",
-                    maxlength: "Vui lòng nhập tối đa {0} ký tự",
-                    alpha_numericRegex:"Chỉ nhập ký tự chữ và số"
-                }
-            },
-            submitHandler: function() {
-                $.ajax( {
-                    type: "POST",
-                    url: '#',
-                    data: $("#contact_form").serialize(),
-                    success: function(data)
-                    {
-                        if (data.errCode == "0") {
-                            alert("Đánh giá thành công");
-                            window.open('#', '_parent');
-                        }else{
-                            alert(data.errCode + " - " + data.errMsg);
-                            window.open('#', '_parent');
-                        }
-                    }
-                });
-            }
-        });
-    });
-    $.validator.addMethod("numericRegex", function (value, element) {
-        return this.optional(element) || /^[0-9\-]+$/i.test(value);
-    });
-    $.validator.addMethod("alpha_numericRegex", function (value, element) {
-        return this.optional(element) || /^[a-z0-9\-]+$/i.test(value);
-    });
-</script>
+</body>
