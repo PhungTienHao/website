@@ -38,3 +38,15 @@
     </form>
 </div></div>
 </body>
+<script>
+    function check_submit(){
+        var value = document.getElementById("testvalidate").value
+
+        var regex = /a-z/
+        unless (regex.test(value)){
+            event.preventDefault()
+            document.getElementById("show-message").innerHTML =
+                "Please enter format input right!"
+        }
+    }
+</script>

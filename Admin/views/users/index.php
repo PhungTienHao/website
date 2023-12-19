@@ -14,7 +14,6 @@
         <th>address</th>
         <th>email</th>
         <th>avatar</th>
-        <th>Quyền Hạn</th>
         <th>created_at</th>
         <th></th>
     </tr>
@@ -33,8 +32,6 @@
                         <img height="80" src="assets/uploads/<?php echo $user['avatar'] ?>">
                     <?php endif; ?>
                 </td>
-                <td><?php echo Helper::getquyenhan($user['quyenhan']) ?></td>
-
                 <td><?php echo date('d-m-Y H:i:s', strtotime($user['created_at'])) ?></td>
                 <td>
                     <?php
