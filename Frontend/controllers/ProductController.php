@@ -74,14 +74,15 @@ class ProductController extends Controller {
   }
 
     public function search() {
+      
         // Lấy tham số tìm kiếm từ URL
-        $searchKeyword = isset($_GET['timkiem']) ? $_GET['timkiem'] : '';
+        $Keyword = isset($_GET['search']) ? $_GET['search'] : '';
 
         // Tạo thể hiện của model Product
         $productModel = new Product();
 
         // Gọi hàm tìm kiếm sản phẩm dựa trên $searchKeyword
-        $searchResults = $productModel->searchProducts($searchKeyword);
+        $searchResults = $productModel->searchProducts($Keyword);
 
         // Trả về kết quả tìm kiếm cho view hiển thị
         require_once 'views/layouts/search.php';

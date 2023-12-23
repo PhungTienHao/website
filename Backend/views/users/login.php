@@ -25,7 +25,7 @@
         <div class="form-group">
             <input id="user" type="checkbox" class="checkbox-user">Ghi Nhớ Đăng Nhập <br>
             <input type="submit" name="submit" value="đăng nhập" class="btn btn-success">
-            <div class="link-user">chưa có tài khoản , đăng ký  <a class="aaa" href="index.php?controller=user&action=register">tại đây</a>
+<!--            <div class="link-user">chưa có tài khoản , đăng ký  <a class="aaa" href="index.php?controller=user&action=register">tại đây</a>-->
             </div>
         </div>
     </form>

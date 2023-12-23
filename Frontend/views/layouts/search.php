@@ -50,8 +50,10 @@ require_once 'helpers/Helper.php';
 
 <div class="main-content">
 
+                        
+                        
 
-                    <p class="sanphamnoibat_id">Sản phẩm tìm kiếm</p>
+<p>Kết quả cho tìm kiếm :  <i><?php echo $Keyword ?></i></p>
 
 
 

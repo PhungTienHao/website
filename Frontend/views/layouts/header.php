@@ -69,9 +69,30 @@
                                 <input type="hidden" name="controller" value="product">
                                 <input type="hidden" name="action" value="search">
                                         <input type="text" name="search" class="form-control form-search-input" placeholder="Search anything..." >
-
+                                        <input type="submit" name="submit"value=" ">
                                 </div>
                     </form>
+                    <?php
+                        require_once'configs/Database.php';
+                          if(ISSET($_POST['submit'])){
+                                $keyword = $_POST['search'];
+                        ?>
+                        <div>
+                            <h2>Kết quả cho tìm kiếm<?php $keyword ?></h2>
+                            <?php
+
+                                $query = mysqli_query($conn, "SELECT * FROM `products` WHERE `title` LIKE '%$keyword%' ORDER BY `title`") or die(mysqli_error());
+                                while($fetch = mysqli_fetch_array($query)){
+                            ?>
+                                <?php echo $fetch['title']?>
+                                <p><?php echo substr($fetch['avatar'], 0, 100)?>...</p>
+                            <?php
+                                }
+                            ?>
+                        </div>
+                        <?php
+                            }
+                        ?>
                     </div>
                     <ul class="header-navigation" data-show-menu-on-mobile>
 

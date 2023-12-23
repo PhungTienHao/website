@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-  $('.timkiem').click(function () {
-    $('.form-search').submit()
-  });
+  // $('.timkiem').click(function () {
+  //   $('.form-search').submit()
+  // });
 
   $('.add-to-cart').each(function () {
     $(this).click(function () {

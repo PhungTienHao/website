@@ -285,7 +285,7 @@ a {
 
 /*seach*/
 .form-search{
-
+    display: flex;
     position: relative;
     width:100%;
 }
