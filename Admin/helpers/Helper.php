@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: nvmanh
- * Date: 5/2/2020
- * Time: 10:14 AM
- */
+
 class Helper
 {
     const STATUS_ACTIVE = 1;
@@ -15,6 +10,8 @@ class Helper
     const STATUS_DISABLE_TEXT = 'Chưa Thanh Toán';
     const STATUS_ACTI_TEXT = 'Hiển thị ở trang chủ';
     const STATUS_DISA_TEXT = 'Không hiện ở trang chủ';
+    const STATUS_ACTIVE1_TEXT = 'Admin';
+    const STATUS_DISABLED1_TEXT = 'User';
 
     /**
      * Get status text
@@ -56,6 +53,18 @@ class Helper
                 break;
         }
         return $is_home_text;
+    }
+    public static function getquyenhan($quyenhan = 0) {
+        $quyenhan_text = '';
+        switch ($quyenhan) {
+            case self::STATUS_ACTIVE:
+                $quyenhan_text = self::STATUS_ACTIVE1_TEXT;
+                break;
+            case self::STATUS_DISABLED:
+                $quyenhan_text = self::STATUS_DISABLED1_TEXT;
+                break;
+        }
+        return $quyenhan_text;
     }
 
   public static function getSlug($str) {

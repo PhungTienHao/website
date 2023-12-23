@@ -27,7 +27,7 @@ require_once 'controllers/ProductController.php';
 
                     <div class="main-right col-md-6 col-sm-6 col-xs-12">
                         <img class="secondary-img img-responsive" title="<?php echo $news['name'] ?>"
-                             src="../backend/assets/uploads/<?php echo $news['avatar'] ?>"     width="300px"  height="200px" >
+                             src="../Admin/assets/uploads/<?php echo $news['avatar'] ?>"     width="300px"  height="200px" >
 
                     </div>
                     <div class="service-link col-md-6 col-sm-6 col-xs-12">

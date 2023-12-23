@@ -64,7 +64,7 @@ require_once 'controllers/HomeController.php';
                 <div class="service-link col-md-3 col-sm-6 col-xs-12">
                     <a href="<?php echo $product_link; ?>">
                         <img class="secondary-img img-responsive" title="<?php echo $products['title'] ?>"
-                             src="../backend/assets/uploads/<?php echo $products['avatar'] ?>"
+                             src="../Admin/assets/uploads/<?php echo $products['avatar'] ?>"
                              alt="<?php echo $products['title'] ?>"/>
                         <span class="shop-title">
                         <?php echo $products['title'] ?>
@@ -186,7 +186,7 @@ require_once 'controllers/HomeController.php';
                         <div class="service-link col-md-3 col-sm-6 col-xs-12">
                             <a href="<?php echo $news_link; ?>">
                                 <img class="anh" title="<?php echo $news['name'] ?>"
-                                     src="../backend/assets/uploads/<?php echo $news['avatar'] ?>"
+                                     src="../Admin/assets/uploads/<?php echo $news['avatar'] ?>"
                                      alt="<?php echo $news['name'] ?>"/>
                                 <span class="shop-title">
                         <?php echo $news['name'] ?>

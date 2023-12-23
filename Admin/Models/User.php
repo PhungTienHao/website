@@ -15,6 +15,7 @@ class User extends Model {
     public $avatar;
     public $created_at;
     public $str_search;
+    public $quyenhan;
     public $page;
 
     public function __construct()
@@ -61,7 +62,7 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
     }
 
     public function getUser($username){
-        $sql_select_one ="select * from users where username=:username";
+        $sql_select_one ="select * from users where username=:username ";
         $obj_select_one = $this->connection->prepare($sql_select_one);
         $selects=[
             ':username'=>$username
@@ -71,7 +72,7 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
         return $user;
     }
     public function getAdmin($username){
-        $sql_select_one ="select * from admin where username=:username";
+        $sql_select_one ="select * from users where username=:username AND users.quyenhan = 1";
         $obj_select_one = $this->connection->prepare($sql_select_one);
         $selects=[
             ':username'=>$username
@@ -88,11 +89,23 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
         return $obj_select->fetch(PDO::FETCH_ASSOC);
     }
     public function getTotal(){
+        $str_search = 'WHERE TRUE';
+        if (isset($params['name']) && !empty($params['name'])) {
+            $name = $params['name'];
+
+            $str_search .= " AND `name` LIKE '%$name%'";
+        }
+        if (isset($params['quyenhan'])) {
+            $quyenhan = $params['quyenhan'];
+            $str_search .= " AND `quyenhan` = $quyenhan";
+        }
             $obj_select = $this->connection
                 ->prepare("SELECT COUNT(id) FROM users WHERE TRUE $this->str_search");
             $obj_select->execute();
-            return $obj_select->fetchColumn();
-
+        $arr_select = [];
+        $obj_select->execute($arr_select);
+        $users = $obj_select->fetchAll(PDO::FETCH_ASSOC);
+            return $users;
 }
     public function getAllPagination($params = [])
     {
@@ -107,5 +120,4 @@ VALUES(:username, :password,:name, :phone, :address, :email, :avatar)");
         $users = $obj_select->fetchAll(PDO::FETCH_ASSOC);
         return $users;
     }
-
 }
