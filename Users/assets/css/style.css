@@ -4956,7 +4956,9 @@ td .product-avatar.img-responsive {
 .news-relative li {
     margin-bottom: 25px;
 }
-
+ul.icon-service-wrap {
+    width: 50px;
+}
 .icon-service-wrap {
     z-index: 1;
     position: fixed;
