@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 29, 2023 lúc 08:22 AM
+-- Thời gian đã tạo: Th1 12, 2024 lúc 02:52 PM
 -- Phiên bản máy phục vụ: 10.4.27-MariaDB
 -- Phiên bản PHP: 8.2.0
 
@@ -43,7 +43,9 @@ INSERT INTO `assess` (`id`, `name`, `email`, `assess`, `created_at`) VALUES
 (1, 'Phùng Tiến Hào', 'haotienphung@gmail.com', 'quá tuyệt vời', '0000-00-00 00:00:00'),
 (2, 'phùng tiến hào', 'haotienphung@gmail.com', 'tuyệt vời', '2023-09-08 11:05:23'),
 (3, 'phùng tiến hào', 'haotienphung@gmail.com', 'tuyệt vời', '2023-09-08 11:05:30'),
-(4, 'phùng tiến hào', 'haotienphung@gmail.com', 'tuyệt vời', '2023-09-08 11:05:59');
+(4, 'phùng tiến hào', 'haotienphung@gmail.com', 'tuyệt vời', '2023-09-08 11:05:59'),
+(10, 'phùng tiến hào', 'haotienphung@gmail.com', '111', '2023-12-19 14:36:53'),
+(11, '&lt;script&gt;alert(&#039;Bị dính XSS rồi!&#039;)&lt;/script&gt;', '123@gmail,com', 'uww', '2023-12-19 14:37:36');
 
 -- --------------------------------------------------------
 
@@ -127,7 +129,9 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `user_id`, `fullname`, `address`, `mobile`, `email`, `note`, `price_total`, `payment_status`, `created_at`, `updated_at`) VALUES
 (24, NULL, 'phùng tiến hào', 'hn', 338680362, 'haotienphung@gmail.com', '', 7500000, 0, '2023-09-28 02:54:54', NULL),
-(25, NULL, 'phùng tiến hào', 'hn', 338680362, 'haotienphung@gmail.com', '', 10300000, 0, '2023-09-28 02:58:48', NULL);
+(25, NULL, 'phùng tiến hào', 'hn', 338680362, 'haotienphung@gmail.com', '', 10300000, 0, '2023-09-28 02:58:48', NULL),
+(26, NULL, 'phùng tiến hào', 'hn', 338680362, 'haotienphung@gmail.com', '', 3900000, 0, '2024-01-12 13:03:17', NULL),
+(27, NULL, 'phùng tiến hào', 'hn', 338680362, 'haotienphung@gmail.com', '', 7500000, 0, '2024-01-12 13:15:19', NULL);
 
 -- --------------------------------------------------------
 
@@ -148,7 +152,9 @@ CREATE TABLE `order_details` (
 INSERT INTO `order_details` (`order_id`, `product_id`, `quantity`) VALUES
 (24, 14, 1),
 (25, 11, 1),
-(25, 12, 1);
+(25, 12, 1),
+(26, 18, 1),
+(27, 17, 1);
 
 -- --------------------------------------------------------
 
@@ -193,21 +199,6 @@ INSERT INTO `products` (`id`, `category_id`, `title`, `avatar`, `price`, `amount
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user`
---
-
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `user` varchar(110) NOT NULL,
-  `pas` text NOT NULL,
-  `sdt` text NOT NULL,
-  `address` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `users`
 --
 
@@ -220,6 +211,7 @@ CREATE TABLE `users` (
   `address` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
+  `quyenhan` tinyint(4) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -227,8 +219,8 @@ CREATE TABLE `users` (
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `name`, `phone`, `address`, `email`, `avatar`, `created_at`) VALUES
-(4, 'haohao', '$2y$10$3i4Oez9wICou92ScyMttYeetuuKtxXPvJ2FjrLdmbg9WjO01zX/8C', 'phùng tiến hào', 338680362, 'hn', 'haotienphung@gmail.com', '1692286825-user-z4569980100674_8ae6250eb99a08817a7d8fb41abe624b.jpg', '2023-08-17 15:40:25');
+INSERT INTO `users` (`id`, `username`, `password`, `name`, `phone`, `address`, `email`, `avatar`, `quyenhan`, `created_at`) VALUES
+(4, 'haohao', '$2y$10$3i4Oez9wICou92ScyMttYeetuuKtxXPvJ2FjrLdmbg9WjO01zX/8C', 'phùng tiến hào', 338680362, 'hn', 'haotienphung@gmail.com', '1692286825-user-z4569980100674_8ae6250eb99a08817a7d8fb41abe624b.jpg', 0, '2023-08-17 15:40:25');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -273,12 +265,6 @@ ALTER TABLE `products`
   ADD KEY `category_id` (`category_id`);
 
 --
--- Chỉ mục cho bảng `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
@@ -292,7 +278,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `assess`
 --
 ALTER TABLE `assess`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `categories`
@@ -310,19 +296,13 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
---
--- AUTO_INCREMENT cho bảng `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `users`

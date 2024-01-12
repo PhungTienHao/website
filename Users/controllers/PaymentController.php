@@ -8,13 +8,12 @@ class PaymentController extends Controller
 {
     public function index()
     {
-        //nếu giỏ hàng trống thì ko cho phép truy cập trang này
+
         if (!isset($_SESSION['cart'])) {
             $_SESSION['error'] = 'Bạn chưa có sản phẩm nào trong giỏ hàng';
             header("Location: index.php");
             exit();
         }
-
         if (isset($_POST['submit'])) {
             $fullname = $_POST['fullname'];
             $address = $_POST['address'];
@@ -25,7 +24,6 @@ class PaymentController extends Controller
             if (empty($fullname) || empty($address) || empty($mobile)) {
                 $this->error = 'Fullname, address, mobile ko đc để trống';
             }
-
             if (empty($this->error)) {
                 $order_model = new Order();
                 $order_model->fullname = $fullname;
@@ -38,12 +36,12 @@ class PaymentController extends Controller
                     $price_total += $cart['quantity'] * $cart['price'];
                 }
                 $order_model->price_total = $price_total;
-                //mặc định là chưa thanh toán
+
                 $order_model->payment_status = 0;
-                //lưu vào bảng orders
+
                 $order_id = $order_model->insertorder();
                 if ($order_id > 0) {
-                    //lưu vào bảng order_details
+
                     $order_detail = new OrderDetail();
                     $order_detail->order_id = $order_id;
                     foreach ($_SESSION['cart'] AS $product_id => $cart) {
@@ -53,7 +51,7 @@ class PaymentController extends Controller
                     }
 
 
-//          unset($_SESSION['cart']);
+          unset($_SESSION['cart']);
 
                     if ($method == 1) {
                         $order_model->id = $order_id;

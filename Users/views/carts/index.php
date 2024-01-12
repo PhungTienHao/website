@@ -21,7 +21,7 @@
                         <td style="display:flex;">
                             <a href="chi-tiet-san-pham/samsung-s9/5" class="content-product-a">
                             <img class="product-avatar img-responsive"
-                                 src="../backend/assets/uploads/<?php echo $product['avatar'] ?>"
+                                 src="../Admin/assets/uploads/<?php echo $product['avatar'] ?>"
                                  width="80">
                             <div class="content-product">
 

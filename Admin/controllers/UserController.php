@@ -100,7 +100,7 @@ public function register(){
                     if($is_login){
                         $_SESSION['user']=$user;
                         $_SESSION['success']='đăng nhập thành công';
-                        header('location:website/users/index.php');
+                        header('location:index.php?controller=product&action=index');
                         exit();
                     }
                     $this->error='sai tk';

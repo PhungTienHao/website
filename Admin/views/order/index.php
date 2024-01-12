@@ -36,7 +36,7 @@ require_once 'helpers/Helper.php';
                     <?php
                     $url_detail = "index.php?controller=order&action=detail&id=" . $order['id'];
                     ?>
-<!--                    <a title="Chi tiết" href="--><?php //echo $url_detail ?><!--"><i class="fa fa-eye"></i></a> &nbsp;&nbsp;-->
+<!--                  <a title="Chi tiết" href="--><?php //echo $url_detail ?><!--"><i class="fa fa-eye"></i></a>-->
 
                 </td>
             </tr>
