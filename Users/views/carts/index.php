@@ -38,9 +38,10 @@
                         </td>
                         <td>
                             <?php
-                            $product_price = $product['price'] * $product['quantity'];
+                           $product_price = $product['price'] * $product['quantity'];
                             $total_price += $product_price;
                             echo number_format($product_price);
+
                             ?>
                         </td>
                         <td>
@@ -66,7 +67,7 @@
                 </tr>
                 <tr>
                     <td colspan="5" class="product-payment">
-                        <input type="submit" name="submit" value="Cập nhật lại giá" class="btn btn-primary">
+                        <input type="submit" name="ok" value="Cập nhật lại giá" class="btn btn-primary">
                         <a href="thanh-toan.html" class="btn btn-success">Đến trang thanh toán</a>
                     </td>
                 </tr>

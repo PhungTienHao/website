@@ -23,7 +23,7 @@ class CartController extends Controller
             'name' => $product['title'],
             'price' => $product['price'],
             'avatar' => $product['avatar'],
-            'quantity' => 1, //mỗi lần click vào link thêm giỏ hàng tương đương với số lượng tăng 1
+            'quantity' => 1,
         ];
 
         if (!isset($_SESSION['cart'])) {
@@ -45,18 +45,13 @@ class CartController extends Controller
 
         echo TRUE;
 
-        //sau khi xử lý xong giỏ hàng thì chuyển hướng về trang danh sách giỏ hàng
-        //do đang sử dụng rewwrite url nên các url khi chuyển hướng cần có cả đường dẫn ứng dụng
-//    $url_redirect = $_SERVER['SCRIPT_NAME'] . '/gio-hang-cua-ban';
-//    header("Location: $url_redirect");
-//    exit();
 
     }
 
     public function index()
     {
         //nếu user update form giỏ hàng
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['ok'])) {
             //lặp mảng giỏ hàng để tiến hành update lại số lượng cho giỏ hàng
             foreach ($_SESSION['cart'] AS $product_id => $cart) {
                 $_SESSION['cart'][$product_id]['quantity'] = $_POST[$product_id];

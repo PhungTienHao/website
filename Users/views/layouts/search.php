@@ -73,7 +73,7 @@ require_once 'helpers/Helper.php';
                         <div class="service-link col-md-3 col-sm-6 col-xs-12">
                             <a href="<?php echo $product_link; ?>">
                                 <img class="secondary-img img-responsive" title="<?php echo $product['title'] ?>"
-                                     src="../backend/assets/uploads/<?php echo $product['avatar'] ?>"
+                                     src="../Admin/assets/uploads/<?php echo $product['avatar'] ?>"
                                      alt="<?php echo $product['title'] ?>"/>
                                 <span class="shop-title">
                         <?php echo $product['title'] ?>

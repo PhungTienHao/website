@@ -15,11 +15,11 @@ class PaymentController extends Controller
             exit();
         }
         if (isset($_POST['submit'])) {
-            $fullname = $_POST['fullname'];
-            $address = $_POST['address'];
-            $mobile = $_POST['mobile'];
-            $email = $_POST['email'];
-            $note = $_POST['note'];
+            $fullname = htmlspecialchars($_POST['fullname']);
+            $address = htmlspecialchars($_POST['address']);
+            $mobile = htmlspecialchars($_POST['mobile']);
+            $email =htmlspecialchars($_POST['email']);
+            $note = htmlspecialchars($_POST['note']);
             $method = $_POST['method'];
             if (empty($fullname) || empty($address) || empty($mobile)) {
                 $this->error = 'Fullname, address, mobile ko đc để trống';

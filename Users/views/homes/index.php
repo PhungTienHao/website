@@ -217,4 +217,3 @@ flex-wrap: wrap;
 }
 
 </style>
-<!--END NEWS-->
